@@ -1,0 +1,253 @@
+[
+  {
+    "id": "olympic-forest-south-outer",
+    "name": "奥森南园外圈",
+    "district": "朝阳",
+    "distance_km": 5.0,
+    "surface": ["paved", "plastic"],
+    "scenery_tags": ["公园", "湖景", "夜跑友好", "热门"],
+    "start": [116.396, 40.013],
+    "blurb": "北京跑友的圣地，塑胶跑道 + 林荫路，5km 标准圈，新手老手都合适。"
+  },
+  {
+    "id": "olympic-forest-south-inner",
+    "name": "奥森南园内圈",
+    "district": "朝阳",
+    "distance_km": 3.0,
+    "surface": ["plastic"],
+    "scenery_tags": ["公园", "塑胶", "夜跑友好"],
+    "start": [116.396, 40.013],
+    "blurb": "全程塑胶跑道，3km 短小精悍，配速不掉链子。"
+  },
+  {
+    "id": "olympic-forest-full-loop",
+    "name": "奥森南北全圈",
+    "district": "朝阳",
+    "distance_km": 10.0,
+    "surface": ["paved", "plastic", "trail"],
+    "scenery_tags": ["公园", "湖景", "上强度"],
+    "start": [116.396, 40.013],
+    "blurb": "南北园通走，10km LSD 经典选择，一圈下来心情都开阔。"
+  },
+  {
+    "id": "chaoyang-park-outer",
+    "name": "朝阳公园外圈",
+    "district": "朝阳",
+    "distance_km": 5.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "国贸近"],
+    "start": [116.479, 39.945],
+    "blurb": "国贸打工人的下班放风地，5km 公园外圈刚刚好。"
+  },
+  {
+    "id": "chaoyang-park-track",
+    "name": "朝阳公园塑胶跑道",
+    "district": "朝阳",
+    "distance_km": 2.8,
+    "surface": ["plastic"],
+    "scenery_tags": ["塑胶", "刷圈"],
+    "start": [116.467, 39.949],
+    "blurb": "想刷间歇？2.8km 塑胶跑道随便切。"
+  },
+  {
+    "id": "liangma-river",
+    "name": "亮马河沿岸",
+    "district": "朝阳",
+    "distance_km": 4.5,
+    "surface": ["paved"],
+    "scenery_tags": ["水景", "夜景", "网红", "出片"],
+    "start": [116.466, 39.961],
+    "blurb": "蓝港-燕莎-三里屯一线，跑完顺路撸串/喝精酿，朋友圈封面级。"
+  },
+  {
+    "id": "honglingjin-park",
+    "name": "红领巾公园",
+    "district": "朝阳",
+    "distance_km": 3.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "通勤友好"],
+    "start": [116.488, 39.926]
+  ,
+    "blurb": "朝阳东四环边的小而美，3km 一圈，通勤前热身正好。"
+  },
+  {
+    "id": "wangjing-park",
+    "name": "望京公园",
+    "district": "朝阳",
+    "distance_km": 2.5,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "社区"],
+    "start": [116.476, 40.001],
+    "blurb": "望京码农的早晨，绕公园两圈刚好醒神。"
+  },
+  {
+    "id": "wenyu-park-south",
+    "name": "温榆河公园南园",
+    "district": "朝阳",
+    "distance_km": 4.0,
+    "surface": ["paved", "trail"],
+    "scenery_tags": ["公园", "水景", "新晋"],
+    "start": [116.515, 40.062],
+    "blurb": "温榆河公园朝阳片区，新修的，人少景多，4km 巡一圈舒服。"
+  },
+  {
+    "id": "yuyuantan-outer",
+    "name": "玉渊潭外圈",
+    "district": "海淀",
+    "distance_km": 5.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "樱花季"],
+    "start": [116.331, 39.917],
+    "blurb": "海淀打工人首选，5km 环湖一圈，春天樱花季封神。"
+  },
+  {
+    "id": "zizhuyuan",
+    "name": "紫竹院公园",
+    "district": "海淀",
+    "distance_km": 3.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "竹林", "人少"],
+    "start": [116.314, 39.945],
+    "blurb": "竹林+湖+古亭，3km 环线，跑完心都静了。"
+  },
+  {
+    "id": "haidian-park",
+    "name": "海淀公园",
+    "district": "海淀",
+    "distance_km": 2.5,
+    "surface": ["paved", "plastic"],
+    "scenery_tags": ["公园", "塑胶", "中关村近"],
+    "start": [116.302, 39.992],
+    "blurb": "中关村加班人的后花园，2.5km 一圈，午休都能跑一圈。"
+  },
+  {
+    "id": "summer-palace-outer",
+    "name": "颐和园外圈",
+    "district": "海淀",
+    "distance_km": 8.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "上强度", "出片"],
+    "start": [116.265, 40.010],
+    "blurb": "西堤-南湖岛-知春亭，8km 一圈跑完像穿越了一场山水画。"
+  },
+  {
+    "id": "yuandadu-relics-park",
+    "name": "元大都遗址公园",
+    "district": "朝阳",
+    "distance_km": 4.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "历史", "海棠"],
+    "start": [116.378, 39.985],
+    "blurb": "沿小月河一路跑，海棠花季美哭，4km 平缓适合 easy run。"
+  },
+  {
+    "id": "beihai-shichahai",
+    "name": "北海 + 什刹海",
+    "district": "西城",
+    "distance_km": 3.5,
+    "surface": ["paved"],
+    "scenery_tags": ["水景", "胡同", "出片", "古都"],
+    "start": [116.391, 39.928],
+    "blurb": "穿胡同绕湖跑，3.5km 拍照片每张都能发朋友圈。"
+  },
+  {
+    "id": "lianhuachi",
+    "name": "莲花池公园",
+    "district": "丰台",
+    "distance_km": 2.5,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "西站近"],
+    "start": [116.318, 39.890],
+    "blurb": "西站旁的小绿洲，2.5km 一圈，候车两小时？跑一圈再上车。"
+  },
+  {
+    "id": "taoranting",
+    "name": "陶然亭公园",
+    "district": "西城",
+    "distance_km": 3.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "古亭", "湖景"],
+    "start": [116.385, 39.881],
+    "blurb": "南城最稳的 3km 公园圈，古亭 + 湖 + 老北京味。"
+  },
+  {
+    "id": "moat-yongdingmen-chongwenmen",
+    "name": "二环护城河（永定门-崇文门）",
+    "district": "东城",
+    "distance_km": 3.5,
+    "surface": ["paved"],
+    "scenery_tags": ["水景", "古城墙", "city run"],
+    "start": [116.404, 39.872],
+    "blurb": "沿护城河一路向北，左边古城墙右边城市，城市跑步的标准答案。"
+  },
+  {
+    "id": "city-green-heart",
+    "name": "城市绿心森林公园",
+    "district": "通州",
+    "distance_km": 5.0,
+    "surface": ["paved", "trail"],
+    "scenery_tags": ["公园", "森林", "新晋", "通州"],
+    "start": [116.703, 39.812],
+    "blurb": "通州副中心新地标，5km 林间小路 + 大草坪，周末值得专程过去。"
+  },
+  {
+    "id": "wenyu-greenway-qinghe",
+    "name": "温榆河绿道（清河段）",
+    "district": "朝阳/昌平",
+    "distance_km": 10.0,
+    "surface": ["paved"],
+    "scenery_tags": ["水景", "绿道", "上强度", "无车"],
+    "start": [116.396, 40.046],
+    "blurb": "10km 全程绿道无车扰，沿河一路向北，配速党的大爱。"
+  },
+  {
+    "id": "garden-expo-park",
+    "name": "园博园",
+    "district": "丰台",
+    "distance_km": 6.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "建筑", "人少"],
+    "start": [116.205, 39.823],
+    "blurb": "西南角宝藏，6km 园林大观园，跑步 + city walk 都行。"
+  },
+  {
+    "id": "shougang-park",
+    "name": "首钢园",
+    "district": "石景山",
+    "distance_km": 5.0,
+    "surface": ["paved"],
+    "scenery_tags": ["工业风", "出片", "网红"],
+    "start": [116.184, 39.929],
+    "blurb": "工业遗址 + 冬奥滑雪大跳台，5km 跑下来照片张张赛博朋克。"
+  },
+  {
+    "id": "longtan-park",
+    "name": "龙潭公园",
+    "district": "东城",
+    "distance_km": 3.0,
+    "surface": ["paved"],
+    "scenery_tags": ["公园", "湖景", "南城"],
+    "start": [116.422, 39.876],
+    "blurb": "南二环边的老牌公园，3km 环湖，老北京晨练气息浓。"
+  },
+  {
+    "id": "langwa-forest",
+    "name": "狼垡城市森林公园",
+    "district": "大兴",
+    "distance_km": 4.0,
+    "surface": ["trail", "paved"],
+    "scenery_tags": ["森林", "人少", "野"],
+    "start": [116.270, 39.737],
+    "blurb": "大兴隐藏款，4km 森林步道，想躲人就来这。"
+  },
+  {
+    "id": "tonghui-river-gaobeidian",
+    "name": "通惠河南岸（高碑店段）",
+    "district": "朝阳",
+    "distance_km": 6.0,
+    "surface": ["paved"],
+    "scenery_tags": ["水景", "city run", "通勤友好"],
+    "start": [116.518, 39.909],
+    "blurb": "通惠河南岸 6km 直道，CBD 到高碑店湖，城东河边跑步首选。"
+  }
+]
