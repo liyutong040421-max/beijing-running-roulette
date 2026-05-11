@@ -5,10 +5,12 @@ import { amapWalkUrl } from "@/lib/amap-uri";
 
 type Props = {
   route: Route;
+  showSheet: boolean;
   onFinishedRun: () => void;
+  onClose: () => void;
 };
 
-export function RouteCard({ route, onFinishedRun }: Props) {
+export function RouteCard({ route, showSheet, onFinishedRun, onClose }: Props) {
   const navUrl = amapWalkUrl({
     lng: route.start[0],
     lat: route.start[1],
@@ -16,52 +18,95 @@ export function RouteCard({ route, onFinishedRun }: Props) {
   });
 
   return (
-    <div className="w-full max-w-md mx-auto rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm space-y-4">
-      <div className="flex items-baseline justify-between gap-3">
-        <h2 className="text-2xl font-bold">{route.name}</h2>
-        <div className="text-sm text-zinc-500 shrink-0">{route.district}</div>
+    <div
+      key={route.id}
+      className="
+        absolute z-20
+        left-0 right-0 bottom-0
+        lg:left-8 lg:bottom-8 lg:right-auto lg:max-w-md
+        bg-bg/92 backdrop-blur
+        border-t border-hairline lg:border lg:border-hairline
+        px-6 pt-6 pb-7 lg:px-8 lg:py-8
+        animate-slide-up
+      "
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-muted mb-2">
+            today&apos;s run · {route.district}
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] text-fg">
+            {route.name}
+          </h2>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="关闭"
+          className="text-muted hover:text-fg text-2xl leading-none -mr-1 -mt-1 px-2 py-1"
+        >
+          ×
+        </button>
       </div>
 
-      <div className="flex items-center gap-2 text-sm">
-        <span className="font-mono text-lg font-semibold text-orange-600 dark:text-orange-400">
-          {route.distance_km} km
+      <div className="mt-5 flex items-baseline gap-3">
+        <span className="font-mono text-2xl font-semibold text-fg">
+          {route.distance_km.toFixed(1)}
         </span>
-        <span className="text-zinc-400">·</span>
-        <span className="text-zinc-600 dark:text-zinc-400">
+        <span className="text-xs uppercase tracking-widest text-muted">km</span>
+        <span className="text-hairline">|</span>
+        <span className="text-xs uppercase tracking-widest text-muted">
           {route.surface.map(surfaceLabel).join(" · ")}
         </span>
       </div>
 
-      <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">{route.blurb}</p>
+      <p className="mt-5 text-sm leading-relaxed text-fg/80">{route.blurb}</p>
 
-      <div className="flex flex-wrap gap-2 pt-1">
+      <div className="mt-4 flex flex-wrap gap-1.5">
         {route.scenery_tags.map((tag) => (
           <span
             key={tag}
-            className="text-xs px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300"
+            className="text-[11px] px-2 py-0.5 border border-hairline text-muted"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3 pt-3">
+      <div className="mt-7 pt-5 border-t border-hairline flex flex-wrap gap-x-7 gap-y-3 text-sm">
         <a
           href={navUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center rounded-full bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-5 py-3 font-medium hover:opacity-90 transition-opacity"
+          className="group flex items-center gap-1.5 text-fg hover:text-accent transition-colors"
         >
-          🧭 用高德导航去起点
+          <span className="text-muted group-hover:text-accent transition-colors">→</span>
+          <span className="underline underline-offset-4 decoration-1 decoration-hairline group-hover:decoration-accent">
+            用高德导航去起点
+          </span>
         </a>
         <button
           type="button"
           onClick={onFinishedRun}
-          className="flex-1 rounded-full border border-orange-400 text-orange-600 dark:text-orange-400 px-5 py-3 font-medium hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
+          className="group flex items-center gap-1.5 text-fg hover:text-accent transition-colors"
         >
-          🍜 我跑完了
+          <span className="text-muted group-hover:text-accent transition-colors">→</span>
+          <span className="underline underline-offset-4 decoration-1 decoration-hairline group-hover:decoration-accent">
+            我跑完了
+          </span>
         </button>
       </div>
+
+      {showSheet && (
+        <div className="mt-6 pt-5 border-t border-hairline">
+          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-muted mb-2">
+            nearby eats
+          </div>
+          <p className="text-xs text-muted">
+            等接上 高德 POI 之后这里会列出 {route.name} 附近的餐厅，一键跳大众点评。
+          </p>
+        </div>
+      )}
     </div>
   );
 }
