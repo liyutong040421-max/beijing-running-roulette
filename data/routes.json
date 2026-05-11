@@ -1,253 +1,4112 @@
 [
   {
-    "id": "olympic-forest-south-outer",
-    "name": "奥森南园外圈",
-    "district": "朝阳",
-    "distance_km": 5.0,
-    "surface": ["paved", "plastic"],
-    "scenery_tags": ["公园", "湖景", "夜跑友好", "热门"],
-    "start": [116.396, 40.013],
-    "blurb": "北京跑友的圣地，塑胶跑道 + 林荫路，5km 标准圈，新手老手都合适。"
+    "id": "route-01",
+    "route_index": 1,
+    "section": "一、短线（3-8km）",
+    "name": "天坛吉象线",
+    "district": "东城",
+    "district_adcode": 110101,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "清晨灵气足",
+      "舒适度满分",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.412,
+      39.89
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.412,
+          39.89
+        ],
+        [
+          116.426,
+          39.88285
+        ],
+        [
+          116.4225,
+          39.87075
+        ],
+        [
+          116.4092,
+          39.868
+        ],
+        [
+          116.398,
+          39.8768
+        ],
+        [
+          116.4029,
+          39.88615
+        ],
+        [
+          116.412,
+          39.89
+        ]
+      ]
+    },
+    "blurb": "清晨灵气足，舒适度满分",
+    "route_line": "天坛东门→吉象轨迹→东门出",
+    "road_condition": "塑胶+柏油，红绿灯少",
+    "audience": "入门晨跑",
+    "night_run": "亮灯",
+    "runner_feeling": "这条线的关键词是清晨、树荫和稳定脚感。路面组合比较友好，红绿灯少，跑起来不容易被打断，夏天也有不错的遮阴。",
+    "runner_tip": "建议早上6-7点到，人少空气好。吉象轨迹需在\"两步路\"App上找，不然跑不出大象形状。东门进最方便，地铁5号线天坛东门站。",
+    "food_hint": "天坛南门小吃/蒲黄榆",
+    "access_note": "入门晨跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/01-tiantan-jiqixian-1.webp",
+        "alt": "天坛吉象线 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/01-tiantan-jiqixian-map.png",
+      "alt": "天坛吉象线 真实路线图"
+    }
   },
   {
-    "id": "olympic-forest-south-inner",
-    "name": "奥森南园内圈",
+    "id": "route-02",
+    "route_index": 2,
+    "section": "一、短线（3-8km）",
+    "name": "奥森南园",
     "district": "朝阳",
-    "distance_km": 3.0,
-    "surface": ["plastic"],
-    "scenery_tags": ["公园", "塑胶", "夜跑友好"],
-    "start": [116.396, 40.013],
-    "blurb": "全程塑胶跑道，3km 短小精悍，配速不掉链子。"
+    "district_adcode": 110105,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "北京跑步圣地",
+      "秋日浪漫",
+      "零红绿灯",
+      "塑胶"
+    ],
+    "start": [
+      116.394,
+      40.02
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.394,
+          40.02
+        ],
+        [
+          116.412,
+          40.0122
+        ],
+        [
+          116.4075,
+          39.999
+        ],
+        [
+          116.3904,
+          39.996
+        ],
+        [
+          116.376,
+          40.0056
+        ],
+        [
+          116.3823,
+          40.0158
+        ],
+        [
+          116.394,
+          40.02
+        ]
+      ]
+    },
+    "blurb": "北京跑步圣地，秋日浪漫",
+    "route_line": "奥森南门→环南园一圈",
+    "road_condition": "塑胶跑道，零红绿灯",
+    "audience": "全水平",
+    "night_run": "关门较早",
+    "runner_feeling": "整体氛围很强，跑团和日常训练的人都多，是北京跑者很有共识的经典地点。缺点是热门时段会拥挤，更适合早到或工作日跑。",
+    "runner_tip": "想安静跑就工作日去或早7点前。南园5km一圈刚好热身，想跑10km就南北园各一圈。注意奥森关门较早，傍晚跑注意时间。",
+    "food_hint": "慧忠里/北苑",
+    "access_note": "全水平",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/02-aosennanyuan-map.png",
+      "alt": "奥森南园 真实路线图"
+    }
   },
   {
-    "id": "olympic-forest-full-loop",
-    "name": "奥森南北全圈",
+    "id": "route-03",
+    "route_index": 3,
+    "section": "一、短线（3-8km）",
+    "name": "奥森北园",
     "district": "朝阳",
-    "distance_km": 10.0,
-    "surface": ["paved", "plastic", "trail"],
-    "scenery_tags": ["公园", "湖景", "上强度"],
-    "start": [116.396, 40.013],
-    "blurb": "南北园通走，10km LSD 经典选择，一圈下来心情都开阔。"
+    "district_adcode": 110105,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "plastic",
+      "trail"
+    ],
+    "scenery_tags": [
+      "比南园人少更野趣",
+      "塑胶",
+      "越野"
+    ],
+    "start": [
+      116.394,
+      40.05
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.394,
+          40.05
+        ],
+        [
+          116.412,
+          40.0409
+        ],
+        [
+          116.4075,
+          40.0255
+        ],
+        [
+          116.3904,
+          40.022
+        ],
+        [
+          116.376,
+          40.0332
+        ],
+        [
+          116.3823,
+          40.0451
+        ],
+        [
+          116.394,
+          40.05
+        ]
+      ]
+    },
+    "blurb": "比南园人少更野趣",
+    "route_line": "奥森北门→环北园一圈",
+    "road_condition": "塑胶+土路",
+    "audience": "短中线",
+    "night_run": "关门较早",
+    "runner_feeling": "北园比南园更安静，野趣更明显，土路和小坡让路线有一点越野训练感。适合想避开人群、又不想跑太远的人。",
+    "runner_tip": "适合不想被跑团人潮打扰的跑者。北园台阶和土路部分注意雨天湿滑。可以和南园串联跑10km。",
+    "food_hint": "同奥森南园",
+    "access_note": "短中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/03-aosenbeiyuan-map.png",
+      "alt": "奥森北园 真实路线图"
+    }
   },
   {
-    "id": "chaoyang-park-outer",
-    "name": "朝阳公园外圈",
-    "district": "朝阳",
-    "distance_km": 5.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "国贸近"],
-    "start": [116.479, 39.945],
-    "blurb": "国贸打工人的下班放风地，5km 公园外圈刚刚好。"
-  },
-  {
-    "id": "chaoyang-park-track",
-    "name": "朝阳公园塑胶跑道",
-    "district": "朝阳",
-    "distance_km": 2.8,
-    "surface": ["plastic"],
-    "scenery_tags": ["塑胶", "刷圈"],
-    "start": [116.467, 39.949],
-    "blurb": "想刷间歇？2.8km 塑胶跑道随便切。"
-  },
-  {
-    "id": "liangma-river",
-    "name": "亮马河沿岸",
-    "district": "朝阳",
-    "distance_km": 4.5,
-    "surface": ["paved"],
-    "scenery_tags": ["水景", "夜景", "网红", "出片"],
-    "start": [116.466, 39.961],
-    "blurb": "蓝港-燕莎-三里屯一线，跑完顺路撸串/喝精酿，朋友圈封面级。"
-  },
-  {
-    "id": "honglingjin-park",
-    "name": "红领巾公园",
-    "district": "朝阳",
-    "distance_km": 3.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "通勤友好"],
-    "start": [116.488, 39.926]
-  ,
-    "blurb": "朝阳东四环边的小而美，3km 一圈，通勤前热身正好。"
-  },
-  {
-    "id": "wangjing-park",
-    "name": "望京公园",
-    "district": "朝阳",
+    "id": "route-04",
+    "route_index": 4,
+    "section": "一、短线（3-8km）",
+    "name": "龙潭中湖公园",
+    "district": "东城",
+    "district_adcode": 110101,
     "distance_km": 2.5,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "社区"],
-    "start": [116.476, 40.001],
-    "blurb": "望京码农的早晨，绕公园两圈刚好醒神。"
+    "distance_label": "2.5km/圈",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "专业运动公园",
+      "补给方便无人动",
+      "夜跑",
+      "零红绿灯",
+      "塑胶"
+    ],
+    "start": [
+      116.439,
+      39.882
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.439,
+          39.882
+        ],
+        [
+          116.45,
+          39.8768
+        ],
+        [
+          116.44725,
+          39.868
+        ],
+        [
+          116.4368,
+          39.866
+        ],
+        [
+          116.428,
+          39.8724
+        ],
+        [
+          116.43185,
+          39.8792
+        ],
+        [
+          116.439,
+          39.882
+        ]
+      ]
+    },
+    "blurb": "专业运动公园，补给方便无人动",
+    "route_line": "环湖步道（多圈叠加）",
+    "road_condition": "塑胶跑道，零红绿灯",
+    "audience": "全水平",
+    "night_run": "亮灯",
+    "runner_feeling": "优点是塑胶、补给方便、没有红绿灯，单圈短所以很适合自由叠加。热门时段人会明显变多，想跑配速最好避开高峰。",
+    "runner_tip": "2.5km一圈偏短，但叠加圈数很灵活。夏天最推荐，湖风不闷。缺点是热门时段人太多，建议非高峰去。",
+    "food_hint": "劲松/潘家园",
+    "access_note": "全水平",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/04-longtanzhonghu-1.webp",
+        "alt": "龙潭中湖公园 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/04-longtanzhonghu-map.png",
+      "alt": "龙潭中湖公园 真实路线图"
+    }
   },
   {
-    "id": "wenyu-park-south",
-    "name": "温榆河公园南园",
+    "id": "route-05",
+    "route_index": 5,
+    "section": "一、短线（3-8km）",
+    "name": "北京大学",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "未名湖博雅塔",
+      "人文气息"
+    ],
+    "start": [
+      116.311,
+      39.994
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.311,
+          39.994
+        ],
+        [
+          116.318,
+          39.999
+        ],
+        [
+          116.31,
+          40.003
+        ],
+        [
+          116.302,
+          39.998
+        ],
+        [
+          116.306,
+          39.991
+        ],
+        [
+          116.311,
+          39.994
+        ]
+      ]
+    },
+    "blurb": "未名湖博雅塔，人文气息",
+    "route_line": "东校门→五四操场→博雅塔→未名湖→出",
+    "road_condition": "柏油+石板",
+    "audience": "需预约",
+    "night_run": "视路段情况",
+    "runner_feeling": "未名湖和博雅塔带来的校园感很强，适合轻松晨跑或拍照跑。路面有石板，需要比普通公园路更注意脚下。",
+    "runner_tip": "需预约进校，目前可通过小程序提前预约。建议绕未名湖+博雅塔一圈约5km。石板路注意脚下。五道口吃饭方便。",
+    "food_hint": "中关村/海淀黄庄",
+    "access_note": "需预约",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/05-beijingdaxue-map.png",
+      "alt": "北京大学 真实路线图"
+    }
+  },
+  {
+    "id": "route-06",
+    "route_index": 6,
+    "section": "一、短线（3-8km）",
+    "name": "清华大学",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 6,
+    "distance_label": "6km",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "\"为祖国健康工作50年\"",
+      "塑胶"
+    ],
+    "start": [
+      116.326,
+      40.002
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.326,
+          40.002
+        ],
+        [
+          116.334,
+          40.006
+        ],
+        [
+          116.33,
+          40.012
+        ],
+        [
+          116.317,
+          40.011
+        ],
+        [
+          116.315,
+          40.003
+        ],
+        [
+          116.326,
+          40.002
+        ]
+      ]
+    },
+    "blurb": "\"为祖国健康工作50年\"",
+    "route_line": "东南门→荷塘月色→操场→出",
+    "road_condition": "柏油+塑胶操场",
+    "audience": "需预约",
+    "night_run": "视路段情况",
+    "runner_feeling": "清华的跑步氛围浓，校园空间也适合把操场、荷塘和主路串起来。适合偏轻松的校园跑，重点是氛围而不是刷速度。",
+    "runner_tip": "同样需预约。\"为祖国健康工作50年\"是清华传统。荷塘月色那段很美，建议绕操场+荷塘+西门。五道口跑完吃饭，烤串一条街。",
+    "food_hint": "五道口",
+    "access_note": "需预约",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/06-qinghuadaxue-map.png",
+      "alt": "清华大学 真实路线图"
+    }
+  },
+  {
+    "id": "route-07",
+    "route_index": 7,
+    "section": "一、短线（3-8km）",
+    "name": "地坛+国子监+五道营",
+    "district": "东城",
+    "district_adcode": 110101,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "秋天银杏绝美",
+      "夜跑"
+    ],
+    "start": [
+      116.408,
+      39.948
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.408,
+          39.948
+        ],
+        [
+          116.414,
+          39.949
+        ],
+        [
+          116.412,
+          39.942
+        ],
+        [
+          116.405,
+          39.942
+        ],
+        [
+          116.4,
+          39.946
+        ]
+      ]
+    },
+    "blurb": "秋天银杏绝美",
+    "route_line": "地坛南门→银杏大道→国子监→五道营",
+    "road_condition": "柏油+石板，游客较多",
+    "audience": "秋季晨跑",
+    "night_run": "部分亮灯",
+    "runner_feeling": "这条线最适合秋天，银杏、古建和胡同街区能连成一段很有北京气质的慢跑。游客多时配速会受影响，更适合晨跑。",
+    "runner_tip": "秋天限定路线！10月底-11月初银杏最黄。其他季节稍普通。五道营咖啡馆跑完喝一杯很惬意。",
+    "food_hint": "五道营咖啡馆/雍和宫",
+    "access_note": "秋季晨跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/07-ditan-guozijian-map.png",
+      "alt": "地坛+国子监+五道营 真实路线图"
+    }
+  },
+  {
+    "id": "route-08",
+    "route_index": 8,
+    "section": "一、短线（3-8km）",
+    "name": "日坛公园",
     "district": "朝阳",
-    "distance_km": 4.0,
-    "surface": ["paved", "trail"],
-    "scenery_tags": ["公园", "水景", "新晋"],
-    "start": [116.515, 40.062],
-    "blurb": "温榆河公园朝阳片区，新修的，人少景多，4km 巡一圈舒服。"
+    "district_adcode": 110105,
+    "distance_km": 3.5,
+    "distance_label": "3-4km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "小众公园超级好看",
+      "夜跑"
+    ],
+    "start": [
+      116.444,
+      39.922
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.444,
+          39.922
+        ],
+        [
+          116.453,
+          39.91745
+        ],
+        [
+          116.45075,
+          39.90975
+        ],
+        [
+          116.4422,
+          39.908
+        ],
+        [
+          116.435,
+          39.9136
+        ],
+        [
+          116.43815,
+          39.91955
+        ],
+        [
+          116.444,
+          39.922
+        ]
+      ]
+    },
+    "blurb": "小众公园超级好看",
+    "route_line": "日坛环线",
+    "road_condition": "柏油步道",
+    "audience": "短线休闲",
+    "night_run": "视路段情况",
+    "runner_feeling": "日坛的优势是小而安静，附近上班族午休或下班跑都很方便。路线不算大，但路况顺、灯光好，日常 3-5K 很舒服。",
+    "runner_tip": "CBD打工人最佳午休跑/下班跑地点！3-4km一圈不大不小。公园小众安静，比朝阳公园人少。夜跑有灯。从国贸步行可达。",
+    "food_hint": "朝外/国贸",
+    "access_note": "短线休闲",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/08-ritangongyuan-map.png",
+      "alt": "日坛公园 真实路线图"
+    }
   },
   {
-    "id": "yuyuantan-outer",
-    "name": "玉渊潭外圈",
+    "id": "route-09",
+    "route_index": 9,
+    "section": "一、短线（3-8km）",
+    "name": "通惠河晨跑",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 6,
+    "distance_label": "5-7km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "河边晨跑安静惬意"
+    ],
+    "start": [
+      116.475,
+      39.905
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.475,
+          39.905
+        ],
+        [
+          116.495,
+          39.912
+        ],
+        [
+          116.515,
+          39.9037
+        ],
+        [
+          116.535,
+          39.908
+        ]
+      ]
+    },
+    "blurb": "河边晨跑安静惬意",
+    "route_line": "大望路→沿通惠河→四惠方向",
+    "road_condition": "柏油+步道，红绿灯少",
+    "audience": "晨跑",
+    "night_run": "部分无灯",
+    "runner_feeling": "通惠河晨跑比较安静，河边步道适合放松跑。部分路段灯光不足，夜里不如清晨友好。",
+    "runner_tip": "早上跑最佳，河边安静空气好。中传段(约5km处)学生多、补给方便。部分河边步道较窄注意安全。",
+    "food_hint": "大望路/四惠",
+    "access_note": "晨跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/09-tonghuihe-2.webp",
+        "alt": "通惠河晨跑 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/09-tonghuihe-map.png",
+      "alt": "通惠河晨跑 真实路线图"
+    }
+  },
+  {
+    "id": "route-10",
+    "route_index": 10,
+    "section": "一、短线（3-8km）",
+    "name": "圆明园",
     "district": "海淀",
-    "distance_km": 5.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "樱花季"],
-    "start": [116.331, 39.917],
-    "blurb": "海淀打工人首选，5km 环湖一圈，春天樱花季封神。"
+    "district_adcode": 110108,
+    "distance_km": 6,
+    "distance_label": "6km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "夏看荷花秋看落叶"
+    ],
+    "start": [
+      116.307,
+      40.022
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.307,
+          40.022
+        ],
+        [
+          116.325,
+          40.0142
+        ],
+        [
+          116.3205,
+          40.001
+        ],
+        [
+          116.3034,
+          39.998
+        ],
+        [
+          116.289,
+          40.0076
+        ],
+        [
+          116.2953,
+          40.0178
+        ],
+        [
+          116.307,
+          40.022
+        ]
+      ]
+    },
+    "blurb": "夏看荷花秋看落叶",
+    "route_line": "南门→福海→南门出",
+    "road_condition": "石板+柏油，部分不平",
+    "audience": "短中线",
+    "night_run": "关门较早",
+    "runner_feeling": "圆明园适合看季节变化，夏天荷花、秋天落叶都很有画面感。石板和不平路段较多，适合慢跑体验，不太适合硬刷配速。",
+    "runner_tip": "福海一圈约6km，石板路部分不平注意脚下。夏天荷花极美但人也多。冬天游客少可以安心跑。清华/五道口吃饭方便。",
+    "food_hint": "清华/五道口",
+    "access_note": "短中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/10-yuanmingyuan-map.png",
+      "alt": "圆明园 真实路线图"
+    }
   },
   {
-    "id": "zizhuyuan",
-    "name": "紫竹院公园",
-    "district": "海淀",
-    "distance_km": 3.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "竹林", "人少"],
-    "start": [116.314, 39.945],
-    "blurb": "竹林+湖+古亭，3km 环线，跑完心都静了。"
+    "id": "route-11",
+    "route_index": 11,
+    "section": "一、短线（3-8km）",
+    "name": "首钢园环线",
+    "district": "石景山",
+    "district_adcode": 110107,
+    "distance_km": 4.5,
+    "distance_label": "4.5km/圈",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "工业风冬奥场馆",
+      "有坡练爬升",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.166,
+      39.917
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.166,
+          39.917
+        ],
+        [
+          116.184,
+          39.9105
+        ],
+        [
+          116.1795,
+          39.8995
+        ],
+        [
+          116.1624,
+          39.897
+        ],
+        [
+          116.148,
+          39.905
+        ],
+        [
+          116.1543,
+          39.9135
+        ],
+        [
+          116.166,
+          39.917
+        ]
+      ]
+    },
+    "blurb": "工业风冬奥场馆，有坡练爬升",
+    "route_line": "群明湖大街→石景山路→秀池南路",
+    "road_condition": "柏油路（非塑胶）",
+    "audience": "短中线",
+    "night_run": "亮灯",
+    "runner_feeling": "首钢园的工业风很突出，平日人少，还有坡度可以顺带练爬升。柏油路为主，想多跑可以用单圈反复叠加。",
+    "runner_tip": "4.5km一圈不长，但可多圈叠加。柏油路非塑胶，怕伤膝盖穿厚底鞋。冬天园内湿度够，夏天也舒服。有坡可以练爬升。园内违停拍照别开车停。",
+    "food_hint": "首钢园商圈",
+    "access_note": "短中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110107
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/11-shougangyuan-map.png",
+      "alt": "首钢园环线 真实路线图"
+    }
   },
   {
-    "id": "haidian-park",
+    "id": "route-12",
+    "route_index": 12,
+    "section": "一、短线（3-8km）",
     "name": "海淀公园",
     "district": "海淀",
-    "distance_km": 2.5,
-    "surface": ["paved", "plastic"],
-    "scenery_tags": ["公园", "塑胶", "中关村近"],
-    "start": [116.302, 39.992],
-    "blurb": "中关村加班人的后花园，2.5km 一圈，午休都能跑一圈。"
+    "district_adcode": 110108,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "中关村旁的绿地氧吧",
+      "夜跑"
+    ],
+    "start": [
+      116.3,
+      39.999
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.3,
+          39.999
+        ],
+        [
+          116.311,
+          39.9938
+        ],
+        [
+          116.30825,
+          39.985
+        ],
+        [
+          116.2978,
+          39.983
+        ],
+        [
+          116.289,
+          39.9894
+        ],
+        [
+          116.29285,
+          39.9962
+        ],
+        [
+          116.3,
+          39.999
+        ]
+      ]
+    },
+    "blurb": "中关村旁的绿地氧吧",
+    "route_line": "海淀公园环线",
+    "road_condition": "柏油步道",
+    "audience": "短线",
+    "night_run": "视路段情况",
+    "runner_feeling": "海淀公园是中关村附近很方便的日常训练点，绿量不错，人也相对少。适合午休、下班或者恢复跑。",
+    "runner_tip": "适合住中关村/万柳附近的人日常训练。5km环线，配速稳定。附近吃的多但不在园内。",
+    "food_hint": "中关村/万柳",
+    "access_note": "短线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/12-haidianpark-map.png",
+      "alt": "海淀公园 真实路线图"
+    }
   },
   {
-    "id": "summer-palace-outer",
-    "name": "颐和园外圈",
+    "id": "route-13",
+    "route_index": 13,
+    "section": "一、短线（3-8km）",
+    "name": "回龙观体育公园",
+    "district": "昌平",
+    "district_adcode": 110114,
+    "distance_km": 4,
+    "distance_label": "3-5km/圈",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "专业跑道",
+      "跑团氛围好",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.338,
+      40.086
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.338,
+          40.086
+        ],
+        [
+          116.35,
+          40.0808
+        ],
+        [
+          116.347,
+          40.072
+        ],
+        [
+          116.3356,
+          40.07
+        ],
+        [
+          116.326,
+          40.0764
+        ],
+        [
+          116.3302,
+          40.0832
+        ],
+        [
+          116.338,
+          40.086
+        ]
+      ]
+    },
+    "blurb": "专业跑道+跑团氛围好",
+    "route_line": "回龙观体育公园跑道",
+    "road_condition": "塑胶跑道",
+    "audience": "全水平",
+    "night_run": "视路段情况",
+    "runner_feeling": "回龙观体育公园的优势是专业跑道和跑团氛围，夜跑安全感也比较强。适合住在附近的人做日常配速或间歇。",
+    "runner_tip": "昌平码农首选！专业塑胶跑道，灯光好夜跑安全。跑完旁边就有各种吃的。周末人也不算太多。",
+    "food_hint": "回龙观商圈",
+    "access_note": "全水平",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110114
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/13-huilongguan-sport-map.png",
+      "alt": "回龙观体育公园 真实路线图"
+    }
+  },
+  {
+    "id": "route-14",
+    "route_index": 14,
+    "section": "一、短线（3-8km）",
+    "name": "回龙观生态公园",
+    "district": "昌平",
+    "district_adcode": 110114,
+    "distance_km": 6.5,
+    "distance_label": "5-8km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "新公园",
+      "人少景好"
+    ],
+    "start": [
+      116.365,
+      40.096
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.365,
+          40.096
+        ],
+        [
+          116.381,
+          40.08885
+        ],
+        [
+          116.377,
+          40.07675
+        ],
+        [
+          116.3618,
+          40.074
+        ],
+        [
+          116.349,
+          40.0828
+        ],
+        [
+          116.3546,
+          40.09215
+        ],
+        [
+          116.365,
+          40.096
+        ]
+      ]
+    },
+    "blurb": "新公园，人少景好",
+    "route_line": "回龙观新开生态公园",
+    "road_condition": "步道+绿道",
+    "audience": "短中线",
+    "night_run": "视路段情况",
+    "runner_feeling": "生态公园更偏新、更安静，步道和绿道混合，跑起来比纯跑道更有变化。夜跑灯光可能不稳定，更适合白天或傍晚。",
+    "runner_tip": "新公园所以知道的人少，周末也不挤。但灯光可能不完善，夜跑建议带头灯。和回龙观体育公园搭配跑很好。",
+    "food_hint": "回龙观",
+    "access_note": "短中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110114
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/14-huilongguan-eco-map.png",
+      "alt": "回龙观生态公园 真实路线图"
+    }
+  },
+  {
+    "id": "route-15",
+    "route_index": 15,
+    "section": "二、中线（8-15km）",
+    "name": "颐和园环湖",
     "district": "海淀",
-    "distance_km": 8.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "上强度", "出片"],
-    "start": [116.265, 40.010],
-    "blurb": "西堤-南湖岛-知春亭，8km 一圈跑完像穿越了一场山水画。"
+    "district_adcode": 110108,
+    "distance_km": 7,
+    "distance_label": "7km",
+    "surface": [
+      "mixed",
+      "paved"
+    ],
+    "scenery_tags": [
+      "公园顶流",
+      "四季绝美"
+    ],
+    "start": [
+      116.276,
+      40.014
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.276,
+          40.014
+        ],
+        [
+          116.304,
+          40.0036
+        ],
+        [
+          116.297,
+          39.986
+        ],
+        [
+          116.2704,
+          39.982
+        ],
+        [
+          116.248,
+          39.9948
+        ],
+        [
+          116.2578,
+          40.0084
+        ],
+        [
+          116.276,
+          40.014
+        ]
+      ]
+    },
+    "blurb": "公园顶流，四季绝美",
+    "route_line": "北宫门→环昆明湖一圈",
+    "road_condition": "混合(柏油+石板)",
+    "audience": "中线入门",
+    "night_run": "关门较早",
+    "runner_feeling": "颐和园环湖的景观密度很高，湖面、长廊和西山方向都很出片。游客多、路面混合，适合体验路线，不适合追求稳定配速。",
+    "runner_tip": "建议早7点前进园避开旅游团。石板路注意脚下别崴脚。冬天昆明湖结冰别跑上去！",
+    "food_hint": "西苑/颐和园附近",
+    "access_note": "中线入门",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/15-yiheyuan-1.webp",
+        "alt": "颐和园环湖 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/15-yiheyuan-map.png",
+      "alt": "颐和园环湖 真实路线图"
+    }
   },
   {
-    "id": "yuandadu-relics-park",
-    "name": "元大都遗址公园",
+    "id": "route-16",
+    "route_index": 16,
+    "section": "二、中线（8-15km）",
+    "name": "故宫+北海+中山公园",
+    "district": "东城/西城",
+    "district_adcode": 110101,
+    "distance_km": 8,
+    "distance_label": "8km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "红墙古建",
+      "皇家园林",
+      "夜跑"
+    ],
+    "start": [
+      116.397,
+      39.917
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.397,
+          39.917
+        ],
+        [
+          116.389,
+          39.916
+        ],
+        [
+          116.38,
+          39.924
+        ],
+        [
+          116.383,
+          39.934
+        ],
+        [
+          116.395,
+          39.929
+        ],
+        [
+          116.397,
+          39.917
+        ]
+      ]
+    },
+    "blurb": "红墙古建+皇家园林",
+    "route_line": "东华门→中山公园→北海南门",
+    "road_condition": "柏油+石板，红绿灯多",
+    "audience": "中线拍照跑",
+    "night_run": "视路段情况",
+    "runner_feeling": "红墙、角楼、北海和中山公园串起来很有城市记忆点。红绿灯和游客会打断节奏，更适合拍照跑或文化跑。",
+    "runner_tip": "早上6-7点跑最舒服，故宫角楼晨光绝美。注意周一故宫/中山公园可能闭馆，提前查。南锣鼓巷/景山附近吃饭多。",
+    "food_hint": "南锣/景山周边",
+    "access_note": "中线拍照跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/16-gugong-beihai-map.png",
+      "alt": "故宫+北海+中山公园 真实路线图"
+    }
+  },
+  {
+    "id": "route-17",
+    "route_index": 17,
+    "section": "二、中线（8-15km）",
+    "name": "朝阳公园小怪兽",
     "district": "朝阳",
-    "distance_km": 4.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "历史", "海棠"],
-    "start": [116.378, 39.985],
-    "blurb": "沿小月河一路跑，海棠花季美哭，4km 平缓适合 easy run。"
+    "district_adcode": 110105,
+    "distance_km": 7,
+    "distance_label": "7km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "绿荫跑道",
+      "远眺中国尊",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.482,
+      39.954
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.482,
+          39.954
+        ],
+        [
+          116.502,
+          39.94425
+        ],
+        [
+          116.497,
+          39.92775
+        ],
+        [
+          116.478,
+          39.924
+        ],
+        [
+          116.462,
+          39.936
+        ],
+        [
+          116.469,
+          39.94875
+        ],
+        [
+          116.482,
+          39.954
+        ]
+      ]
+    },
+    "blurb": "绿荫跑道，远眺中国尊",
+    "route_line": "朝阳公园南门→小怪兽轨迹",
+    "road_condition": "塑胶跑道",
+    "audience": "纯跑党",
+    "night_run": "视路段情况",
+    "runner_feeling": "朝阳公园路线绿荫多，视野开阔，还能看到城市天际线。公园空间大，固定轨迹之外也适合自由加减距离。",
+    "runner_tip": "7km轨迹需要在App上提前规划。公园大可以自由发挥，不一定要跑固定轨迹。三里屯/蓝色港湾吃完再跑或者跑完吃都方便。",
+    "food_hint": "三里屯/蓝色港湾",
+    "access_note": "纯跑党",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/17-chaoyangpark-1.webp",
+        "alt": "朝阳公园小怪兽 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/17-chaoyangpark-map.png",
+      "alt": "朝阳公园小怪兽 真实路线图"
+    }
   },
   {
-    "id": "beihai-shichahai",
-    "name": "北海 + 什刹海",
-    "district": "西城",
-    "distance_km": 3.5,
-    "surface": ["paved"],
-    "scenery_tags": ["水景", "胡同", "出片", "古都"],
-    "start": [116.391, 39.928],
-    "blurb": "穿胡同绕湖跑，3.5km 拍照片每张都能发朋友圈。"
+    "id": "route-18",
+    "route_index": 18,
+    "section": "二、中线（8-15km）",
+    "name": "奥森仰山越野",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 11.5,
+    "distance_label": "8-15km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "市内越野天花板",
+      "越野"
+    ],
+    "start": [
+      116.389,
+      40.01
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.389,
+          40.01
+        ],
+        [
+          116.399,
+          40.023
+        ],
+        [
+          116.39,
+          40.039
+        ],
+        [
+          116.381,
+          40.032
+        ],
+        [
+          116.392,
+          40.018
+        ]
+      ]
+    },
+    "blurb": "市内越野天花板",
+    "route_line": "奥森内仰山→越野路线",
+    "road_condition": "土路+台阶，有爬升",
+    "audience": "进阶",
+    "night_run": "视路段情况",
+    "runner_feeling": "仰山路线强度比普通公园跑高，土路、台阶和坡道组合很适合市内越野入门。雨后路面会滑，装备和节奏都要保守一点。",
+    "runner_tip": "进阶跑者必试！穿防滑跑鞋。雨天土路会变泥巴路别去。8-15km根据圈数灵活调整。",
+    "food_hint": "同奥森",
+    "access_note": "进阶",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/18-aosen-yangshan-map.png",
+      "alt": "奥森仰山越野 真实路线图"
+    }
   },
   {
-    "id": "lianhuachi",
-    "name": "莲花池公园",
-    "district": "丰台",
-    "distance_km": 2.5,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "西站近"],
-    "start": [116.318, 39.890],
-    "blurb": "西站旁的小绿洲，2.5km 一圈，候车两小时？跑一圈再上车。"
+    "id": "route-19",
+    "route_index": 19,
+    "section": "二、中线（8-15km）",
+    "name": "南护城河绿道",
+    "district": "东城/西城",
+    "district_adcode": 110101,
+    "distance_km": 10.5,
+    "distance_label": "10-11km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "塑胶道没车全直线",
+      "下穿桥有坡",
+      "夜跑",
+      "零红绿灯",
+      "塑胶"
+    ],
+    "start": [
+      116.348,
+      39.883
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.348,
+          39.883
+        ],
+        [
+          116.36,
+          39.909333
+        ],
+        [
+          116.372,
+          39.920367
+        ],
+        [
+          116.384,
+          39.944
+        ]
+      ]
+    },
+    "blurb": "塑胶道没车全直线，下穿桥有坡",
+    "route_line": "小街桥→沿河→积水潭方向",
+    "road_condition": "塑胶跑道，零红绿灯",
+    "audience": "中线首选",
+    "night_run": "亮灯",
+    "runner_feeling": "南护城河绿道的核心优势是塑胶、没车、红绿灯少，跑起来很顺。下穿桥和坡度让路线不单调，是很实用的中距离选择。",
+    "runner_tip": "北京最适合纯跑的路线之一，塑胶道+零红绿灯=配速稳定。缺点是有几处台阶雨后可能湿滑。跑完直接去虎坊桥吃烤肉。",
+    "food_hint": "虎坊桥/天桥",
+    "access_note": "中线首选",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/19-nanhuchenghe-1.webp",
+        "alt": "南护城河绿道 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/19-nanhuchenghe-map.png",
+      "alt": "南护城河绿道 真实路线图"
+    }
   },
   {
-    "id": "taoranting",
-    "name": "陶然亭公园",
-    "district": "西城",
-    "distance_km": 3.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "古亭", "湖景"],
-    "start": [116.385, 39.881],
-    "blurb": "南城最稳的 3km 公园圈，古亭 + 湖 + 老北京味。"
+    "id": "route-20",
+    "route_index": 20,
+    "section": "二、中线（8-15km）",
+    "name": "亮马河",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 10,
+    "distance_label": "10km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "河畔夜景绝美",
+      "使馆区",
+      "夜跑"
+    ],
+    "start": [
+      116.452,
+      39.949
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.452,
+          39.949
+        ],
+        [
+          116.469,
+          39.955333
+        ],
+        [
+          116.486,
+          39.948917
+        ],
+        [
+          116.503,
+          39.953
+        ]
+      ]
+    },
+    "blurb": "河畔夜景绝美，使馆区",
+    "route_line": "亮马桥→沿河→蓝港方向",
+    "road_condition": "柏油+木栈道",
+    "audience": "夜跑首选",
+    "night_run": "视路段情况",
+    "runner_feeling": "亮马河夜景和城市氛围都很突出，适合夜跑和跑后吃喝。周末晚间人流会影响速度，更适合轻松跑。",
+    "runner_tip": "夜跑最佳，灯光+河景+使馆区氛围绝了。但近两年游客暴增，晚8-10点最挤。想安静跑就选晚6-7点或早上。酒吧街那段周末人山人海跑不快。",
+    "food_hint": "三里屯/蓝色港湾",
+    "access_note": "夜跑首选",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/20-liangmahe-2.webp",
+        "alt": "亮马河 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/20-liangmahe-map.png",
+      "alt": "亮马河 真实路线图"
+    }
   },
   {
-    "id": "moat-yongdingmen-chongwenmen",
-    "name": "二环护城河（永定门-崇文门）",
+    "id": "route-21",
+    "route_index": 21,
+    "section": "二、中线（8-15km）",
+    "name": "昆玉河双跑",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "一河双跑",
+      "两岸风景各异",
+      "夜跑",
+      "LSD"
+    ],
+    "start": [
+      116.289,
+      39.919
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.289,
+          39.919
+        ],
+        [
+          116.293333,
+          39.95
+        ],
+        [
+          116.297667,
+          39.96315
+        ],
+        [
+          116.302,
+          39.991
+        ]
+      ]
+    },
+    "blurb": "一河双跑，两岸风景各异",
+    "route_line": "昆玉河沿线两岸跑",
+    "road_condition": "柏油+步道",
+    "audience": "中长线",
+    "night_run": "视路段情况",
+    "runner_feeling": "昆玉河两岸路线有变化，一侧安静、一侧开阔，适合中长距离。部分路段人少，建议白天或结伴跑。",
+    "runner_tip": "两岸都跑一遍约10-15km。建议结伴跑。五棵松/万寿路附近补给方便。冬天河面结冰别靠太近。",
+    "food_hint": "五棵松/万寿路",
+    "access_note": "中长线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/21-kunyuhe-2.webp",
+        "alt": "昆玉河双跑 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/21-kunyuhe-map.png",
+      "alt": "昆玉河双跑 真实路线图"
+    }
+  },
+  {
+    "id": "route-22",
+    "route_index": 22,
+    "section": "二、中线（8-15km）",
+    "name": "什刹海→故宫环线",
+    "district": "西城/东城",
+    "district_adcode": 110101,
+    "distance_km": 15,
+    "distance_label": "15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "北京最美跑步路线",
+      "夜跑",
+      "LSD"
+    ],
+    "start": [
+      116.372,
+      39.944
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.372,
+          39.944
+        ],
+        [
+          116.379,
+          39.939
+        ],
+        [
+          116.386,
+          39.932
+        ],
+        [
+          116.39,
+          39.925
+        ],
+        [
+          116.397,
+          39.916
+        ],
+        [
+          116.386,
+          39.91
+        ],
+        [
+          116.374,
+          39.923
+        ],
+        [
+          116.372,
+          39.944
+        ]
+      ]
+    },
+    "blurb": "北京最美跑步路线！",
+    "route_line": "积水潭→西海→后海→银锭桥→前海→北海→故宫",
+    "road_condition": "石板+柏油，人车混行",
+    "audience": "长线早起",
+    "night_run": "亮灯",
+    "runner_feeling": "什刹海到故宫这一圈画面感很强，是典型的北京城市慢跑路线。人车混行和石板路会影响节奏，早起体验最好。",
+    "runner_tip": "必须早起跑！7点前出发最好，否则游客和三轮车太多。银锭桥看日落绝了但不适合追求配速的人。穿薄底鞋石板路多。",
+    "food_hint": "什刹海/鼓楼/牛街",
+    "access_note": "长线早起",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/22-shichahaigugong-map.png",
+      "alt": "什刹海→故宫环线 真实路线图"
+    }
+  },
+  {
+    "id": "route-23",
+    "route_index": 23,
+    "section": "二、中线（8-15km）",
+    "name": "玉渊潭+八一湖",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 7.5,
+    "distance_label": "7.5km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "四季都很美",
+      "八一湖栈道可变化",
+      "夜跑"
+    ],
+    "start": [
+      116.314,
+      39.923
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.314,
+          39.923
+        ],
+        [
+          116.332,
+          39.9165
+        ],
+        [
+          116.3275,
+          39.9055
+        ],
+        [
+          116.3104,
+          39.903
+        ],
+        [
+          116.296,
+          39.911
+        ],
+        [
+          116.3023,
+          39.9195
+        ],
+        [
+          116.314,
+          39.923
+        ]
+      ]
+    },
+    "blurb": "四季都很美，八一湖栈道可变化",
+    "route_line": "玉渊潭环线→八一湖栈道",
+    "road_condition": "柏油+栈道",
+    "audience": "中线",
+    "night_run": "亮灯",
+    "runner_feeling": "玉渊潭和八一湖的组合四季都能跑，路线比普通公园小圈更有变化。栈道和公园环线可以灵活切换。",
+    "runner_tip": "7.5km一圈比大多数公园长。八一湖栈道是变化路线，跑腻了换栈道跑。四季各有看点：春樱花夏荷花秋银杏冬雪景。",
+    "food_hint": "公主坟/军博",
+    "access_note": "中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/23-yuyuantan-map.png",
+      "alt": "玉渊潭+八一湖 真实路线图"
+    }
+  },
+  {
+    "id": "route-24",
+    "route_index": 24,
+    "section": "二、中线（8-15km）",
+    "name": "胡同City Run",
+    "district": "东城/西城",
+    "district_adcode": 110101,
+    "distance_km": 6.5,
+    "distance_label": "5-8km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "胡同穿梭老北京味道",
+      "夜跑"
+    ],
+    "start": [
+      116.39,
+      39.946
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.39,
+          39.946
+        ],
+        [
+          116.404,
+          39.938
+        ],
+        [
+          116.397,
+          39.931
+        ],
+        [
+          116.386,
+          39.937
+        ],
+        [
+          116.39,
+          39.946
+        ]
+      ]
+    },
+    "blurb": "胡同穿梭老北京味道",
+    "route_line": "鼓楼→南锣→什刹海→地安门",
+    "road_condition": "柏油+石板，红绿灯多",
+    "audience": "晨跑避开人群",
+    "night_run": "视路段情况",
+    "runner_feeling": "胡同 City Run 更像城市漫游，老街区、湖边和地安门一带很有北京味。红绿灯多，适合晨跑慢跑。",
+    "runner_tip": "纯晨跑路线，8点后别来。石板路多穿缓震好的鞋。跑完牛街吃涮肉最爽。",
+    "food_hint": "牛街/鼓楼/南锣",
+    "access_note": "晨跑避开人群",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/24-hutongcityrun-map.png",
+      "alt": "胡同City Run 真实路线图"
+    }
+  },
+  {
+    "id": "route-25",
+    "route_index": 25,
+    "section": "二、中线（8-15km）",
+    "name": "中轴线City Run",
     "district": "东城",
-    "distance_km": 3.5,
-    "surface": ["paved"],
-    "scenery_tags": ["水景", "古城墙", "city run"],
-    "start": [116.404, 39.872],
-    "blurb": "沿护城河一路向北，左边古城墙右边城市，城市跑步的标准答案。"
+    "district_adcode": 110101,
+    "distance_km": 10,
+    "distance_label": "8-12km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "中轴线世界遗产跑步穿越",
+      "夜跑"
+    ],
+    "start": [
+      116.399,
+      39.872
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.399,
+          39.872
+        ],
+        [
+          116.412,
+          39.883
+        ],
+        [
+          116.397,
+          39.9
+        ],
+        [
+          116.397,
+          39.914
+        ],
+        [
+          116.397,
+          39.947
+        ]
+      ]
+    },
+    "blurb": "中轴线世界遗产跑步穿越",
+    "route_line": "永定门→天坛→正阳门→天安门→鼓楼",
+    "road_condition": "柏油+石板，红绿灯多",
+    "audience": "文化跑",
+    "night_run": "视路段情况",
+    "runner_feeling": "中轴线跑起来很有仪式感，但距离、红绿灯和游客都会增加消耗。更适合分段体验，或者作为长距离训练的一部分。",
+    "runner_tip": "适合有仪式感的跑者，马拉松备赛LSD可以走这条线。但纯体验建议分段跑。前门大栅栏吃的多。",
+    "food_hint": "前门/大栅栏",
+    "access_note": "文化跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/25-zhongzhouxian-map.png",
+      "alt": "中轴线City Run 真实路线图"
+    }
   },
   {
-    "id": "city-green-heart",
-    "name": "城市绿心森林公园",
+    "id": "route-26",
+    "route_index": 26,
+    "section": "二、中线（8-15km）",
+    "name": "奥体中心",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 4,
+    "distance_label": "3-5km/圈",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "专业跑道",
+      "跑团常驻地",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.397,
+      39.992
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.397,
+          39.992
+        ],
+        [
+          116.409,
+          39.9868
+        ],
+        [
+          116.406,
+          39.978
+        ],
+        [
+          116.3946,
+          39.976
+        ],
+        [
+          116.385,
+          39.9824
+        ],
+        [
+          116.3892,
+          39.9892
+        ],
+        [
+          116.397,
+          39.992
+        ]
+      ]
+    },
+    "blurb": "专业跑道，跑团常驻地",
+    "route_line": "奥体中心环线",
+    "road_condition": "塑胶跑道",
+    "audience": "全水平",
+    "night_run": "视路段情况",
+    "runner_feeling": "奥体中心更偏训练场景，跑道质量好，人比奥森少。适合速度训练、间歇和住亚运村附近的日常跑。",
+    "runner_tip": "3-5km一圈，适合速度训练。人比奥森少很多，间歇跑首选。亚运村吃饭方便。",
+    "food_hint": "亚运村",
+    "access_note": "全水平",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/26-aotizhongxin-map.png",
+      "alt": "奥体中心 真实路线图"
+    }
+  },
+  {
+    "id": "route-27",
+    "route_index": 27,
+    "section": "二、中线（8-15km）",
+    "name": "百望山越野间歇",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 5.5,
+    "distance_label": "3-8km",
+    "surface": [
+      "trail",
+      "paved"
+    ],
+    "scenery_tags": [
+      "城区越野宝藏训练场",
+      "16号线直达",
+      "越野"
+    ],
+    "start": [
+      116.262,
+      40.033
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.262,
+          40.033
+        ],
+        [
+          116.254,
+          40.041
+        ],
+        [
+          116.26,
+          40.049
+        ],
+        [
+          116.27,
+          40.044
+        ],
+        [
+          116.262,
+          40.033
+        ]
+      ]
+    },
+    "blurb": "城区越野宝藏训练场，16号线直达",
+    "route_line": "东门→望绿亭→望京楼",
+    "road_condition": "碎石+陡坡+硬化步道",
+    "audience": "越野训练",
+    "night_run": "带头灯",
+    "runner_feeling": "百望山小环适合越野入门和坡度间歇，交通方便，强度来得很直接。碎石和陡坡较多，鞋和安全意识要跟上。",
+    "runner_tip": "6元门票/年卡免费。碎石多必须穿防滑越野鞋！山顶水7块一瓶(贵)。夜跑带头灯+防风外套。",
+    "food_hint": "马连洼/西北旺",
+    "access_note": "越野训练",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/27-baiwangshan-yueye-map.png",
+      "alt": "百望山越野间歇 真实路线图"
+    }
+  },
+  {
+    "id": "route-28",
+    "route_index": 28,
+    "section": "二、中线（8-15km）",
+    "name": "百望山大环",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 11,
+    "distance_label": "8-14km",
+    "surface": [
+      "mixed"
+    ],
+    "scenery_tags": [
+      "全程8km",
+      "爬升500m",
+      "越野"
+    ],
+    "start": [
+      116.262,
+      40.033
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.262,
+          40.033
+        ],
+        [
+          116.25,
+          40.041
+        ],
+        [
+          116.255,
+          40.054
+        ],
+        [
+          116.276,
+          40.052
+        ],
+        [
+          116.282,
+          40.039
+        ],
+        [
+          116.262,
+          40.033
+        ]
+      ]
+    },
+    "blurb": "全程8km+，爬升500m+，混合路况",
+    "route_line": "东门→友谊亭→圣母院→儿时山林→天澄湖→东门",
+    "road_condition": "混合路况",
+    "audience": "越野耐力",
+    "night_run": "带头灯",
+    "runner_feeling": "百望山大环比小环更考验耐力，爬升和混合路况都更明显。适合已经适应山路的人做越野耐力训练。",
+    "runner_tip": "建议从间歇(小环)升级到大环。带够补给——全程没有卖水的(除了山顶贵的)。周末人多可走小路享受无人赛道。",
+    "food_hint": "同上",
+    "access_note": "越野耐力",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/28-baiwangshan-1.webp",
+        "alt": "百望山大环 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/28-baiwangshan-map.png",
+      "alt": "百望山大环 真实路线图"
+    }
+  },
+  {
+    "id": "route-29",
+    "route_index": 29,
+    "section": "二、中线（8-15km）",
+    "name": "北三环串联",
+    "district": "海淀/西城",
+    "district_adcode": 110102,
+    "distance_km": 15,
+    "distance_label": "15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "城市串联跑",
+      "夜跑",
+      "LSD"
+    ],
+    "start": [
+      116.3,
+      39.968
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.3,
+          39.968
+        ],
+        [
+          116.344,
+          39.978667
+        ],
+        [
+          116.388,
+          39.963833
+        ],
+        [
+          116.432,
+          39.97
+        ]
+      ]
+    },
+    "blurb": "城市串联跑",
+    "route_line": "北三环沿线绿地",
+    "road_condition": "柏油+步道",
+    "audience": "中长线",
+    "night_run": "视路段情况",
+    "runner_feeling": "北三环串联不是完整绿道，更像把沿线绿地拼成城市慢跑。补给方便，但红绿灯会让节奏比较碎。",
+    "runner_tip": "适合住北三环附近的人日常训练。红绿灯多配速不稳定，适合慢跑/恢复跑。沿线商圈补给方便。",
+    "food_hint": "沿线商圈",
+    "access_note": "中长线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110102,
+      110108
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/29-beisanhuan-1.webp",
+        "alt": "北三环串联 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/29-beisanhuan-map.png",
+      "alt": "北三环串联 真实路线图"
+    }
+  },
+  {
+    "id": "route-30",
+    "route_index": 30,
+    "section": "二、中线（8-15km）",
+    "name": "落日胡同跑",
+    "district": "西城",
+    "district_adcode": 110102,
+    "distance_km": 9,
+    "distance_label": "8-10km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "夕阳胡同",
+      "限定跑步地图",
+      "夜跑"
+    ],
+    "start": [
+      116.356,
+      39.923
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.356,
+          39.923
+        ],
+        [
+          116.365,
+          39.925
+        ],
+        [
+          116.371,
+          39.918
+        ],
+        [
+          116.36,
+          39.913
+        ],
+        [
+          116.35,
+          39.918
+        ],
+        [
+          116.356,
+          39.923
+        ]
+      ]
+    },
+    "blurb": "夕阳胡同，限定跑步地图",
+    "route_line": "金融街周边胡同",
+    "road_condition": "柏油+石板",
+    "audience": "傍晚跑",
+    "night_run": "夕阳",
+    "runner_feeling": "金融街周边胡同适合傍晚跑，夕阳和安静街巷是主要亮点。路线更偏氛围和独跑，不是刷速度型。",
+    "runner_tip": "傍晚5-7点跑最佳，夕阳角度绝。金融街/西单吃饭方便。人少安静，适合独跑者。",
+    "food_hint": "金融街/西单",
+    "access_note": "傍晚跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110102
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/30-luorihutong-map.png",
+      "alt": "落日胡同跑 真实路线图"
+    }
+  },
+  {
+    "id": "route-31",
+    "route_index": 31,
+    "section": "三、长线（15km+）",
+    "name": "二环护城河全程",
+    "district": "多区",
+    "district_adcode": 110101,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "塑胶绿道零红绿灯",
+      "LSD首选",
+      "夜跑",
+      "零红绿灯",
+      "塑胶",
+      "LSD"
+    ],
+    "start": [
+      116.355,
+      39.88
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.355,
+          39.88
+        ],
+        [
+          116.352,
+          39.953
+        ],
+        [
+          116.438,
+          39.959
+        ],
+        [
+          116.451,
+          39.887
+        ],
+        [
+          116.397,
+          39.867
+        ],
+        [
+          116.355,
+          39.88
+        ]
+      ]
+    },
+    "blurb": "塑胶绿道零红绿灯，LSD首选",
+    "route_line": "小街桥→沿护城河环二环",
+    "road_condition": "塑胶跑道，零红绿灯",
+    "audience": "LSD首选",
+    "night_run": "亮灯",
+    "runner_feeling": "二环护城河适合长距离和 LSD，绿道连续性强，补给点也相对容易安排。全程距离不短，建议提前规划补水和返程。",
+    "runner_tip": "32km全程，跑前补300-600ml水+1-2根胶(非夏天)。夏天4个补给点：复兴门便利蜂(西)、德胜门小野便利店(北)、光明桥酒店自动售货机(东)、永定门水上基地(南)。走绿道别走人行道！",
+    "food_hint": "沿线多商圈",
+    "access_note": "LSD首选",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102,
+      110105,
+      110106
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/31-erhuanhuchenghe-map.png",
+      "alt": "二环护城河全程 真实路线图"
+    }
+  },
+  {
+    "id": "route-32",
+    "route_index": 32,
+    "section": "三、长线（15km+）",
+    "name": "大运河风景区",
     "district": "通州",
-    "distance_km": 5.0,
-    "surface": ["paved", "trail"],
-    "scenery_tags": ["公园", "森林", "新晋", "通州"],
-    "start": [116.703, 39.812],
-    "blurb": "通州副中心新地标，5km 林间小路 + 大草坪，周末值得专程过去。"
+    "district_adcode": 110112,
+    "distance_km": 15.5,
+    "distance_label": "10-21km",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "又直又平",
+      "10K PB圣地",
+      "塑胶",
+      "LSD"
+    ],
+    "start": [
+      116.645,
+      39.918
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.645,
+          39.918
+        ],
+        [
+          116.671667,
+          39.906333
+        ],
+        [
+          116.698333,
+          39.879367
+        ],
+        [
+          116.725,
+          39.865
+        ]
+      ]
+    },
+    "blurb": "又直又平，10K PB圣地",
+    "route_line": "通州北关→沿河东南",
+    "road_condition": "塑胶+柏油，极平",
+    "audience": "LSD/PB",
+    "night_run": "部分无灯",
+    "runner_feeling": "大运河路线又直又平，很适合稳定节奏和长距离训练。通州段空间开阔，想跑 10K 到半马都比较好安排。",
+    "runner_tip": "通州跑友的宝藏路线。6号线通州北关/北运河西出站即到。桥不多绕圈要提前规划。想刷PB来这就对了。",
+    "food_hint": "通州运河/万达",
+    "access_note": "LSD/PB",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110112
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/32-dayunhe-map.png",
+      "alt": "大运河风景区 真实路线图"
+    }
   },
   {
-    "id": "wenyu-greenway-qinghe",
-    "name": "温榆河绿道（清河段）",
-    "district": "朝阳/昌平",
-    "distance_km": 10.0,
-    "surface": ["paved"],
-    "scenery_tags": ["水景", "绿道", "上强度", "无车"],
-    "start": [116.396, 40.046],
-    "blurb": "10km 全程绿道无车扰，沿河一路向北，配速党的大爱。"
+    "id": "route-33",
+    "route_index": 33,
+    "section": "三、长线（15km+）",
+    "name": "通惠河半马",
+    "district": "朝阳→通州",
+    "district_adcode": 110105,
+    "distance_km": 21,
+    "distance_label": "21km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "河边一路直达通州",
+      "LSD"
+    ],
+    "start": [
+      116.475,
+      39.905
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.475,
+          39.905
+        ],
+        [
+          116.536667,
+          39.915
+        ],
+        [
+          116.598333,
+          39.8995
+        ],
+        [
+          116.66,
+          39.905
+        ]
+      ]
+    },
+    "blurb": "河边一路直达通州",
+    "route_line": "大望路→沿通惠河→通州",
+    "road_condition": "步道+柏油，红绿灯少",
+    "audience": "半马训练",
+    "night_run": "视路段情况",
+    "runner_feeling": "通惠河半马的吸引力在于从城区一路跑向通州，路线方向感很强。部分河边步道夜间灯光不足，晨跑体验更稳。",
+    "runner_tip": "河边步道部分路段无灯夜跑带手电。中传段学生多补给方便。跑到通州后运河边可以吃早茶。",
+    "food_hint": "四惠/通州",
+    "access_note": "半马训练",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105,
+      110112
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/33-tonghuihebama-2.webp",
+        "alt": "通惠河半马 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/33-tonghuihebama-map.png",
+      "alt": "通惠河半马 真实路线图"
+    }
   },
   {
-    "id": "garden-expo-park",
-    "name": "园博园",
-    "district": "丰台",
-    "distance_km": 6.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "建筑", "人少"],
-    "start": [116.205, 39.823],
-    "blurb": "西南角宝藏，6km 园林大观园，跑步 + city walk 都行。"
+    "id": "route-34",
+    "route_index": 34,
+    "section": "三、长线（15km+）",
+    "name": "亦庄凉水河",
+    "district": "亦庄",
+    "district_adcode": 110115,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "三条路可选",
+      "湿地风车",
+      "LSD"
+    ],
+    "start": [
+      116.455,
+      39.803
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.455,
+          39.803
+        ],
+        [
+          116.48,
+          39.802
+        ],
+        [
+          116.505,
+          39.7755
+        ],
+        [
+          116.53,
+          39.77
+        ]
+      ]
+    },
+    "blurb": "三条路可选，湿地风车",
+    "route_line": "旧宫站→凉水河→向南",
+    "road_condition": "柏油+步道，又宽又直",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "凉水河路线宽、直、变化多，湿地和风车段很有记忆点。局部环境一般，选岸线时可以更偏向干净开阔的一侧。",
+    "runner_tip": "三条路可选(自行车道/人行道/亲水步道)。东岸比西岸更干净。亦庄跑友长距离首选。",
+    "food_hint": "亦庄商圈",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110115
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/34-liangshuihe-map.png",
+      "alt": "亦庄凉水河 真实路线图"
+    }
   },
   {
-    "id": "shougang-park",
-    "name": "首钢园",
-    "district": "石景山",
-    "distance_km": 5.0,
-    "surface": ["paved"],
-    "scenery_tags": ["工业风", "出片", "网红"],
-    "start": [116.184, 39.929],
-    "blurb": "工业遗址 + 冬奥滑雪大跳台，5km 跑下来照片张张赛博朋克。"
+    "id": "route-35",
+    "route_index": 35,
+    "section": "三、长线（15km+）",
+    "name": "房山小清河",
+    "district": "房山",
+    "district_adcode": 110111,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "封闭公路做绿道",
+      "夏天不晒",
+      "LSD"
+    ],
+    "start": [
+      116.165,
+      39.756
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.165,
+          39.756
+        ],
+        [
+          116.195,
+          39.758
+        ],
+        [
+          116.225,
+          39.7396
+        ],
+        [
+          116.255,
+          39.738
+        ]
+      ]
+    },
+    "blurb": "封闭公路做绿道，夏天不晒",
+    "route_line": "篱笆房→小清河沿线",
+    "road_condition": "柏油绿道，又宽又直",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "小清河适合住房山附近的人跑长距离，封闭绿道和较少暴晒是优势。补给点少，长���需要自带水。",
+    "runner_tip": "房山跑友的福利路线。冬天风大注意防风。补给点少自带水。",
+    "food_hint": "房山商圈",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110111
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/35-xiaoqinghe-2.webp",
+        "alt": "房山小清河 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/35-xiaoqinghe-map.png",
+      "alt": "房山小清河 真实路线图"
+    }
   },
   {
-    "id": "longtan-park",
-    "name": "龙潭公园",
-    "district": "东城",
-    "distance_km": 3.0,
-    "surface": ["paved"],
-    "scenery_tags": ["公园", "湖景", "南城"],
-    "start": [116.422, 39.876],
-    "blurb": "南二环边的老牌公园，3km 环湖，老北京晨练气息浓。"
+    "id": "route-36",
+    "route_index": 36,
+    "section": "三、长线（15km+）",
+    "name": "南沙河+稻香湖",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "有山有水风景绝佳",
+      "LSD"
+    ],
+    "start": [
+      116.18,
+      40.072
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.18,
+          40.072
+        ],
+        [
+          116.2,
+          40.09
+        ],
+        [
+          116.23,
+          40.082
+        ],
+        [
+          116.25,
+          40.06
+        ]
+      ]
+    },
+    "blurb": "有山有水风景绝佳",
+    "route_line": "稻香湖路站→稻香湖→玉河湿地",
+    "road_condition": "步道+绿道，中间有断点",
+    "audience": "中长线",
+    "night_run": "视路段情况",
+    "runner_feeling": "南沙河和稻香湖的景色更偏郊野，有水面和湿地感。中间有断点，适合有一点路线规划经验的人。",
+    "runner_tip": "海淀北部最美路线。中间有断点需过马路注意安全。周末带家人跑+玩可以。",
+    "food_hint": "海淀北部",
+    "access_note": "中长线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/36-daoxianghu-map.png",
+      "alt": "南沙河+稻香湖 真实路线图"
+    }
   },
   {
-    "id": "langwa-forest",
-    "name": "狼垡城市森林公园",
-    "district": "大兴",
-    "distance_km": 4.0,
-    "surface": ["trail", "paved"],
-    "scenery_tags": ["森林", "人少", "野"],
-    "start": [116.270, 39.737],
-    "blurb": "大兴隐藏款，4km 森林步道，想躲人就来这。"
+    "id": "route-37",
+    "route_index": 37,
+    "section": "三、长线（15km+）",
+    "name": "清河滨水漫行系统",
+    "district": "昌平→朝阳",
+    "district_adcode": 110105,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "可串联温榆河朝阳示范区",
+      "LSD"
+    ],
+    "start": [
+      116.41,
+      40.075
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.41,
+          40.075
+        ],
+        [
+          116.455,
+          40.075
+        ],
+        [
+          116.5,
+          40.0495
+        ],
+        [
+          116.545,
+          40.045
+        ]
+      ]
+    },
+    "blurb": "可串联温榆河朝阳示范区",
+    "route_line": "天通苑→清河→温榆河公园",
+    "road_condition": "柏油+步道",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "清河滨水适合从北城一路拉长距离，还能和温榆河方向串联。部分路段不够连续，跑前最好看一下路线。",
+    "runner_tip": "天通苑向东长距离路线，南岸可串联温榆河公园组更长距离。中间有几处断点需过马路。",
+    "food_hint": "天通苑/回龙观",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/37-qinghebinshui-map.png",
+      "alt": "清河滨水漫行系统 真实路线图"
+    }
   },
   {
-    "id": "tonghui-river-gaobeidian",
-    "name": "通惠河南岸（高碑店段）",
+    "id": "route-38",
+    "route_index": 38,
+    "section": "三、长线（15km+）",
+    "name": "坝河绿道",
     "district": "朝阳",
-    "distance_km": 6.0,
-    "surface": ["paved"],
-    "scenery_tags": ["水景", "city run", "通勤友好"],
-    "start": [116.518, 39.909],
-    "blurb": "通惠河南岸 6km 直道，CBD 到高碑店湖，城东河边跑步首选。"
+    "district_adcode": 110105,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "冬季LSD友好",
+      "路修得好",
+      "LSD"
+    ],
+    "start": [
+      116.525,
+      39.972
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.525,
+          39.972
+        ],
+        [
+          116.555,
+          39.996
+        ],
+        [
+          116.585,
+          39.9996
+        ],
+        [
+          116.615,
+          40.02
+        ]
+      ]
+    },
+    "blurb": "冬季 LSD 友好，路修得好",
+    "route_line": "东坝→坝河→温榆河",
+    "road_condition": "柏油绿道",
+    "audience": "LSD",
+    "night_run": "交通不便",
+    "runner_feeling": "坝河绿道适合东坝附近做冬季 LSD，路况修得比较顺。交通不算方便，更适合住附近或专门过去跑。",
+    "runner_tip": "适合住东坝附近的跑者。交通不便，建议自驾或骑车去。冬天人少景好。",
+    "food_hint": "东坝",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/38-bahelvdao-1.webp",
+        "alt": "坝河绿道 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/38-bahelvdao-map.png",
+      "alt": "坝河绿道 真实路线图"
+    }
+  },
+  {
+    "id": "route-39",
+    "route_index": 39,
+    "section": "三、长线（15km+）",
+    "name": "永定绿道",
+    "district": "丰台",
+    "district_adcode": 110106,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "串联多公园",
+      "绿堤可绕圈",
+      "LSD"
+    ],
+    "start": [
+      116.225,
+      39.855
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.225,
+          39.855
+        ],
+        [
+          116.245,
+          39.853333
+        ],
+        [
+          116.265,
+          39.826167
+        ],
+        [
+          116.285,
+          39.82
+        ]
+      ]
+    },
+    "blurb": "串联多公园，绿堤可绕圈",
+    "route_line": "卢沟桥南→永定河沿线",
+    "road_condition": "绿道+公园路",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "永定绿道兼具河景、公园和历史节点，适合丰台、卢沟桥一带的中长距离。路线能绕圈，也能串联多个公园。",
+    "runner_tip": "丰台/卢沟桥附近。卢沟桥段有历史感。补给方便，沿线商圈多。",
+    "food_hint": "丰台/卢沟桥",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110106
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/39-yongdinglvdao-map.png",
+      "alt": "永定绿道 真实路线图"
+    }
+  },
+  {
+    "id": "route-40",
+    "route_index": 40,
+    "section": "三、长线（15km+）",
+    "name": "永定河→首钢园长线",
+    "district": "石景山",
+    "district_adcode": 110107,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "工业风",
+      "河景",
+      "夜跑",
+      "LSD"
+    ],
+    "start": [
+      116.175,
+      39.89
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.175,
+          39.89
+        ],
+        [
+          116.171667,
+          39.902667
+        ],
+        [
+          116.168333,
+          39.900033
+        ],
+        [
+          116.165,
+          39.91
+        ]
+      ]
+    },
+    "blurb": "工业风+河景+冬奥场馆",
+    "route_line": "永定河畔→首钢园",
+    "road_condition": "步道+柏油",
+    "audience": "中长线",
+    "night_run": "视路段情况",
+    "runner_feeling": "永定河到首钢园的组合有河景和工业风，两种画面切换明显。距离适中，跑完还能直接在首钢园补给或逛一圈。",
+    "runner_tip": "10-15km串联永定河+首钢园，一条路体验两种风格。首钢园商圈补给方便。冬天注意防风。",
+    "food_hint": "首钢园商圈",
+    "access_note": "中长线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110107
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/40-yongdinghe-shougang-2.webp",
+        "alt": "永定河→首钢园长线 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/40-yongdinghe-shougang-map.png",
+      "alt": "永定河→首钢园长线 真实路线图"
+    }
+  },
+  {
+    "id": "route-41",
+    "route_index": 41,
+    "section": "三、长线（15km+）",
+    "name": "温榆河顺义→通州",
+    "district": "顺义→通州",
+    "district_adcode": 110112,
+    "distance_km": 25,
+    "distance_label": "20-30km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "超长距离河边路线",
+      "LSD"
+    ],
+    "start": [
+      116.555,
+      40.11
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.555,
+          40.11
+        ],
+        [
+          116.6,
+          40.06
+        ],
+        [
+          116.645,
+          39.959
+        ],
+        [
+          116.69,
+          39.9
+        ]
+      ]
+    },
+    "blurb": "超长距离河边路线",
+    "route_line": "温榆河顺义段→通州",
+    "road_condition": "绿道+步道",
+    "audience": "超长LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "温榆河顺义到通州属于更长距离的河边路线，适合马拉松备赛或周末长跑。路段偏长偏远，补给和结伴都很重要。",
+    "runner_tip": "马拉松备赛最佳路线之一。补给少必须自带足量。建议结伴跑，部分路段偏僻。",
+    "food_hint": "顺义/通州",
+    "access_note": "超长LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110112
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/41-wenyuhe-shunyi-map.png",
+      "alt": "温榆河顺义→通州 真实路线图"
+    }
+  },
+  {
+    "id": "route-42",
+    "route_index": 42,
+    "section": "三、长线（15km+）",
+    "name": "昌平绿道超长线",
+    "district": "昌平",
+    "district_adcode": 110114,
+    "distance_km": 26,
+    "distance_label": "20-32km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "32km超长绿道",
+      "马拉松备赛",
+      "LSD"
+    ],
+    "start": [
+      116.21,
+      40.215
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.21,
+          40.215
+        ],
+        [
+          116.263333,
+          40.193333
+        ],
+        [
+          116.316667,
+          40.120667
+        ],
+        [
+          116.37,
+          40.09
+        ]
+      ]
+    },
+    "blurb": "32km超长绿道，马拉松备赛",
+    "route_line": "昌平绿道全线",
+    "road_condition": "绿道",
+    "audience": "超长LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "昌平绿道距离很长，适合马拉松备赛分段训练。沿线补给不算密，最好不要第一次就硬跑全程。",
+    "runner_tip": "32km全程适合马拉松备赛但别一次跑完，分段跑更安全。沿线补给点不多自带水。",
+    "food_hint": "昌平商圈",
+    "access_note": "超长LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110114
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/42-changpinglvdao-2.webp",
+        "alt": "昌平绿道超长线 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/42-changpinglvdao-map.png",
+      "alt": "昌平绿道超长线 真实路线图"
+    }
+  },
+  {
+    "id": "route-43",
+    "route_index": 43,
+    "section": "三、长线（15km+）",
+    "name": "亦庄南海子公园越野",
+    "district": "亦庄",
+    "district_adcode": 110115,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "亦庄跑友越野宝藏",
+      "越野"
+    ],
+    "start": [
+      116.46,
+      39.79
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.46,
+          39.79
+        ],
+        [
+          116.5,
+          39.795
+        ],
+        [
+          116.515,
+          39.765
+        ],
+        [
+          116.475,
+          39.755
+        ],
+        [
+          116.46,
+          39.79
+        ]
+      ]
+    },
+    "blurb": "亦庄跑友越野宝藏",
+    "route_line": "南海子公园内部越野路线",
+    "road_condition": "土路+公园路",
+    "audience": "越野入门",
+    "night_run": "视路段情况",
+    "runner_feeling": "南海子公园越野更偏入门，公园路和土路结合，难度不高。适合亦庄附近想尝试越野但不想跑远的人。",
+    "runner_tip": "适合亦庄住不想跑远的越野入门者。路面以公园路为主，难度不高。周末可以公园+越野组合。",
+    "food_hint": "亦庄商圈",
+    "access_note": "越野入门",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110115
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/43-nanhaiziyueye-map.png",
+      "alt": "亦庄南海子公园越野 真实路线图"
+    }
+  },
+  {
+    "id": "route-44",
+    "route_index": 44,
+    "section": "四、特色路线",
+    "name": "温榆河公园",
+    "district": "朝阳/顺义",
+    "district_adcode": 110105,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "比奥森还大",
+      "塑胶跑道",
+      "塑胶",
+      "LSD"
+    ],
+    "start": [
+      116.53,
+      40.048
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.53,
+          40.048
+        ],
+        [
+          116.56,
+          40.0363
+        ],
+        [
+          116.5525,
+          40.0165
+        ],
+        [
+          116.524,
+          40.012
+        ],
+        [
+          116.5,
+          40.0264
+        ],
+        [
+          116.5105,
+          40.0417
+        ],
+        [
+          116.53,
+          40.048
+        ]
+      ]
+    },
+    "blurb": "比奥森还大，塑胶跑道",
+    "route_line": "温榆河公园朝阳示范区",
+    "road_condition": "塑胶跑道",
+    "audience": "中长线",
+    "night_run": "视路段情况",
+    "runner_feeling": "温榆河公园空间很大，人比奥森少，适合 10K 以上自由发挥。园区开阔，跑前最好想好补给和返程。",
+    "runner_tip": "10-15km可以在园内自由发挥。比奥森人少很多。孙河/后沙峪附近吃的少建议自带补给。",
+    "food_hint": "孙河/后沙峪",
+    "access_note": "中长线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/44-wenyuhe-park-map.png",
+      "alt": "温榆河公园 真实路线图"
+    }
+  },
+  {
+    "id": "route-45",
+    "route_index": 45,
+    "section": "四、特色路线",
+    "name": "通州绿心公园",
+    "district": "通州",
+    "district_adcode": 110112,
+    "distance_km": 7.5,
+    "distance_label": "5-10km",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "通州最大跑步公园",
+      "空间开阔",
+      "塑胶"
+    ],
+    "start": [
+      116.71,
+      39.892
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.71,
+          39.892
+        ],
+        [
+          116.74,
+          39.879
+        ],
+        [
+          116.7325,
+          39.857
+        ],
+        [
+          116.704,
+          39.852
+        ],
+        [
+          116.68,
+          39.868
+        ],
+        [
+          116.6905,
+          39.885
+        ],
+        [
+          116.71,
+          39.892
+        ]
+      ]
+    },
+    "blurb": "通州最大跑步公园，空间开阔",
+    "route_line": "绿心公园环线",
+    "road_condition": "塑胶+柏油",
+    "audience": "短中线",
+    "night_run": "视路段情况",
+    "runner_feeling": "通州绿心公园胜在空间开阔、路线灵活，短线和中线都能跑。夜跑灯光不一定每段都稳定，白天体验更稳。",
+    "runner_tip": "5-10km灵活。塑胶+柏油路面好。通州万达吃完再跑。灯光可能不完善夜跑注意。",
+    "food_hint": "通州万达",
+    "access_note": "短中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110112
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/45-tongzhoulvxin-map.png",
+      "alt": "通州绿心公园 真实路线图"
+    }
+  },
+  {
+    "id": "route-46",
+    "route_index": 46,
+    "section": "四、特色路线",
+    "name": "模鬼线（越野入门）",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 13.5,
+    "distance_label": "12-15km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "越野入门友好路线",
+      "越野"
+    ],
+    "start": [
+      116.205,
+      39.99
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.205,
+          39.99
+        ],
+        [
+          116.18,
+          40.01
+        ],
+        [
+          116.165,
+          40
+        ],
+        [
+          116.178,
+          39.98
+        ],
+        [
+          116.205,
+          39.99
+        ]
+      ]
+    },
+    "blurb": "越野入门友好路线",
+    "route_line": "西山/香山附近",
+    "road_condition": "土路+山道，有爬升",
+    "audience": "越野入门",
+    "night_run": "视路段情况",
+    "runner_feeling": "模鬼线是从城市跑向山路的过渡路线，越野味比公园更浓。需要带补给和越野鞋，雨天不建议上。",
+    "runner_tip": "百望山之后的越野进阶路线。带足补给+越野鞋。雨天别上山。从鬼笑石方向下可看北京城区全景。",
+    "food_hint": "香山周边",
+    "access_note": "越野入门",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/46-mogui-yueye-map.png",
+      "alt": "模鬼线（越野入门） 真实路线图"
+    }
+  },
+  {
+    "id": "route-47",
+    "route_index": 47,
+    "section": "四、特色路线",
+    "name": "Sportcation多景点",
+    "district": "多区",
+    "district_adcode": 110101,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "mixed"
+    ],
+    "scenery_tags": [
+      "一条路线多重风景",
+      "LSD"
+    ],
+    "start": [
+      116.315,
+      39.913
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.315,
+          39.913
+        ],
+        [
+          116.38,
+          39.935
+        ],
+        [
+          116.41,
+          39.884
+        ],
+        [
+          116.48,
+          39.94
+        ],
+        [
+          116.315,
+          39.913
+        ]
+      ]
+    },
+    "blurb": "一条路线多重风景",
+    "route_line": "多景点串联",
+    "road_condition": "混合",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "多景点串联更像跑步版 city tour，公园、河边和胡同能一次体验。路线较长，适合把跑步和逛城结合起来。",
+    "runner_tip": "适合周末\"跑步+旅游\"的模式。路线较长需要提前规划补给点。适合有经验的跑者。",
+    "food_hint": "沿线",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102,
+      110105,
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/47-duojingdian-map.png",
+      "alt": "Sportcation多景点 真实路线图"
+    }
+  },
+  {
+    "id": "route-48",
+    "route_index": 48,
+    "section": "四、特色路线",
+    "name": "双井长距离",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "mixed"
+    ],
+    "scenery_tags": [
+      "双井跑友长距离方案",
+      "夜跑",
+      "LSD"
+    ],
+    "start": [
+      116.461,
+      39.894
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.461,
+          39.894
+        ],
+        [
+          116.475,
+          39.905
+        ],
+        [
+          116.44,
+          39.89
+        ],
+        [
+          116.385,
+          39.885
+        ],
+        [
+          116.461,
+          39.894
+        ]
+      ]
+    },
+    "blurb": "双井跑友长距离方案",
+    "route_line": "双井→通惠河/护城河",
+    "road_condition": "混合",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "双井长距离适合国贸、双井附近跑者，把通惠河和护城河方向接起来。补给方便，城市路段也比较多。",
+    "runner_tip": "双井/国贸附近住的人首选LSD路线。双井商圈补给方便。部分路段和通惠河重合。",
+    "food_hint": "双井/国贸",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/48-shuangjing-map.png",
+      "alt": "双井长距离 真实路线图"
+    }
+  },
+  {
+    "id": "route-49",
+    "route_index": 49,
+    "section": "四、特色路线",
+    "name": "念坛公园环线",
+    "district": "大兴",
+    "district_adcode": 110115,
+    "distance_km": 4,
+    "distance_label": "3-5km/圈",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "大兴唯一有圈跑道的公园",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.338,
+      39.737
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.338,
+          39.737
+        ],
+        [
+          116.355,
+          39.7292
+        ],
+        [
+          116.35075,
+          39.716
+        ],
+        [
+          116.3346,
+          39.713
+        ],
+        [
+          116.321,
+          39.7226
+        ],
+        [
+          116.32695,
+          39.7328
+        ],
+        [
+          116.338,
+          39.737
+        ]
+      ]
+    },
+    "blurb": "大兴唯一有圈跑道的公园",
+    "route_line": "念坛公园环线跑道",
+    "road_condition": "塑胶跑道",
+    "audience": "短线",
+    "night_run": "视路段情况",
+    "runner_feeling": "念坛公园是大兴比较实用的圈跑点，单圈短但容易叠距离。适合日常训练和夜跑。",
+    "runner_tip": "大兴跑者的唯一选择，珍惜！3-5km一圈。大兴商圈补给方便。夜跑有灯。",
+    "food_hint": "大兴商圈",
+    "access_note": "短线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110115
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/49-niantan-map.png",
+      "alt": "念坛公园环线 真实路线图"
+    }
+  },
+  {
+    "id": "route-50",
+    "route_index": 50,
+    "section": "四、特色路线",
+    "name": "奥森南北园全跑",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 10,
+    "distance_label": "10km",
+    "surface": [
+      "plastic"
+    ],
+    "scenery_tags": [
+      "经典组合",
+      "10km刚好",
+      "塑胶"
+    ],
+    "start": [
+      116.394,
+      40.008
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.394,
+          40.008
+        ],
+        [
+          116.404,
+          40.018
+        ],
+        [
+          116.397,
+          40.036
+        ],
+        [
+          116.38,
+          40.034
+        ],
+        [
+          116.386,
+          40.012
+        ],
+        [
+          116.394,
+          40.008
+        ]
+      ]
+    },
+    "blurb": "经典组合，10km刚好",
+    "route_line": "奥森南园+北园一圈",
+    "road_condition": "塑胶跑道",
+    "audience": "中线",
+    "night_run": "视路段情况",
+    "runner_feeling": "奥森南北园全跑是很稳的 10K 方案，南北园连接顺畅，不用复杂规划。周末人多，想跑节奏建议早点去。",
+    "runner_tip": "想跑10km最省心的方案。南北园之间有桥连接不用出园。周末人多建议工作日或早上跑。",
+    "food_hint": "慧忠里",
+    "access_note": "中线",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/50-aosen-nanbei-map.png",
+      "alt": "奥森南北园全跑 真实路线图"
+    }
+  },
+  {
+    "id": "route-51",
+    "route_index": 51,
+    "section": "四、特色路线",
+    "name": "北运河西岸夜跑",
+    "district": "通州",
+    "district_adcode": 110112,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "夜跑最佳路线",
+      "夜跑"
+    ],
+    "start": [
+      116.662,
+      39.913
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.662,
+          39.913
+        ],
+        [
+          116.681333,
+          39.906333
+        ],
+        [
+          116.700667,
+          39.884367
+        ],
+        [
+          116.72,
+          39.875
+        ]
+      ]
+    },
+    "blurb": "夜跑最佳路线",
+    "route_line": "北运河西站→沿河",
+    "road_condition": "绿道",
+    "audience": "夜跑",
+    "night_run": "视路段情况",
+    "runner_feeling": "北运河西岸夜跑平坦、开阔，夜景氛围好，是通州很适合晚上跑的一条线。局部灯光较暗时要注意安全。",
+    "runner_tip": "通州夜跑天花板。绿道平坦+灯光好，但部分路段灯暗带手电更安全。通州万达可以吃喝。",
+    "food_hint": "通州",
+    "access_note": "夜跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110112
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/51-beiyunheye-2.webp",
+        "alt": "北运河西岸夜跑 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/51-beiyunheye-map.png",
+      "alt": "北运河西岸夜跑 真实路线图"
+    }
+  },
+  {
+    "id": "route-52",
+    "route_index": 52,
+    "section": "四、特色路线",
+    "name": "鬼笑石越野",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 10,
+    "distance_label": "8-12km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "北京城区最高观景点越野",
+      "越野"
+    ],
+    "start": [
+      116.18,
+      39.98
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.18,
+          39.98
+        ],
+        [
+          116.165,
+          39.995
+        ],
+        [
+          116.155,
+          39.986
+        ],
+        [
+          116.169,
+          39.97
+        ],
+        [
+          116.18,
+          39.98
+        ]
+      ]
+    },
+    "blurb": "北京城区最高观景点越野",
+    "route_line": "西山鬼笑石",
+    "road_condition": "山道+土路",
+    "audience": "越野进阶",
+    "night_run": "视路段情况",
+    "runner_feeling": "鬼笑石的奖励感很强，山顶视野和夜景是主要吸引力。强度比普通公园跑高很多，夜跑必须重视照明和下山安全。",
+    "runner_tip": "从八大处或香山方向上山。8-12km山路强度大。夜跑必须带头灯！下山注意膝盖保护。",
+    "food_hint": "香山",
+    "access_note": "越野进阶",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/52-guixiaoshi-map.png",
+      "alt": "鬼笑石越野 真实路线图"
+    }
+  },
+  {
+    "id": "route-53",
+    "route_index": 53,
+    "section": "四、特色路线",
+    "name": "码农圣地跑坡（北五环）",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 7.5,
+    "distance_label": "5-10km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "码农旁隐藏的跑坡天堂"
+    ],
+    "start": [
+      116.305,
+      40.05
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.305,
+          40.05
+        ],
+        [
+          116.315,
+          40.055
+        ],
+        [
+          116.323,
+          40.047
+        ],
+        [
+          116.31,
+          40.042
+        ],
+        [
+          116.305,
+          40.05
+        ]
+      ]
+    },
+    "blurb": "码农旁隐藏的跑坡天堂",
+    "route_line": "西二旗附近坡道",
+    "road_condition": "坡道+柏油",
+    "audience": "坡训",
+    "night_run": "视路段情况",
+    "runner_feeling": "西二旗附近坡道适合做跑坡和间歇，训练目的很明确。对附近上班族来说，下班直接跑很方便。",
+    "runner_tip": "西二旗/上地码农专属！坡度适中，适合间歇跑和爬坡训练。下班直接跑，西二旗吃饭方便。",
+    "food_hint": "西二旗/上地",
+    "access_note": "坡训",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/53-beiwuhuanpapo-map.png",
+      "alt": "码农圣地跑坡（北五环） 真实路线图"
+    }
+  },
+  {
+    "id": "route-54",
+    "route_index": 54,
+    "section": "四、特色路线",
+    "name": "西二旗→海淀黄庄",
+    "district": "海淀",
+    "district_adcode": 110108,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "码农通勤跑",
+      "一路向南",
+      "夜跑"
+    ],
+    "start": [
+      116.305,
+      40.052
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.305,
+          40.052
+        ],
+        [
+          116.308333,
+          40.034
+        ],
+        [
+          116.311667,
+          40.0007
+        ],
+        [
+          116.315,
+          39.98
+        ]
+      ]
+    },
+    "blurb": "码农通勤跑，一路向南",
+    "route_line": "西二旗→中关村→海淀黄庄",
+    "road_condition": "柏油+步道",
+    "audience": "通勤跑",
+    "night_run": "视路段情况",
+    "runner_feeling": "西二旗到海淀黄庄像一条通勤跑线路，城市面貌变化明显。红绿灯比市中心少一些，但仍然更适合稳态慢跑。",
+    "runner_tip": "10-15km通勤跑方案。柏油+步道混合，红绿灯有一定但比市中心少。中关村补给方便。",
+    "food_hint": "中关村",
+    "access_note": "通勤跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/54-xierqihaidian-map.png",
+      "alt": "西二旗→海淀黄庄 真实路线图"
+    }
+  },
+  {
+    "id": "route-55",
+    "route_index": 55,
+    "section": "四、特色路线",
+    "name": "回龙观LSD",
+    "district": "昌平",
+    "district_adcode": 110114,
+    "distance_km": 17.5,
+    "distance_label": "15-20km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "回龙观跑友长距离最佳路线",
+      "LSD"
+    ],
+    "start": [
+      116.338,
+      40.078
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.338,
+          40.078
+        ],
+        [
+          116.393667,
+          40.079
+        ],
+        [
+          116.449333,
+          40.0494
+        ],
+        [
+          116.505,
+          40.045
+        ]
+      ]
+    },
+    "blurb": "回龙观跑友长距离最佳路线",
+    "route_line": "回龙观→清河绿道→温榆河",
+    "road_condition": "绿道",
+    "audience": "LSD",
+    "night_run": "视路段情况",
+    "runner_feeling": "回龙观 LSD 把社区、公园和绿道串起来，适合周末长距离。整体平坦，但沿途补水点不多。",
+    "runner_tip": "住回龙观想跑长距离的首选方案。绿道平坦适合LSD。沿途补水点不多自带水。",
+    "food_hint": "回龙观",
+    "access_note": "LSD",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110114
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/55-huilongguanlsd-map.png",
+      "alt": "回龙观LSD 真实路线图"
+    }
+  },
+  {
+    "id": "route-56",
+    "route_index": 56,
+    "section": "四、特色路线",
+    "name": "夜奔北京绿道",
+    "district": "多区",
+    "district_adcode": 110101,
+    "distance_km": 12.5,
+    "distance_label": "10-15km",
+    "surface": [
+      "plastic",
+      "paved"
+    ],
+    "scenery_tags": [
+      "夜跑爱好者聚集",
+      "夜跑",
+      "塑胶"
+    ],
+    "start": [
+      116.355,
+      39.88
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.355,
+          39.88
+        ],
+        [
+          116.352,
+          39.953
+        ],
+        [
+          116.438,
+          39.959
+        ],
+        [
+          116.451,
+          39.887
+        ],
+        [
+          116.397,
+          39.867
+        ],
+        [
+          116.355,
+          39.88
+        ]
+      ]
+    },
+    "blurb": "夜跑爱好者聚集",
+    "route_line": "护城河绿道夜跑",
+    "road_condition": "塑胶绿道",
+    "audience": "夜跑",
+    "night_run": "视路段情况",
+    "runner_feeling": "夜奔北京绿道偏夜跑氛围，适合想沿护城河找亮灯路段的人。部分路线和二环绿道重合，重点在夜间体验。",
+    "runner_tip": "和#31二环绿道部分重合但更侧重夜跑体验。灯光完善的路段推荐。沿线多商圈补给方便。",
+    "food_hint": "沿线",
+    "access_note": "夜跑",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110101,
+      110102,
+      110105,
+      110106
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/56-lvdaoyepao-2.webp",
+        "alt": "夜奔北京绿道 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/56-lvdaoyepao-map.png",
+      "alt": "夜奔北京绿道 真实路线图"
+    }
+  },
+  {
+    "id": "route-57",
+    "route_index": 57,
+    "section": "四、特色路线",
+    "name": "亦庄越野跑入门",
+    "district": "亦庄",
+    "district_adcode": 110115,
+    "distance_km": 10,
+    "distance_label": "8-12km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "亦庄住也能练越野",
+      "越野"
+    ],
+    "start": [
+      116.495,
+      39.785
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.495,
+          39.785
+        ],
+        [
+          116.52,
+          39.795
+        ],
+        [
+          116.535,
+          39.775
+        ],
+        [
+          116.505,
+          39.76
+        ],
+        [
+          116.495,
+          39.785
+        ]
+      ]
+    },
+    "blurb": "亦庄住也能练越野",
+    "route_line": "亦庄周边野路",
+    "road_condition": "土路+野路",
+    "audience": "越野入门",
+    "night_run": "视路段情况",
+    "runner_feeling": "亦庄越野入门路线难度低，适合先感受土路和野路。灯光条件有限，建议白天跑。",
+    "runner_tip": "适合不想跑远的亦庄居民。难度低可以穿普通跑鞋。建议周末白天去，野路灯光差。",
+    "food_hint": "亦庄",
+    "access_note": "越野入门",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110115
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/57-yizhuangyueye-2.webp",
+        "alt": "亦庄越野跑入门 风景照 2"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/57-yizhuangyueye-map.png",
+      "alt": "亦庄越野跑入门 真实路线图"
+    }
+  },
+  {
+    "id": "route-58",
+    "route_index": 58,
+    "section": "四、特色路线",
+    "name": "越野训练路线汇总",
+    "district": "多区",
+    "district_adcode": 110108,
+    "distance_km": 12,
+    "distance_label": "多条",
+    "surface": [
+      "mixed"
+    ],
+    "scenery_tags": [
+      "新人到大佬全攻略",
+      "越野"
+    ],
+    "start": [
+      116.26,
+      40.033
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.26,
+          40.033
+        ],
+        [
+          116.205,
+          39.99
+        ],
+        [
+          116.17,
+          39.982
+        ],
+        [
+          116.105,
+          40.06
+        ],
+        [
+          116.06,
+          40.085
+        ]
+      ]
+    },
+    "blurb": "新人到大佬全攻略",
+    "route_line": "多条路线推荐",
+    "road_condition": "混合",
+    "audience": "越野全水平",
+    "night_run": "视路线",
+    "runner_feeling": "越野训练汇总更像一张进阶路线图，从百望山到三峰逐步增加难度。适合想系统尝试越野的人参考。",
+    "runner_tip": "越野新手圣经！按推荐顺序从易到难进阶。每条路线的补给点、装备要求帖子里都有详细说明。",
+    "food_hint": "视路线",
+    "access_note": "越野全水平",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108,
+      110107
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/58-yueyexunlian-map.png",
+      "alt": "越野训练路线汇总 真实路线图"
+    }
+  },
+  {
+    "id": "route-59",
+    "route_index": 59,
+    "section": "四、特色路线",
+    "name": "中传通惠河5km",
+    "district": "朝阳",
+    "district_adcode": 110105,
+    "distance_km": 5,
+    "distance_label": "5km",
+    "surface": [
+      "paved"
+    ],
+    "scenery_tags": [
+      "学生党首选"
+    ],
+    "start": [
+      116.555,
+      39.913
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.555,
+          39.913
+        ],
+        [
+          116.541667,
+          39.914333
+        ],
+        [
+          116.528333,
+          39.905467
+        ],
+        [
+          116.515,
+          39.905
+        ]
+      ]
+    },
+    "blurb": "学生党首选",
+    "route_line": "中国传媒大学→通惠河",
+    "road_condition": "步道",
+    "audience": "学生入门",
+    "night_run": "视路段情况",
+    "runner_feeling": "中传通惠河 5K 简单直接，适合学生和新手入门。河边步道平整，补给也方便。",
+    "runner_tip": "适合学生/新手入门。传媒大学周边吃的多。河边步道平整配速稳定。",
+    "food_hint": "传媒大学周边",
+    "access_note": "学生入门",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110105
+    ],
+    "photos": [
+      {
+        "src": "/running-photos/59-tonghuihe5km-1.webp",
+        "alt": "中传通惠河5km 风景照 1"
+      }
+    ],
+    "map_image": {
+      "src": "/running-maps/59-tonghuihe5km-map.png",
+      "alt": "中传通惠河5km 真实路线图"
+    }
+  },
+  {
+    "id": "route-60",
+    "route_index": 60,
+    "section": "四、特色路线",
+    "name": "三峰越野（进阶）",
+    "district": "海淀/门头沟",
+    "district_adcode": 110108,
+    "distance_km": 25,
+    "distance_label": "20-30km",
+    "surface": [
+      "trail"
+    ],
+    "scenery_tags": [
+      "北京越野跑终极路线",
+      "越野"
+    ],
+    "start": [
+      116.105,
+      40.06
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          116.105,
+          40.06
+        ],
+        [
+          116.075,
+          40.09
+        ],
+        [
+          116.03,
+          40.11
+        ],
+        [
+          116.005,
+          40.085
+        ],
+        [
+          116.05,
+          40.055
+        ],
+        [
+          116.105,
+          40.06
+        ]
+      ]
+    },
+    "blurb": "北京越野跑终极路线",
+    "route_line": "阳台山→妙峰山→萝芭地",
+    "road_condition": "山道",
+    "audience": "越野大神",
+    "night_run": "视路段情况",
+    "runner_feeling": "三峰是进阶越野路线，距离和爬升都不轻松。适合有山地经验的人，补给、头灯和防风装备都不能省。",
+    "runner_tip": "越野大神专属！新手别直接上，从百望山→模鬼线→鬼笑石逐步进阶。带够补给+头灯+防风衣，山上天气变化快。",
+    "food_hint": "阳台山周边",
+    "access_note": "越野大神",
+    "geometry_note": "当前轨迹为示意线，用于轮盘和空间预览；具体跑法以原帖、两步路/高德/现场路况为准。",
+    "district_adcodes": [
+      110108
+    ],
+    "photos": [],
+    "map_image": {
+      "src": "/running-maps/60-sanfengyueye-map.png",
+      "alt": "三峰越野（进阶） 真实路线图"
+    }
   }
 ]
