@@ -139,7 +139,7 @@ export function MapRoulette() {
   const previewRoute = hoveredRoute ?? selectedRoute;
 
   return (
-    <div className="grid h-full grid-rows-[minmax(300px,38vh)_1fr] bg-bg text-fg lg:grid-cols-[390px_minmax(0,1fr)] lg:grid-rows-1">
+    <div className="grid min-h-dvh grid-rows-[340px_auto] bg-bg text-fg lg:h-full lg:min-h-0 lg:grid-cols-[390px_minmax(0,1fr)] lg:grid-rows-1">
       <CurvedRouteWheel
         routes={orderedRoutes}
         activeId={previewRoute?.id ?? null}
@@ -168,9 +168,9 @@ export function MapRoulette() {
         onWheelSpin={wheelSpin}
       />
 
-      <section className="grid min-h-0 grid-rows-[minmax(0,1fr)_auto]">
-        <div className="grid min-h-0 grid-rows-[minmax(0,1fr)_minmax(260px,40%)] border-b border-hairline bg-[#f7f7f3] xl:grid-cols-[minmax(0,1fr)_420px] xl:grid-rows-1">
-          <div className="grid min-h-0 grid-rows-[40px_minmax(0,1fr)] border-b border-hairline xl:border-b-0 xl:border-r">
+      <section className="min-h-0 lg:grid lg:grid-rows-[minmax(0,1fr)_auto]">
+        <div className="grid min-h-0 border-b border-hairline bg-[#f7f7f3] lg:grid-rows-[minmax(0,1fr)_minmax(300px,42%)] xl:grid-cols-[minmax(0,1fr)_420px] xl:grid-rows-1">
+          <div className="hidden min-h-0 grid-rows-[40px_minmax(0,1fr)] border-b border-hairline lg:grid xl:border-b-0 xl:border-r">
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
               <div className="font-mono text-[11px] uppercase tracking-[0.24em]">
                 Map
@@ -200,7 +200,7 @@ export function MapRoulette() {
             </div>
           </div>
 
-          <div className="grid min-h-0 grid-rows-[40px_minmax(0,1fr)]">
+          <div className="grid min-h-[390px] grid-rows-[40px_minmax(0,1fr)] lg:min-h-0">
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
               <div className="font-mono text-[11px] uppercase tracking-[0.24em]">
                 Route

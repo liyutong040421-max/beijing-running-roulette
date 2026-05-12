@@ -54,7 +54,7 @@ export function RoutePreviewMap({ route }: Props) {
   return (
     <div
       ref={panelRef}
-      className="relative h-full min-h-[260px] overflow-hidden bg-[#e7e4dc]"
+      className="relative h-full min-h-[350px] overflow-hidden bg-[#e7e4dc] lg:min-h-[260px]"
       onWheel={(event) => {
         event.preventDefault();
         const delta = event.deltaY > 0 ? -0.18 : 0.18;
@@ -145,7 +145,7 @@ export function RoutePreviewMap({ route }: Props) {
         </button>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-hairline bg-bg/94 p-4 pr-16 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur">
+      <div className="absolute bottom-0 left-0 right-0 z-20 hidden border-t border-hairline bg-bg/94 p-4 pr-16 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur sm:block">
         <div className="grid gap-3 md:grid-cols-3">
           {highlights.slice(0, 3).map((item, index) => (
             <div key={item.title} className="min-w-0">
