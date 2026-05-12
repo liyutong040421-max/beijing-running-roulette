@@ -736,9 +736,14 @@ function GymPreview({ gym, participants, photoManifest }: { gym: ClimbingGym | n
   if (!gym) {
     return (
       <div className="grid h-full min-h-[260px] place-items-center bg-bg px-6 text-center">
-        <div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">gym preview</div>
-          <p className="mt-2 max-w-60 text-xs leading-5 text-muted">抽中岩馆后，这里会显示照片和心得。现在先留占位。</p>
+        <div className="max-w-72">
+          <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">今晚去哪爬</div>
+          <p className="mt-3 text-sm leading-6 text-fg">
+            按 <span className="font-mono font-bold">SPIN</span> 随机摇一家。
+          </p>
+          <p className="mt-2 text-xs leading-5 text-muted">
+            和朋友一起？左边「多人模式」加几个位置，从对所有人通勤都不亏的子集里抽。
+          </p>
         </div>
       </div>
     );
