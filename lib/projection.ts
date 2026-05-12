@@ -80,7 +80,26 @@ export function geometryToPath(
       .flatMap((poly) => poly.map((ring) => ringToPath(ring, project)))
       .join(" ");
   }
+  if (geometry.type === "LineString") {
+    return lineToPath(geometry.coordinates, project);
+  }
+  if (geometry.type === "MultiLineString") {
+    return geometry.coordinates
+      .map((line) => lineToPath(line, project))
+      .join(" ");
+  }
   return "";
+}
+
+function lineToPath(line: Position[], project: Projection): string {
+  if (line.length === 0) return "";
+  const [x0, y0] = project(line[0]);
+  let d = `M${x0.toFixed(1)},${y0.toFixed(1)}`;
+  for (let i = 1; i < line.length; i++) {
+    const [x, y] = project(line[i]);
+    d += `L${x.toFixed(1)},${y.toFixed(1)}`;
+  }
+  return d;
 }
 
 function ringToPath(ring: Position[], project: Projection): string {

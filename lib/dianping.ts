@@ -12,3 +12,10 @@ export function dianpingDeeplink(name: string): string {
 export function dianpingWebUrl(name: string, cityId = BEIJING_CITY_ID): string {
   return `https://www.dianping.com/search/keyword/${cityId}/0_${encodeURIComponent(name)}`;
 }
+
+// Cuisine + locality search, e.g. dianpingCuisineUrl("拉面", "三里屯/白家庄")
+// → keyword "三里屯 拉面" so dianping returns area-localized results.
+export function dianpingCuisineUrl(cuisine: string, area: string): string {
+  const locality = area.split(/[\/／]/)[0]?.trim() || area;
+  return dianpingWebUrl(`${locality} ${cuisine}`.trim());
+}

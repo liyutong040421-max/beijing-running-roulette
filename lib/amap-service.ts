@@ -37,6 +37,24 @@ type PoiResponse = AmapEnvelope<{
     pname?: string;
     cityname?: string;
     adname?: string;
+    biz_ext?: {
+      rating?: string;
+      cost?: string;
+      open_time?: string;
+    };
+    photos?: Array<{ title?: string; url?: string }>;
+  }>;
+}>;
+
+type GeocodeResponse = AmapEnvelope<{
+  count?: string;
+  geocodes?: Array<{
+    formatted_address?: string;
+    province?: string;
+    city?: string;
+    district?: string;
+    location?: string;
+    level?: string;
   }>;
 }>;
 
@@ -75,6 +93,7 @@ export async function fetchNearbyPois(params: {
   radius?: string;
   offset?: string;
   page?: string;
+  extensions?: "base" | "all";
 }): Promise<PoiResponse> {
   const search = new URLSearchParams({
     key: getAmapWebServiceKey(),
@@ -82,7 +101,7 @@ export async function fetchNearbyPois(params: {
     radius: params.radius ?? "1200",
     offset: params.offset ?? "12",
     page: params.page ?? "1",
-    extensions: "base",
+    extensions: params.extensions ?? "base",
     output: "json",
   });
 
@@ -91,6 +110,21 @@ export async function fetchNearbyPois(params: {
 
   return cachedFetchAmap<PoiResponse>(
     `${AMAP_REST_BASE}/place/around?${search.toString()}`,
+  );
+}
+
+export async function fetchGeocode(params: {
+  address: string;
+  city?: string;
+}): Promise<GeocodeResponse> {
+  const search = new URLSearchParams({
+    key: getAmapWebServiceKey(),
+    address: params.address,
+    city: params.city ?? "北京",
+    output: "json",
+  });
+  return cachedFetchAmap<GeocodeResponse>(
+    `${AMAP_REST_BASE}/geocode/geo?${search.toString()}`,
   );
 }
 

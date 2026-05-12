@@ -18,6 +18,7 @@ export async function GET(request: Request) {
       );
     }
 
+    const ext = url.searchParams.get("extensions");
     const data = await fetchNearbyPois({
       location,
       keywords: url.searchParams.get("keywords") ?? "美食",
@@ -25,6 +26,7 @@ export async function GET(request: Request) {
       radius: url.searchParams.get("radius") ?? undefined,
       offset: url.searchParams.get("offset") ?? undefined,
       page: url.searchParams.get("page") ?? undefined,
+      extensions: ext === "all" || ext === "base" ? ext : undefined,
     });
 
     return Response.json({

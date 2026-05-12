@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# climbing curate workflow — source screenshots, processed copies live in public/climbing-photos/
+/incoming-photos
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

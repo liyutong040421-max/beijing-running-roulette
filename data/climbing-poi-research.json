@@ -1,0 +1,1381 @@
+{
+  "generated_at": "2026-05-12T10:29:13.965Z",
+  "results": [
+    {
+      "key": "yaoyan",
+      "name": "耀岩",
+      "source": "missing",
+      "hint": "顺义?",
+      "queries_run": [
+        "耀岩攀岩",
+        "耀岩 攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "耀岩攀岩(沙河店)",
+          "address": "1983创意产业园内",
+          "district": "昌平区",
+          "lng": 116.293557,
+          "lat": 40.143849,
+          "poi_id": "B0G32UH666",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "耀岩攀岩沙河店停车场",
+          "address": "032县道与于新庄路交叉口南320米",
+          "district": "昌平区",
+          "lng": 116.293628,
+          "lat": 40.143909,
+          "poi_id": "B0H2TSOK3Y",
+          "type": "交通设施服务;停车场;公共停车场",
+          "score": 14
+        },
+        {
+          "rank": 3,
+          "name": "耀岩攀岩沙河店停车场(出入口)",
+          "address": "耀岩攀岩沙河店停车场",
+          "district": "昌平区",
+          "lng": 116.293004,
+          "lat": 40.14378,
+          "poi_id": "B0H2TSOK3Z",
+          "type": "交通设施服务;停车场;停车场出入口",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "yueshi",
+      "name": "悦石",
+      "source": "missing",
+      "queries_run": [
+        "悦石攀岩",
+        "悦石 攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "悦石运动攀岩空间(华贸天地店)(装修中)",
+          "address": "来广营清河营南街9号院华贸天地商业街西区下沉广场最西侧漫点生活市集内B1层-悦石运动攀岩空间",
+          "district": "朝阳区",
+          "lng": 116.42777,
+          "lat": 40.048901,
+          "poi_id": "B0HGPMTI37",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "quye-longhu",
+      "name": "趣野（龙湖）",
+      "source": "missing",
+      "hint": "龙湖天街?",
+      "queries_run": [
+        "趣野攀岩 龙湖",
+        "趣野 龙湖"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "趣野攀岩(龙湖北苑天街店)",
+          "address": "北苑东路19号龙湖北京北苑天街5F层",
+          "district": "朝阳区",
+          "lng": 116.438392,
+          "lat": 40.042977,
+          "poi_id": "B0J1XUPZWM",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "趣野儿童夏令营",
+          "address": "北土城东路辅路与芍药居桥交叉口东北100米",
+          "district": "朝阳区",
+          "lng": 116.433175,
+          "lat": 39.977475,
+          "poi_id": "B0M6T75J8J",
+          "type": "科教文化服务;培训机构;培训机构",
+          "score": 11
+        }
+      ]
+    },
+    {
+      "key": "wenshan",
+      "name": "问山",
+      "source": "missing",
+      "hint": "可能与现有 向山攀岩 是同一家",
+      "queries_run": [
+        "问山攀岩",
+        "问山攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "问山攀岩馆",
+          "address": "玉泉路2号(北区)8幢",
+          "district": "海淀区",
+          "lng": 116.25526,
+          "lat": 39.927156,
+          "poi_id": "B0GDJC3QTJ",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "shougang-jixian",
+      "name": "首钢极限公园攀岩区",
+      "source": "missing",
+      "hint": "和 COG 首钢店在同一园区?",
+      "queries_run": [
+        "首钢极限公园 攀岩",
+        "首钢极限公园攀岩区"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "首钢极限公园",
+          "address": "北京城区首钢极限公园攀岩场",
+          "district": "石景山区",
+          "lng": 116.157913,
+          "lat": 39.923146,
+          "poi_id": "B0LAP7F6FB",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 12
+        },
+        {
+          "rank": 2,
+          "name": "Climb On Gym攀岩馆(COG首钢店)",
+          "address": "首钢园六工购物广场1层",
+          "district": "石景山区",
+          "lng": 116.156848,
+          "lat": 39.91536,
+          "poi_id": "B0KRNUFURH",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "dingshi",
+      "name": "鼎石",
+      "source": "missing",
+      "queries_run": [
+        "鼎石攀岩",
+        "鼎石攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "鼎石攀岩",
+          "address": "成寿寺路甲12号9幢1层18B室",
+          "district": "丰台区",
+          "lng": 116.448041,
+          "lat": 39.853025,
+          "poi_id": "B0JA753FSM",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "aopan-jiaomen",
+      "name": "奥攀（角门）",
+      "source": "missing",
+      "queries_run": [
+        "奥攀攀岩 角门",
+        "奥攀 角门"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "奥攀攀岩(角门店)",
+          "address": "北京城区大红门西路19号物美2层(物美超市出口)",
+          "district": "丰台区",
+          "lng": 116.387024,
+          "lat": 39.844061,
+          "poi_id": "B0I2CCF2PE",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "奥攀攀岩(世界公园店)",
+          "address": "北京城区葆台路188号7号馆",
+          "district": "丰台区",
+          "lng": 116.282684,
+          "lat": 39.801259,
+          "poi_id": "B0IRD5OPF0",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 3,
+          "name": "奥攀攀岩(西红门店)",
+          "address": "西红门欣旺北大街8号鸿坤广场购物中心F1层",
+          "district": "大兴区",
+          "lng": 116.340732,
+          "lat": 39.791998,
+          "poi_id": "B0FFI90L0E",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 4,
+          "name": "奥攀攀岩(王府井奥莱店)",
+          "address": "北京城区久敬庄路丙57号(王府井奥莱)",
+          "district": "大兴区",
+          "lng": 116.421272,
+          "lat": 39.81745,
+          "poi_id": "B0JKT5D2S2",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        },
+        {
+          "rank": 5,
+          "name": "奥攀攀岩(玉泉营校区)",
+          "address": "玉泉营博瑞体育园",
+          "district": "丰台区",
+          "lng": 116.339885,
+          "lat": 39.842465,
+          "poi_id": "B0FFLHVZW6",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "aopan-wangfujing",
+      "name": "奥攀（王府井）",
+      "source": "missing",
+      "queries_run": [
+        "奥攀攀岩 王府井",
+        "奥攀 王府井"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "奥攀攀岩(王府井奥莱店)",
+          "address": "北京城区久敬庄路丙57号(王府井奥莱)",
+          "district": "大兴区",
+          "lng": 116.421272,
+          "lat": 39.81745,
+          "poi_id": "B0JKT5D2S2",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "北京王府井银泰in88购物中心",
+          "address": "王府井大街88号",
+          "district": "东城区",
+          "lng": 116.411812,
+          "lat": 39.916164,
+          "poi_id": "B000A80P20",
+          "type": "购物服务;商场;购物中心",
+          "score": 3
+        },
+        {
+          "rank": 3,
+          "name": "王府井",
+          "address": "东城区",
+          "district": "东城区",
+          "lng": 116.412422,
+          "lat": 39.908966,
+          "poi_id": "B000A8WS91",
+          "type": "地名地址信息;热点地名;热点地名",
+          "score": 3
+        },
+        {
+          "rank": 4,
+          "name": "王府井喜悦",
+          "address": "王府井大街301号(王府井地铁站E1口步行70米)",
+          "district": "东城区",
+          "lng": 116.410557,
+          "lat": 39.909902,
+          "poi_id": "B000AA0I5O",
+          "type": "购物服务;商场;购物中心",
+          "score": 3
+        },
+        {
+          "rank": 5,
+          "name": "南京大牌档(王府井银泰in88店)",
+          "address": "王府井大街88号王府井银泰in88内4楼",
+          "district": "东城区",
+          "lng": 116.411695,
+          "lat": 39.916786,
+          "poi_id": "B0FFFZENUO",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "key": "dashou",
+      "name": "大手",
+      "source": "missing",
+      "queries_run": [
+        "大手攀岩",
+        "大手攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "大手攀岩馆(北京华联店)",
+          "address": "杨庄北里天时名苑14号楼B1华联BHG Mall(通州北苑店)F4层",
+          "district": "通州区",
+          "lng": 116.636215,
+          "lat": 39.903643,
+          "poi_id": "B0IDVZYIEG",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "yanshi-guanzhuang",
+      "name": "岩时（管庄）",
+      "source": "missing",
+      "queries_run": [
+        "岩时攀岩 管庄",
+        "岩时 管庄"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "岩时攀岩(管庄店)",
+          "address": "管庄路1号新管庄科技园6号楼-1-112",
+          "district": "朝阳区",
+          "lng": 116.59775,
+          "lat": 39.909828,
+          "poi_id": "B0H647JDIC",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "紫岩时代(环宇国际店)",
+          "address": "高碑店镇环宇国际大厦705紫岩时代",
+          "district": "朝阳区",
+          "lng": 116.53666,
+          "lat": 39.907417,
+          "poi_id": "B0FFM9ZU2I",
+          "type": "生活服务;中介机构;中介机构",
+          "score": 11
+        },
+        {
+          "rank": 3,
+          "name": "大手攀岩馆(北京华联店)",
+          "address": "杨庄北里天时名苑14号楼B1华联BHG Mall(通州北苑店)F4层",
+          "district": "通州区",
+          "lng": 116.636215,
+          "lat": 39.903643,
+          "poi_id": "B0IDVZYIEG",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "jishi",
+      "name": "极石",
+      "source": "missing",
+      "hint": "可能与磐石是同一家",
+      "queries_run": [
+        "极石攀岩",
+        "极石攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "北顶奥森攀岩生态园",
+          "address": "科荟路33号11幢-1至2层101内2层201",
+          "district": "朝阳区",
+          "lng": 116.381409,
+          "lat": 40.017191,
+          "poi_id": "B0KRBUWELN",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "Mellow Climbing Gym攀岩馆",
+          "address": "506创新园7号楼",
+          "district": "朝阳区",
+          "lng": 116.496157,
+          "lat": 39.973374,
+          "poi_id": "B0JKUZKD2K",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "BLOC1 Climbing Gym 攀岩馆",
+          "address": "北京城区京顺路5号曙光大厦C座101室(近西南门)",
+          "district": "朝阳区",
+          "lng": 116.451126,
+          "lat": 39.963622,
+          "poi_id": "B0L0HRRVDR",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "xingyan",
+      "name": "星岩",
+      "source": "missing",
+      "queries_run": [
+        "星岩攀岩",
+        "星岩攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "星岩攀石",
+          "address": "和平里中街天元和平商业大厦二层220",
+          "district": "东城区",
+          "lng": 116.420086,
+          "lat": 39.957554,
+          "poi_id": "B0LDYL1FDD",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 11
+        },
+        {
+          "rank": 2,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "我攀攀岩",
+          "address": "广渠东路北京商业储运公司35幢双跨库",
+          "district": "朝阳区",
+          "lng": 116.514183,
+          "lat": 39.887583,
+          "poi_id": "B0KUZ5HV3S",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "问山攀岩馆",
+          "address": "玉泉路2号(北区)8幢",
+          "district": "海淀区",
+          "lng": 116.25526,
+          "lat": 39.927156,
+          "poi_id": "B0GDJC3QTJ",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "heibao",
+      "name": "黑爆",
+      "source": "missing",
+      "queries_run": [
+        "黑爆攀岩",
+        "黑爆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "北顶奥森攀岩生态园",
+          "address": "科荟路33号11幢-1至2层101内2层201",
+          "district": "朝阳区",
+          "lng": 116.381409,
+          "lat": 40.017191,
+          "poi_id": "B0KRBUWELN",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "Mellow Climbing Gym攀岩馆",
+          "address": "506创新园7号楼",
+          "district": "朝阳区",
+          "lng": 116.496157,
+          "lat": 39.973374,
+          "poi_id": "B0JKUZKD2K",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "BLOC1 Climbing Gym 攀岩馆",
+          "address": "北京城区京顺路5号曙光大厦C座101室(近西南门)",
+          "district": "朝阳区",
+          "lng": 116.451126,
+          "lat": 39.963622,
+          "poi_id": "B0L0HRRVDR",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "wanyan",
+      "name": "顽岩",
+      "source": "missing",
+      "hint": "难度馆",
+      "queries_run": [
+        "顽岩攀岩",
+        "顽岩攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "顽岩攀岩馆(房天下大厦A座店)",
+          "address": "花乡街道郭公庄中街20号房天下大厦A座一楼",
+          "district": "丰台区",
+          "lng": 116.301019,
+          "lat": 39.813699,
+          "poi_id": "B0J0XAB119",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "qupanyan",
+      "name": "趣攀岩",
+      "source": "missing",
+      "hint": "难度馆",
+      "queries_run": [
+        "趣攀岩",
+        "趣攀岩 攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "趣攀岩(龙玥城店)",
+          "address": "科创五街38号龙玥城L1层",
+          "district": "大兴区",
+          "lng": 116.533295,
+          "lat": 39.801492,
+          "poi_id": "B0KK4509EU",
+          "type": "购物服务;体育用品店;户外用品",
+          "score": 30
+        },
+        {
+          "rank": 2,
+          "name": "趣野攀岩(龙湖北苑天街店)",
+          "address": "北苑东路19号龙湖北京北苑天街5F层",
+          "district": "朝阳区",
+          "lng": 116.438392,
+          "lat": 40.042977,
+          "poi_id": "B0J1XUPZWM",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "趣野攀岩馆(北京房山印象城)",
+          "address": "广阳新路9号院1号楼北京房山印象城F2",
+          "district": "房山区",
+          "lng": 116.211327,
+          "lat": 39.753838,
+          "poi_id": "B0H0KUMJII",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "趣野攀岩(回龙观店)",
+          "address": "回龙观东大街腾讯众创空间338号",
+          "district": "昌平区",
+          "lng": 116.347385,
+          "lat": 40.079843,
+          "poi_id": "B0FFJNPYLC",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "北顶奥森攀岩生态园",
+          "address": "科荟路33号11幢-1至2层101内2层201",
+          "district": "朝阳区",
+          "lng": 116.381409,
+          "lat": 40.017191,
+          "poi_id": "B0KRBUWELN",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "xianfeng",
+      "name": "先锋 / 先攀",
+      "source": "missing",
+      "queries_run": [
+        "先锋攀岩",
+        "先攀攀岩",
+        "先锋攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "北顶奥森攀岩生态园",
+          "address": "科荟路33号11幢-1至2层101内2层201",
+          "district": "朝阳区",
+          "lng": 116.381409,
+          "lat": 40.017191,
+          "poi_id": "B0KRBUWELN",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "Mellow Climbing Gym攀岩馆",
+          "address": "506创新园7号楼",
+          "district": "朝阳区",
+          "lng": 116.496157,
+          "lat": 39.973374,
+          "poi_id": "B0JKUZKD2K",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "BLOC1 Climbing Gym 攀岩馆",
+          "address": "北京城区京顺路5号曙光大厦C座101室(近西南门)",
+          "district": "朝阳区",
+          "lng": 116.451126,
+          "lat": 39.963622,
+          "poi_id": "B0L0HRRVDR",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "camp4-jiangtai",
+      "name": "Camp4（将台）",
+      "source": "split",
+      "hint": "现有 camp4 (白家庄) 实际可能就是这家或三里屯店",
+      "queries_run": [
+        "CAMP4 攀岩 将台",
+        "Camp4 将台",
+        "岩肆 将台"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "CAMP4攀岩馆(酒仙桥新辰里店)",
+          "address": "酒仙桥路12号新辰里酒仙桥店2层F2-005",
+          "district": "朝阳区",
+          "lng": 116.490927,
+          "lat": 39.975592,
+          "poi_id": "B0J15PV7ZM",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "CAMP4岩肆精酿餐吧",
+          "address": "三里屯街道中海置业白家庄商务中心A座一层",
+          "district": "朝阳区",
+          "lng": 116.45648,
+          "lat": 39.927068,
+          "poi_id": "B0J3XH2J8D",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "score": 11
+        },
+        {
+          "rank": 3,
+          "name": "CAMP4岩肆",
+          "address": "三里屯街道中海置业白家庄商务中心A座二楼",
+          "district": "朝阳区",
+          "lng": 116.45645,
+          "lat": 39.927076,
+          "poi_id": "B0J3DMI1GJ",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 11
+        }
+      ]
+    },
+    {
+      "key": "camp4-sanlitun",
+      "name": "Camp4（三里屯）",
+      "source": "split",
+      "hint": "白家庄商圈即三里屯外围，需比对",
+      "queries_run": [
+        "CAMP4 攀岩 三里屯",
+        "岩肆 三里屯"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "CAMP4岩肆",
+          "address": "三里屯街道中海置业白家庄商务中心A座二楼",
+          "district": "朝阳区",
+          "lng": 116.45645,
+          "lat": 39.927076,
+          "poi_id": "B0J3DMI1GJ",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 11
+        },
+        {
+          "rank": 2,
+          "name": "CAMP4岩肆精酿餐吧",
+          "address": "三里屯街道中海置业白家庄商务中心A座一层",
+          "district": "朝阳区",
+          "lng": 116.45648,
+          "lat": 39.927068,
+          "poi_id": "B0J3XH2J8D",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "score": 11
+        },
+        {
+          "rank": 3,
+          "name": "好利来(三里屯店)",
+          "address": "北京城区东三里屯社区1号楼西侧一层底商",
+          "district": "朝阳区",
+          "lng": 116.455566,
+          "lat": 39.934254,
+          "poi_id": "B0K61ZKA7P",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "key": "qingshan-weigongcun",
+      "name": "青山（魏公村）",
+      "source": "split",
+      "hint": "现有 qingshan-panshi 是清河店",
+      "queries_run": [
+        "青山攀岩 魏公村",
+        "青山攀石 魏公村"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "青山攀石(魏公村店)",
+          "address": "北京城区魏公芳华里B1(蚂蚁集团楼下)",
+          "district": "海淀区",
+          "lng": 116.321071,
+          "lat": 39.956194,
+          "poi_id": "B0L3XA1IHU",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 11
+        }
+      ]
+    },
+    {
+      "key": "dayu",
+      "name": "大宇",
+      "source": "suspect",
+      "queries_run": [
+        "大宇攀岩",
+        "大宇攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "岚山攀岩",
+          "address": "果园8号楼1-101-K-04",
+          "district": "丰台区",
+          "lng": 116.397726,
+          "lat": 39.855747,
+          "poi_id": "B0LRUGCKDD",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "青藤攀岩",
+          "address": "北京子拓国际广场B座101室",
+          "district": "朝阳区",
+          "lng": 116.432061,
+          "lat": 40.002832,
+          "poi_id": "B0LKGA1GHR",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "今日攀岩生活馆(北京)",
+          "address": "永大路32号",
+          "district": "大兴区",
+          "lng": 116.304547,
+          "lat": 39.687911,
+          "poi_id": "B0FFI6NV5Y",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "bairimeng",
+      "name": "白日梦",
+      "source": "suspect",
+      "queries_run": [
+        "白日梦攀岩",
+        "白日梦"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "白日梦蓝少儿美学馆(房山店)",
+          "address": "嘉州水郡西区三期",
+          "district": "房山区",
+          "lng": 116.163745,
+          "lat": 39.770129,
+          "poi_id": "B0KGFK2SEZ",
+          "type": "科教文化服务;培训机构;培训机构",
+          "score": 11
+        },
+        {
+          "rank": 2,
+          "name": "白日梦民宿(天荣大街分店)",
+          "address": "永兴路与天荣大街交叉口东北180米",
+          "district": "大兴区",
+          "lng": 116.312725,
+          "lat": 39.685657,
+          "poi_id": "B0J27N3PG3",
+          "type": "住宿服务;住宿服务相关;住宿服务相关",
+          "score": 11
+        },
+        {
+          "rank": 3,
+          "name": "白日梦实验室",
+          "address": "顺黄路217号",
+          "district": "朝阳区",
+          "lng": 116.474515,
+          "lat": 40.058578,
+          "poi_id": "B0K13R586M",
+          "type": "汽车服务;汽车服务相关;汽车服务相关",
+          "score": 11
+        },
+        {
+          "rank": 4,
+          "name": "白日梦蓝民宿",
+          "address": "九渡河二道关口楼1号",
+          "district": "怀柔区",
+          "lng": 116.351255,
+          "lat": 40.428983,
+          "poi_id": "B0JGPUFZVM",
+          "type": "住宿服务;旅馆招待所;旅馆招待所",
+          "score": 11
+        },
+        {
+          "rank": 5,
+          "name": "白日梦文化传媒有限公司",
+          "address": "S50东五环与S50东五环出口交叉口东280米",
+          "district": "朝阳区",
+          "lng": 116.508508,
+          "lat": 39.994052,
+          "poi_id": "B0M6N6DNU4",
+          "type": "公司企业;公司企业;公司企业",
+          "score": 11
+        }
+      ]
+    },
+    {
+      "key": "heitang",
+      "name": "黑塘",
+      "source": "suspect",
+      "queries_run": [
+        "黑塘攀岩",
+        "黑塘攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "岚山攀岩",
+          "address": "果园8号楼1-101-K-04",
+          "district": "丰台区",
+          "lng": 116.397726,
+          "lat": 39.855747,
+          "poi_id": "B0LRUGCKDD",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "问山攀岩馆",
+          "address": "玉泉路2号(北区)8幢",
+          "district": "海淀区",
+          "lng": 116.25526,
+          "lat": 39.927156,
+          "poi_id": "B0GDJC3QTJ",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "我攀攀岩",
+          "address": "广渠东路北京商业储运公司35幢双跨库",
+          "district": "朝阳区",
+          "lng": 116.514183,
+          "lat": 39.887583,
+          "poi_id": "B0KUZ5HV3S",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "shuangyan",
+      "name": "双岩",
+      "source": "suspect",
+      "queries_run": [
+        "双岩攀岩",
+        "双岩攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "我攀攀岩",
+          "address": "广渠东路北京商业储运公司35幢双跨库",
+          "district": "朝阳区",
+          "lng": 116.514183,
+          "lat": 39.887583,
+          "poi_id": "B0KUZ5HV3S",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "鼎石攀岩",
+          "address": "成寿寺路甲12号9幢1层18B室",
+          "district": "丰台区",
+          "lng": 116.448041,
+          "lat": 39.853025,
+          "poi_id": "B0JA753FSM",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "顽岩攀岩馆(房天下大厦A座店)",
+          "address": "花乡街道郭公庄中街20号房天下大厦A座一楼",
+          "district": "丰台区",
+          "lng": 116.301019,
+          "lat": 39.813699,
+          "poi_id": "B0J0XAB119",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "aopan-lifang",
+      "name": "奥攀（立方村）",
+      "source": "suspect",
+      "queries_run": [
+        "奥攀攀岩 立方村",
+        "奥攀 立方村"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "奥攀攀岩(角门店)",
+          "address": "北京城区大红门西路19号物美2层(物美超市出口)",
+          "district": "丰台区",
+          "lng": 116.387024,
+          "lat": 39.844061,
+          "poi_id": "B0I2CCF2PE",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 2,
+          "name": "奥攀攀岩(玉泉营校区)",
+          "address": "玉泉营博瑞体育园",
+          "district": "丰台区",
+          "lng": 116.339885,
+          "lat": 39.842465,
+          "poi_id": "B0FFLHVZW6",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 3,
+          "name": "奥攀攀岩(王府井奥莱店)",
+          "address": "北京城区久敬庄路丙57号(王府井奥莱)",
+          "district": "大兴区",
+          "lng": 116.421272,
+          "lat": 39.81745,
+          "poi_id": "B0JKT5D2S2",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 14
+        },
+        {
+          "rank": 4,
+          "name": "奥攀攀岩(五棵松店)",
+          "address": "华熙下沉广场探唔哩街区内",
+          "district": "海淀区",
+          "lng": 116.27616,
+          "lat": 39.910148,
+          "poi_id": "B0LB2LLJ0N",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        },
+        {
+          "rank": 5,
+          "name": "奥攀攀岩(四季青校区)",
+          "address": "中关村军民融合产业园商业街C座下沉广场一层",
+          "district": "海淀区",
+          "lng": 116.278516,
+          "lat": 39.950271,
+          "poi_id": "B0LB2CRGXQ",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "key": "yuepanyan",
+      "name": "越攀岩",
+      "source": "suspect",
+      "queries_run": [
+        "越攀岩",
+        "越攀岩 攀岩馆"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "悦山河攀岩飞拉达露营地",
+          "address": "悅山河龙云山户外营地东北侧140米",
+          "district": "密云区",
+          "lng": 116.738025,
+          "lat": 40.638575,
+          "poi_id": "B0L2AC2ERP",
+          "type": "体育休闲服务;休闲场所;露营地",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "悦石运动攀岩空间(华贸天地店)(装修中)",
+          "address": "来广营清河营南街9号院华贸天地商业街西区下沉广场最西侧漫点生活市集内B1层-悦石运动攀岩空间",
+          "district": "朝阳区",
+          "lng": 116.42777,
+          "lat": 40.048901,
+          "poi_id": "B0HGPMTI37",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "北顶奥森攀岩生态园",
+          "address": "科荟路33号11幢-1至2层101内2层201",
+          "district": "朝阳区",
+          "lng": 116.381409,
+          "lat": 40.017191,
+          "poi_id": "B0KRBUWELN",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "Mellow Climbing Gym攀岩馆",
+          "address": "506创新园7号楼",
+          "district": "朝阳区",
+          "lng": 116.496157,
+          "lat": 39.973374,
+          "poi_id": "B0JKUZKD2K",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "cishan",
+      "name": "此山（米家堡）",
+      "source": "suspect",
+      "queries_run": [
+        "此山攀岩 米家堡",
+        "此山攀岩"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "问山攀岩馆",
+          "address": "玉泉路2号(北区)8幢",
+          "district": "海淀区",
+          "lng": 116.25526,
+          "lat": 39.927156,
+          "poi_id": "B0GDJC3QTJ",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        },
+        {
+          "rank": 2,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 3,
+          "name": "岚山攀岩",
+          "address": "果园8号楼1-101-K-04",
+          "district": "丰台区",
+          "lng": 116.397726,
+          "lat": 39.855747,
+          "poi_id": "B0LRUGCKDD",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 4,
+          "name": "岩时攀岩馆",
+          "address": "西大望路27号院74栋(平乐园地铁站B东北口步行410米)",
+          "district": "朝阳区",
+          "lng": 116.48213,
+          "lat": 39.887141,
+          "poi_id": "B0FFI0SZE7",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        },
+        {
+          "rank": 5,
+          "name": "飞猫攀岩(Feline Climbing Gym)",
+          "address": "南竹杆胡同2号银河SOHO商场C座F3层",
+          "district": "东城区",
+          "lng": 116.432709,
+          "lat": 39.920292,
+          "poi_id": "B0LBO76J7I",
+          "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+          "score": 6
+        }
+      ]
+    },
+    {
+      "key": "panshi-fangshan",
+      "name": "磐石（房山）",
+      "source": "suspect",
+      "queries_run": [
+        "磐石攀岩 房山",
+        "磐石 房山"
+      ],
+      "candidates": [
+        {
+          "rank": 1,
+          "name": "磐石",
+          "address": "朝阳区",
+          "district": "朝阳区",
+          "lng": 116.519629,
+          "lat": 39.926221,
+          "poi_id": "B0LRGHTNZ4",
+          "type": "地名地址信息;地名地址信息;地名地址信息",
+          "score": 27
+        },
+        {
+          "rank": 2,
+          "name": "海德磐石",
+          "address": "福田寺西街启迪香山",
+          "district": "石景山区",
+          "lng": 116.20407,
+          "lat": 39.945327,
+          "poi_id": "B0HDH6CR8H",
+          "type": "风景名胜;风景名胜;风景名胜",
+          "score": 11
+        },
+        {
+          "rank": 3,
+          "name": "磐石造物",
+          "address": "潘家园旧货市场4区精品区2-24",
+          "district": "朝阳区",
+          "lng": 116.45941,
+          "lat": 39.875328,
+          "poi_id": "B0K0FLI9AS",
+          "type": "公司企业;公司;公司",
+          "score": 11
+        },
+        {
+          "rank": 4,
+          "name": "磐石越峰汽车服务(北京房山旗舰店)",
+          "address": "拱辰街道月华北大街门牌10号",
+          "district": "房山区",
+          "lng": 116.150363,
+          "lat": 39.747482,
+          "poi_id": "B0KG973Z6L",
+          "type": "汽车服务;汽车服务相关;汽车服务相关",
+          "score": 11
+        },
+        {
+          "rank": 5,
+          "name": "一起攀岩",
+          "address": "北京城区崇文门外大街正仁大厦地下一层",
+          "district": "东城区",
+          "lng": 116.417928,
+          "lat": 39.895408,
+          "poi_id": "B0L14R21GY",
+          "type": "体育休闲服务;运动场馆;运动场所",
+          "score": 6
+        }
+      ]
+    }
+  ]
+}

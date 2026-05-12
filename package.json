@@ -6,7 +6,11 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "fetch-geo": "tsx scripts/fetch-beijing-geojson.ts"
+    "fetch-geo": "tsx scripts/fetch-beijing-geojson.ts",
+    "fetch-overlays": "tsx scripts/fetch-beijing-overlays.ts",
+    "fetch-climbing-pois": "tsx scripts/fetch-climbing-pois.ts",
+    "research-gyms": "tsx scripts/research-new-gyms.ts",
+    "import-photos": "tsx scripts/import-screenshots.ts"
   },
   "dependencies": {
     "next": "16.2.6",
