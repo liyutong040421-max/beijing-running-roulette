@@ -15,7 +15,7 @@ export type WheelFeedback = {
 export function createWheelFeedback(): WheelFeedback {
   let ctx: AudioContext | null = null;
   let noiseBuffer: AudioBuffer | null = null;
-  let lastTickAt = 0;
+  let lastTickAt = -Infinity;
 
   const ensureCtx = (): AudioContext | null => {
     if (typeof window === "undefined") return null;
@@ -24,7 +24,11 @@ export function createWheelFeedback(): WheelFeedback {
         window.AudioContext ??
         (window as unknown as { webkitAudioContext?: Ctor }).webkitAudioContext;
       if (!Ctor) return null;
-      ctx = new Ctor();
+      try {
+        ctx = new Ctor();
+      } catch {
+        return null;
+      }
       const sampleRate = ctx.sampleRate;
       const length = Math.floor(sampleRate * NOISE_BUFFER_SECONDS);
       const buffer = ctx.createBuffer(1, length, sampleRate);
@@ -35,6 +39,21 @@ export function createWheelFeedback(): WheelFeedback {
     if (ctx.state === "suspended") void ctx.resume();
     return ctx;
   };
+
+  // Try to unlock immediately (works if we're inside a user gesture, e.g.
+  // SPIN button click) and also attach passive listeners to catch the next
+  // pointer / key event on the page if we were created from mousemove.
+  // Chrome's autoplay policy blocks resume() outside user-activation, so
+  // both attempts are needed.
+  const unlock = () => {
+    ensureCtx();
+  };
+  if (typeof window !== "undefined") {
+    unlock();
+    window.addEventListener("pointerdown", unlock);
+    window.addEventListener("keydown", unlock);
+    window.addEventListener("touchstart", unlock, { passive: true });
+  }
 
   const playClick = (opts: {
     freq: number;
@@ -75,11 +94,9 @@ export function createWheelFeedback(): WheelFeedback {
 
   return {
     tick: () => {
-      const audio = ensureCtx();
-      if (!audio) return;
-      const elapsed = audio.currentTime * 1000 - lastTickAt;
-      if (elapsed < TICK_COOLDOWN_MS) return;
-      lastTickAt = audio.currentTime * 1000;
+      const now = typeof performance !== "undefined" ? performance.now() : Date.now();
+      if (now - lastTickAt < TICK_COOLDOWN_MS) return;
+      lastTickAt = now;
       playClick({ freq: 1700, q: 8, gain: 0.22, decay: 0.04 });
       vibrate(6);
     },
