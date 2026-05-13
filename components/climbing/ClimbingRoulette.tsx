@@ -20,6 +20,11 @@ const MAP_H = 900;
 const MAP_PADDING = 36;
 const BOUNDS_PAD_LNG = 0.05;
 const BOUNDS_PAD_LAT = 0.045;
+const MAP_MIN_ZOOM = 1; // viewBox = full extent
+const MAP_MAX_ZOOM = 5; // viewBox shrinks to 1/5
+
+type MapView = { x: number; y: number; w: number; h: number };
+const INITIAL_VIEW: MapView = { x: 0, y: 0, w: MAP_W, h: MAP_H };
 
 type WheelGeom = {
   width: number;
@@ -647,6 +652,161 @@ function ClimbingCityMap({
     { name: string; x: number; y: number } | null
   >(null);
 
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [view, setView] = useState<MapView>(() => INITIAL_VIEW);
+  const viewRef = useRef(view);
+  useEffect(() => {
+    viewRef.current = view;
+  }, [view]);
+
+  // Pan / pinch state. Refs so handlers don't trigger re-render churn.
+  const panRef = useRef<{
+    pointerId: number;
+    startClientX: number;
+    startClientY: number;
+    startView: MapView;
+    moved: number;
+  } | null>(null);
+  const draggedRef = useRef(false);
+  const pointersRef = useRef<Map<number, { x: number; y: number }>>(new Map());
+  const pinchRef = useRef<{
+    startDist: number;
+    startView: MapView;
+    anchorSvg: [number, number];
+  } | null>(null);
+
+  const svgPointFromClient = (clientX: number, clientY: number): [number, number] => {
+    const svg = svgRef.current;
+    if (!svg) return [0, 0];
+    const rect = svg.getBoundingClientRect();
+    const v = viewRef.current;
+    // preserveAspectRatio="xMidYMid meet" → uniform scale + centered letterbox
+    const scale = Math.min(rect.width / v.w, rect.height / v.h);
+    const renderedW = v.w * scale;
+    const renderedH = v.h * scale;
+    const offsetX = (rect.width - renderedW) / 2;
+    const offsetY = (rect.height - renderedH) / 2;
+    return [
+      v.x + (clientX - rect.left - offsetX) / scale,
+      v.y + (clientY - rect.top - offsetY) / scale,
+    ];
+  };
+
+  // Wheel-to-zoom. Attach via DOM listener so we can preventDefault (React's
+  // onWheel is passive). Re-binds when view changes through viewRef.
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const [px, py] = svgPointFromClient(e.clientX, e.clientY);
+      // deltaY > 0 = scroll down = zoom out (factor > 1 grows viewBox)
+      const factor = Math.pow(1.0015, e.deltaY);
+      setView((v) => zoomViewAround(v, factor, px, py));
+    };
+    svg.addEventListener("wheel", onWheel, { passive: false });
+    return () => svg.removeEventListener("wheel", onWheel);
+  }, []);
+
+  const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
+    pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (pointersRef.current.size === 2) {
+      // Pinch start — bail any in-progress pan
+      panRef.current = null;
+      const pts = Array.from(pointersRef.current.values());
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      const cx = (pts[0].x + pts[1].x) / 2;
+      const cy = (pts[0].y + pts[1].y) / 2;
+      pinchRef.current = {
+        startDist: dist,
+        startView: viewRef.current,
+        anchorSvg: svgPointFromClient(cx, cy),
+      };
+      return;
+    }
+
+    // Single-pointer pan
+    e.currentTarget.setPointerCapture(e.pointerId);
+    panRef.current = {
+      pointerId: e.pointerId,
+      startClientX: e.clientX,
+      startClientY: e.clientY,
+      startView: viewRef.current,
+      moved: 0,
+    };
+  };
+
+  const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (pointersRef.current.has(e.pointerId)) {
+      pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    }
+
+    // Pinch
+    if (pinchRef.current && pointersRef.current.size >= 2) {
+      const pts = Array.from(pointersRef.current.values()).slice(0, 2);
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      if (dist <= 0) return;
+      const factor = pinchRef.current.startDist / dist;
+      const [px, py] = pinchRef.current.anchorSvg;
+      setView(zoomViewAround(pinchRef.current.startView, factor, px, py));
+      return;
+    }
+
+    // Pan
+    const pan = panRef.current;
+    if (!pan || e.pointerId !== pan.pointerId) return;
+    const dx = e.clientX - pan.startClientX;
+    const dy = e.clientY - pan.startClientY;
+    pan.moved = Math.max(pan.moved, Math.hypot(dx, dy));
+    if (pan.moved > 4) draggedRef.current = true;
+    const svg = svgRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const scale = Math.min(rect.width / pan.startView.w, rect.height / pan.startView.h);
+    setView(
+      clampMapView({
+        x: pan.startView.x - dx / scale,
+        y: pan.startView.y - dy / scale,
+        w: pan.startView.w,
+        h: pan.startView.h,
+      }),
+    );
+  };
+
+  const onPointerUp = (e: React.PointerEvent<SVGSVGElement>) => {
+    pointersRef.current.delete(e.pointerId);
+    if (pointersRef.current.size < 2) pinchRef.current = null;
+    if (panRef.current && e.pointerId === panRef.current.pointerId) {
+      try {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      } catch {
+        // pointer may already be released
+      }
+      panRef.current = null;
+      // Defer so the synthetic onClick (fired right after) sees draggedRef=true
+      setTimeout(() => {
+        draggedRef.current = false;
+      }, 0);
+    }
+  };
+
+  const handleGymClick = (gym: ClimbingGym) => {
+    if (draggedRef.current) return;
+    onGymClick(gym);
+  };
+
+  const zoomBy = (factor: number) => {
+    const v = viewRef.current;
+    const cx = v.x + v.w / 2;
+    const cy = v.y + v.h / 2;
+    setView(zoomViewAround(v, factor, cx, cy));
+  };
+  const resetView = () => setView(INITIAL_VIEW);
+  const zoomLevel = MAP_W / view.w; // 1 = full, MAP_MAX_ZOOM = max
+
+  const isInteractive = view.w < MAP_W || view.h < MAP_H;
+
   useEffect(() => {
     const load = (path: string) =>
       fetch(path)
@@ -715,16 +875,30 @@ function ClimbingCityMap({
     [gyms, project],
   );
 
+  // When the underlying projection shifts (gym filter / participants), the
+  // user's zoomed-in view would land on whitespace. Snap back to full extent.
+  useEffect(() => {
+    setView(INITIAL_VIEW);
+  }, [bounds]);
+
   return (
     <div className="relative h-full min-h-[260px] overflow-hidden bg-bg">
       <svg
-        viewBox={`0 0 ${MAP_W} ${MAP_H}`}
+        ref={svgRef}
+        viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`}
         width="100%"
         height="100%"
         preserveAspectRatio="xMidYMid meet"
-        className="block select-none"
+        className="block touch-none select-none"
         role="img"
         aria-label="北京城区攀岩馆分布图"
+        style={{
+          cursor: panRef.current ? "grabbing" : isInteractive ? "grab" : "default",
+        }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
         onMouseLeave={() => {
           setHoveredGymLabel(null);
           setHoveredDistrict(null);
@@ -801,6 +975,14 @@ function ClimbingCityMap({
               previewGym?.id === gym.id || selectedGym?.id === gym.id;
             const inPool = fairPoolIds.has(gym.id);
             const color = gymColor(gym);
+            // Counter-scale dot radii so they stay roughly the same size on
+            // screen as the user zooms in.
+            const s = view.w / MAP_W;
+            const dotR = (active ? 5.5 : 3.5) * s;
+            const ringR = 9 * s;
+            const ringStroke = 1 * s;
+            const dotStroke = (active ? 2 : 1) * s;
+            const hitR = Math.max(10 * s, 6);
 
             return (
               <g
@@ -832,28 +1014,28 @@ function ClimbingCityMap({
                   setHoveredGymLabel(null);
                   onGymHover(null);
                 }}
-                onClick={() => onGymClick(gym)}
+                onClick={() => handleGymClick(gym)}
                 style={{ cursor: "pointer", opacity: inPool ? 1 : 0.25 }}
               >
-                <circle cx={x} cy={y} r={10} fill="transparent" />
+                <circle cx={x} cy={y} r={hitR} fill="transparent" />
                 {active ? (
                   <circle
                     cx={x}
                     cy={y}
-                    r={9}
+                    r={ringR}
                     fill="none"
                     className="pulse-ring"
-                    style={{ stroke: "var(--color-accent)", strokeWidth: 1 }}
+                    style={{ stroke: "var(--color-accent)", strokeWidth: ringStroke }}
                   />
                 ) : null}
                 <circle
                   cx={x}
                   cy={y}
-                  r={active ? 5.5 : 3.5}
+                  r={dotR}
                   fill={color}
                   style={{
                     stroke: "var(--color-bg)",
-                    strokeWidth: active ? 2 : 1,
+                    strokeWidth: dotStroke,
                   }}
                 />
               </g>
@@ -865,8 +1047,12 @@ function ClimbingCityMap({
           <g pointerEvents="none">
             {participants.map((p) => {
               const [px, py] = project([p.lng, p.lat]);
+              const s = view.w / MAP_W;
               return (
-                <g key={p.id} transform={`translate(${px.toFixed(1)} ${py.toFixed(1)})`}>
+                <g
+                  key={p.id}
+                  transform={`translate(${px.toFixed(1)} ${py.toFixed(1)}) scale(${s})`}
+                >
                   <circle r={11} fill="var(--color-bg)" stroke="var(--color-accent)" strokeWidth={1.5} />
                   <line x1={-4.5} y1={-4.5} x2={4.5} y2={4.5} stroke="var(--color-accent)" strokeWidth={1.6} strokeLinecap="round" />
                   <line x1={4.5} y1={-4.5} x2={-4.5} y2={4.5} stroke="var(--color-accent)" strokeWidth={1.6} strokeLinecap="round" />
@@ -890,6 +1076,36 @@ function ClimbingCityMap({
           </g>
         ) : null}
       </svg>
+
+      <div className="pointer-events-auto absolute right-3 top-3 z-20 flex flex-col overflow-hidden border border-hairline bg-bg/92 backdrop-blur">
+        <button
+          type="button"
+          onClick={() => zoomBy(1 / 1.4)}
+          disabled={zoomLevel >= MAP_MAX_ZOOM - 0.001}
+          aria-label="放大"
+          className="flex h-7 w-7 items-center justify-center font-mono text-[14px] text-fg transition-colors hover:bg-fg hover:text-bg disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => zoomBy(1.4)}
+          disabled={zoomLevel <= MAP_MIN_ZOOM + 0.001}
+          aria-label="缩小"
+          className="flex h-7 w-7 items-center justify-center border-t border-hairline font-mono text-[14px] text-fg transition-colors hover:bg-fg hover:text-bg disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          onClick={resetView}
+          disabled={!isInteractive}
+          aria-label="重置视图"
+          className="flex h-7 w-7 items-center justify-center border-t border-hairline font-mono text-[10px] uppercase tracking-[0.12em] text-fg transition-colors hover:bg-fg hover:text-bg disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg"
+        >
+          ⌖
+        </button>
+      </div>
 
       <div className="pointer-events-none absolute bottom-3 left-3 z-20 flex gap-3 border border-hairline bg-bg/92 px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted backdrop-blur">
         <LegendDot color="#0a0a0a" label="综合" />
@@ -1197,6 +1413,36 @@ function toRad(deg: number): number {
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
+}
+
+// Resize the viewBox by `factor` (factor < 1 zooms in) anchored at the given
+// svg-space point so it stays under the cursor / pinch center.
+function zoomViewAround(
+  v: MapView,
+  factor: number,
+  px: number,
+  py: number,
+): MapView {
+  const minW = MAP_W / MAP_MAX_ZOOM;
+  const maxW = MAP_W / MAP_MIN_ZOOM;
+  const newW = clamp(v.w * factor, minW, maxW);
+  const newH = clamp(v.h * factor, minW, maxW);
+  const ratio = newW / v.w;
+  return clampMapView({
+    x: px - (px - v.x) * ratio,
+    y: py - (py - v.y) * ratio,
+    w: newW,
+    h: newH,
+  });
+}
+
+function clampMapView(v: MapView): MapView {
+  return {
+    x: clamp(v.x, 0, MAP_W - v.w),
+    y: clamp(v.y, 0, MAP_H - v.h),
+    w: v.w,
+    h: v.h,
+  };
 }
 
 function mod(value: number, size: number): number {
