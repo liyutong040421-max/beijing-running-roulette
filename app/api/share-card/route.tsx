@@ -101,7 +101,10 @@ export async function GET(request: Request) {
 
   const color = gymColor(gym.type);
   const type = shortType(gym.type);
-  const hook = isParty ? "今晚一起 →" : "今晚抽到 →";
+  const hook = isParty ? "今晚一起" : "今晚抽到";
+  const dateObj = parseDateStr(date) ?? new Date();
+  const issueNo = String(dayOfYear(dateObj)).padStart(3, "0");
+  const volRoman = toRoman(dateObj.getFullYear());
 
   let fonts;
   try {
@@ -122,17 +125,49 @@ export async function GET(request: Request) {
           height: H,
           display: "flex",
           flexDirection: "column",
-          background: "#fafafa",
+          background: "#fafaf6",
           fontFamily: "Noto Sans SC",
           color: "#0a0a0a",
         }}
       >
-        {/* TOP — visual zone (~55%) */}
+        {/* MASTHEAD */}
         <div
           style={{
             display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            padding: "32px 56px 18px",
+            borderBottom: "2px solid #0a0a0a",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              fontSize: 30,
+              fontWeight: 700,
+              letterSpacing: 10,
+            }}
+          >
+            ROULETTE
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 16,
+              color: "#52525b",
+              letterSpacing: 5,
+            }}
+          >
+            VOL.{volRoman} · NO.{issueNo} · ¥0
+          </div>
+        </div>
+
+        {/* HERO */}
+        <div
+          style={{
             position: "relative",
-            height: 745,
+            display: "flex",
+            height: 880,
             background: photoSrc ? "#0a0a0a" : color,
             overflow: "hidden",
           }}
@@ -142,192 +177,231 @@ export async function GET(request: Request) {
             <img
               src={photoSrc}
               width={W}
-              height={745}
+              height={880}
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
               alt={photo?.alt ?? gym.name}
             />
           ) : (
-            // No photo: huge area-name as background art
             <div
               style={{
                 display: "flex",
                 width: "100%",
                 height: "100%",
-                alignItems: "flex-end",
-                padding: 56,
-                color: "#fafafa",
-                opacity: 0.16,
-                fontSize: 240,
+                alignItems: "center",
+                justifyContent: "center",
+                color: "rgba(250,250,246,0.18)",
+                fontSize: 320,
                 fontWeight: 700,
                 lineHeight: 1,
-                letterSpacing: -8,
+                letterSpacing: -10,
               }}
             >
               {gym.area.split(/[\/／]/)[0] ?? gym.area}
             </div>
           )}
 
-          {/* dice/hook chip top-right */}
+          {/* gradient — keeps the bottom title legible over busy photos */}
           <div
             style={{
               position: "absolute",
-              top: 36,
-              right: 36,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
               display: "flex",
-              padding: "8px 14px",
-              border: "1.5px solid #fafafa",
-              color: "#fafafa",
-              fontSize: 22,
-              fontWeight: 700,
-              letterSpacing: 4,
-              background: "rgba(0,0,0,0.18)",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0) 32%, rgba(0,0,0,0.78) 100%)",
             }}
-          >
-            🎲 ROULETTE
-          </div>
-        </div>
+          />
 
-        {/* BOTTOM — info zone */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            padding: "44px 56px 36px",
-            background: "#fafafa",
-          }}
-        >
+          {/* tonight tag */}
           <div
             style={{
+              position: "absolute",
+              top: 32,
+              left: 32,
               display: "flex",
-              fontSize: 28,
-              fontWeight: 400,
-              color: "#71717a",
-              letterSpacing: 2,
+              padding: "8px 16px",
+              border: "1.5px solid #fafaf6",
+              color: "#fafaf6",
+              fontSize: 20,
+              fontWeight: 700,
+              letterSpacing: 5,
+              background: "rgba(0,0,0,0.22)",
             }}
           >
             {hook}
           </div>
 
+          {/* type chip — solid type color over a photo, white over a flat
+              type-color background (otherwise it'd blend in) */}
           <div
             style={{
+              position: "absolute",
+              top: 32,
+              right: 32,
               display: "flex",
-              marginTop: 14,
-              fontSize: 76,
+              padding: "8px 18px",
+              background: photoSrc ? color : "#fafaf6",
+              color: photoSrc ? "#fafaf6" : color,
+              fontSize: 22,
               fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: -2,
-              color: "#0a0a0a",
+              letterSpacing: 4,
             }}
           >
-            {gym.name}
+            {type}
           </div>
 
+          {/* big gym name — bottom of photo */}
           <div
             style={{
+              position: "absolute",
+              bottom: 40,
+              left: 40,
+              right: 40,
               display: "flex",
-              marginTop: 22,
-              alignItems: "center",
-              gap: 14,
+              flexDirection: "column",
+              color: "#fafaf6",
             }}
           >
             <div
               style={{
                 display: "flex",
-                padding: "6px 14px",
-                background: color,
-                color: "#fafafa",
-                fontSize: 22,
+                fontSize: gym.name.length > 12 ? 64 : 80,
                 fontWeight: 700,
+                lineHeight: 1.0,
+                letterSpacing: -3,
               }}
             >
-              {type}
+              {gym.name}
             </div>
             <div
               style={{
                 display: "flex",
-                fontSize: 26,
-                color: "#52525b",
+                marginTop: 12,
+                fontSize: 22,
+                color: "rgba(250,250,246,0.82)",
+                letterSpacing: 5,
               }}
             >
               {gym.district} · {gym.area}
             </div>
           </div>
+        </div>
 
+        {/* COVERLINES */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            padding: "32px 56px 28px",
+            background: "#fafaf6",
+          }}
+        >
           {isParty ? (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginTop: 32,
-                paddingTop: 24,
-                borderTop: "1px solid #e4e4e7",
-              }}
-            >
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "#71717a",
+                    letterSpacing: 5,
+                  }}
+                >
+                  WITH
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 10,
+                  }}
+                >
+                  {participants.map((p) => (
+                    <div
+                      key={p.label}
+                      style={{
+                        display: "flex",
+                        padding: "5px 14px",
+                        border: "1.5px solid #0a0a0a",
+                        fontSize: 22,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {p.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div
                 style={{
                   display: "flex",
-                  fontSize: 22,
+                  marginTop: 18,
+                  fontSize: 20,
+                  color: "#52525b",
+                  letterSpacing: 2,
+                }}
+              >
+                公平池 {poolCount} 家  ·  最远 {maxKm.toFixed(1)} km
+              </div>
+            </div>
+          ) : (
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  display: "flex",
+                  fontSize: 38,
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  letterSpacing: -1,
+                }}
+              >
+                今晚就这家
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: 12,
+                  fontSize: 18,
                   color: "#71717a",
                   letterSpacing: 2,
                 }}
               >
-                with
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 10,
-                  marginTop: 8,
-                }}
-              >
-                {participants.map((p) => (
-                  <div
-                    key={p.label}
-                    style={{
-                      display: "flex",
-                      padding: "6px 14px",
-                      border: "1.5px solid #0a0a0a",
-                      fontSize: 24,
-                      fontWeight: 700,
-                      color: "#0a0a0a",
-                    }}
-                  >
-                    {p.label}
-                  </div>
-                ))}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: 14,
-                  fontSize: 22,
-                  color: "#52525b",
-                }}
-              >
-                公平池 {poolCount} 家 · 最远 {maxKm.toFixed(1)}km
+                {gym.address}
               </div>
             </div>
-          ) : null}
+          )}
+
+          {/* push footer to the bottom */}
+          <div style={{ display: "flex", flex: 1 }} />
 
           {/* footer */}
           <div
             style={{
               display: "flex",
-              flex: 1,
-              alignItems: "flex-end",
+              marginTop: 20,
+              paddingTop: 14,
+              borderTop: "2px solid #0a0a0a",
               justifyContent: "space-between",
-              marginTop: 24,
-              paddingTop: 18,
-              borderTop: "1px solid #e4e4e7",
-              fontSize: 20,
-              color: "#71717a",
-              letterSpacing: 1,
+              alignItems: "flex-end",
+              fontSize: 14,
+              color: "#52525b",
+              letterSpacing: 4,
             }}
           >
             <div style={{ display: "flex" }}>{date}</div>
-            <div style={{ display: "flex" }}>beijing climbing roulette</div>
+            <div
+              style={{
+                display: "flex",
+                fontWeight: 700,
+                color: "#0a0a0a",
+              }}
+            >
+              BJG · CLIMBING ROULETTE · {dateObj.getFullYear()}
+            </div>
           </div>
         </div>
       </div>
@@ -345,4 +419,34 @@ function formatDate(d: Date): string {
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${y}.${m}.${day}`;
+}
+
+function parseDateStr(s: string): Date | null {
+  const m = s.match(/^(\d{4})\.(\d{2})\.(\d{2})$/);
+  if (!m) return null;
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function dayOfYear(d: Date): number {
+  const start = new Date(d.getFullYear(), 0, 0);
+  const diff = d.getTime() - start.getTime();
+  return Math.floor(diff / 86_400_000);
+}
+
+function toRoman(n: number): string {
+  const map: Array<[number, string]> = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let out = "";
+  let v = n;
+  for (const [num, sym] of map) {
+    while (v >= num) {
+      out += sym;
+      v -= num;
+    }
+  }
+  return out;
 }
