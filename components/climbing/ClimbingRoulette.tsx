@@ -7,24 +7,64 @@ import { climbingGyms, type ClimbingGym } from "@/data/climbing-gyms";
 import { geometryToPath, makeProjection, type Bounds } from "@/lib/projection";
 import { haversineKm } from "@/lib/geo";
 import { pickFirstPhoto, type PhotoManifest } from "@/lib/climbing-photos";
+import { createWheelFeedback, type WheelFeedback } from "@/lib/wheel-feedback";
 import { RefuelPanel } from "./RefuelPanel";
 import { PartyPanel, type Participant } from "./PartyPanel";
 
 const TOTAL_SPIN_MS = 1800;
 const WHEEL_SPIN_MS = 260;
-const WHEEL_W = 390;
-const WHEEL_H = 860;
-const CENTER_X = -120;
-const CENTER_Y = 505;
-const RADIUS = 330;
-const ITEM_H = 28;
-const POINTER_ROW_H = 36;
-const VISIBLE_ITEM_COUNT = 7;
+const HOVER_SPIN_MS = 160;
 const MAP_W = 900;
 const MAP_H = 900;
 const MAP_PADDING = 36;
 const BOUNDS_PAD_LNG = 0.05;
 const BOUNDS_PAD_LAT = 0.045;
+
+type WheelGeom = {
+  width: number;
+  height: number;
+  centerX: number;
+  centerY: number;
+  radius: number;
+  itemH: number;
+  pointerRowH: number;
+  visibleItemCount: number;
+};
+
+const DESKTOP_WHEEL: WheelGeom = {
+  width: 390,
+  height: 860,
+  centerX: -120,
+  centerY: 505,
+  radius: 330,
+  itemH: 28,
+  pointerRowH: 36,
+  visibleItemCount: 7,
+};
+
+const MOBILE_WHEEL: WheelGeom = {
+  width: 400,
+  height: 360,
+  centerX: -100,
+  centerY: 180,
+  radius: 240,
+  itemH: 26,
+  pointerRowH: 32,
+  visibleItemCount: 5,
+};
+
+function useIsMobile(): boolean {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(mq.matches);
+    const update = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return isMobile;
+}
 
 const INNER_DISTRICTS = new Set([
   "东城区",
@@ -63,6 +103,15 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
   const [spinning, setSpinning] = useState(false);
   const frameRef = useRef<number | null>(null);
   const spinAngleRef = useRef(0);
+  const feedbackRef = useRef<WheelFeedback | null>(null);
+  const previewSectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  const wheelGeom = isMobile ? MOBILE_WHEEL : DESKTOP_WHEEL;
+
+  const getFeedback = (): WheelFeedback => {
+    if (!feedbackRef.current) feedbackRef.current = createWheelFeedback();
+    return feedbackRef.current;
+  };
 
   const gyms = useMemo(() => {
     return [...climbingGyms].sort((a, b) => {
@@ -111,11 +160,12 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
 
   const focusGym = (
     gym: ClimbingGym,
-    options: { fullSpin?: boolean; durationMs?: number } = {},
+    options: { fullSpin?: boolean; durationMs?: number; preview?: boolean } = {},
   ) => {
     if (frameRef.current) cancelAnimationFrame(frameRef.current);
 
     const fullSpin = options.fullSpin ?? false;
+    const preview = options.preview ?? false;
     const durationMs = options.durationMs ?? (fullSpin ? TOTAL_SPIN_MS : 0);
     const targetAngle = centerAngleForGym(gyms, gym.id);
     const currentAngle = spinAngleRef.current;
@@ -139,7 +189,11 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
 
     const startTime = performance.now();
     setSpinning(fullSpin);
-    setHoveredGym(null);
+    if (!preview) setHoveredGym(null);
+
+    const feedback = getFeedback();
+    let lastTickGymId =
+      gymAtAngle(gyms, spinAngleRef.current)?.id ?? null;
 
     const animate = (now: number) => {
       const progress = Math.min((now - startTime) / durationMs, 1);
@@ -147,7 +201,13 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
       const angle = startAngle + (animatedAngle - startAngle) * eased;
       spinAngleRef.current = angle;
       setSpinAngle(angle);
-      setHoveredGym(gymAtAngle(gyms, angle));
+      const currentGym = gymAtAngle(gyms, angle);
+      setHoveredGym(currentGym);
+
+      if (currentGym && currentGym.id !== lastTickGymId) {
+        lastTickGymId = currentGym.id;
+        feedback.tick();
+      }
 
       if (progress < 1) {
         frameRef.current = requestAnimationFrame(animate);
@@ -157,8 +217,19 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
       const finalGym = gymAtAngle(gyms, targetAngle) ?? gym;
       spinAngleRef.current = targetAngle;
       setSpinAngle(targetAngle);
-      setSelectedGym(finalGym);
-      setHoveredGym(null);
+      if (preview) {
+        setHoveredGym(finalGym);
+      } else {
+        setSelectedGym(finalGym);
+        setHoveredGym(null);
+        feedback.lock();
+        if (isMobile) {
+          previewSectionRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
       setSpinning(false);
       frameRef.current = null;
     };
@@ -188,12 +259,13 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
   };
 
   return (
-    <div className="grid min-h-dvh grid-rows-[340px_auto] bg-bg text-fg lg:h-full lg:min-h-0 lg:grid-cols-[390px_minmax(0,1fr)] lg:grid-rows-1">
+    <div className="grid min-h-dvh grid-rows-[460px_auto] bg-bg text-fg lg:h-full lg:min-h-0 lg:grid-cols-[390px_minmax(0,1fr)] lg:grid-rows-1">
       <ClimbingWheel
         gyms={gyms}
         activeId={previewGym?.id ?? null}
         spinAngle={spinAngle}
         spinning={spinning}
+        geom={wheelGeom}
         onSpin={spin}
         onGymClick={(gym) => {
           if (!spinning) focusGym(gym, { durationMs: WHEEL_SPIN_MS });
@@ -209,10 +281,8 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
           }
           const gym = gyms[index];
           if (!gym) return;
-          const nextAngle = centerAngleForGym(gyms, gym.id);
-          spinAngleRef.current = nextAngle;
-          setSpinAngle(nextAngle);
-          setHoveredGym(gym);
+          if (previewGym?.id === gym.id) return;
+          focusGym(gym, { durationMs: HOVER_SPIN_MS, preview: true });
         }}
         onWheelSpin={wheelSpin}
         fairPoolIds={fairPoolIds}
@@ -228,7 +298,7 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
 
       <section className="min-h-0 lg:grid lg:grid-rows-[minmax(0,1fr)_auto]">
         <div className="grid min-h-0 border-b border-hairline bg-[#f7f7f3] lg:grid-rows-[minmax(0,1fr)_minmax(300px,42%)] xl:grid-cols-[minmax(0,1fr)_420px] xl:grid-rows-1">
-          <div className="grid min-h-[390px] grid-rows-[40px_minmax(0,1fr)] border-b border-hairline xl:min-h-0 xl:border-b-0 xl:border-r">
+          <div className="order-2 grid min-h-[390px] grid-rows-[40px_minmax(0,1fr)] border-b border-hairline lg:order-none xl:min-h-0 xl:border-b-0 xl:border-r">
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
               <div className="font-mono text-[11px] uppercase tracking-[0.24em]">Map</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
@@ -252,7 +322,10 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
             </div>
           </div>
 
-          <div className="grid min-h-[320px] grid-rows-[40px_minmax(0,1fr)] lg:min-h-0">
+          <div
+            ref={previewSectionRef}
+            className="order-1 grid min-h-[320px] grid-rows-[40px_minmax(0,1fr)] border-b border-hairline lg:order-none lg:min-h-0 lg:border-b-0"
+          >
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
               <div className="font-mono text-[11px] uppercase tracking-[0.24em]">Gym</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
@@ -275,6 +348,7 @@ function ClimbingWheel({
   activeId,
   spinAngle,
   spinning,
+  geom,
   onSpin,
   onGymClick,
   onGymHover,
@@ -287,6 +361,7 @@ function ClimbingWheel({
   activeId: string | null;
   spinAngle: number;
   spinning: boolean;
+  geom: WheelGeom;
   onSpin: () => void;
   onGymClick: (gym: ClimbingGym) => void;
   onGymHover: (gym: ClimbingGym | null) => void;
@@ -299,11 +374,45 @@ function ClimbingWheel({
     ? Math.max(0, gyms.findIndex((gym) => gym.id === activeId))
     : centerIndex(gyms);
 
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const THRESHOLD = 30;
+    const IDLE_RESET_MS = 180;
+    let accum = 0;
+    let resetTimer: number | null = null;
+
+    const handler = (event: WheelEvent) => {
+      if (spinning) return;
+      event.preventDefault();
+      accum += event.deltaY;
+
+      if (resetTimer !== null) window.clearTimeout(resetTimer);
+      resetTimer = window.setTimeout(() => {
+        accum = 0;
+        resetTimer = null;
+      }, IDLE_RESET_MS);
+
+      while (Math.abs(accum) >= THRESHOLD) {
+        const direction = accum > 0 ? 1 : -1;
+        accum -= direction * THRESHOLD;
+        onWheelSpin(direction);
+      }
+    };
+    svg.addEventListener("wheel", handler, { passive: false });
+    return () => {
+      svg.removeEventListener("wheel", handler);
+      if (resetTimer !== null) window.clearTimeout(resetTimer);
+    };
+  }, [spinning, onWheelSpin]);
+
   const handleWheelPointer = (clientY: number, currentTarget: SVGSVGElement) => {
     if (spinning) return;
     const rect = currentTarget.getBoundingClientRect();
-    const svgY = ((clientY - rect.top) / rect.height) * WHEEL_H;
-    const offset = Math.round((svgY - CENTER_Y) / POINTER_ROW_H);
+    const svgY = ((clientY - rect.top) / rect.height) * geom.height;
+    const offset = Math.round((svgY - geom.centerY) / geom.pointerRowH);
     const index = clamp(activeIndex + offset, 0, gyms.length - 1);
     onGymHoverIndex(index);
   };
@@ -328,7 +437,8 @@ function ClimbingWheel({
 
       <div className="relative min-h-0 overflow-hidden">
         <svg
-          viewBox={`0 0 ${WHEEL_W} ${WHEEL_H}`}
+          ref={svgRef}
+          viewBox={`0 0 ${geom.width} ${geom.height}`}
           width="100%"
           height="100%"
           preserveAspectRatio="xMidYMid slice"
@@ -336,10 +446,6 @@ function ClimbingWheel({
           role="listbox"
           aria-label="北京攀岩馆轮盘"
           onMouseMove={(event) => handleWheelPointer(event.clientY, event.currentTarget)}
-          onWheel={(event) => {
-            event.preventDefault();
-            if (!spinning) onWheelSpin(event.deltaY);
-          }}
           onMouseLeave={() => {
             if (!spinning) {
               onGymHover(null);
@@ -347,20 +453,20 @@ function ClimbingWheel({
             }
           }}
         >
-          <line x1={0} x2={WHEEL_W} y1={CENTER_Y} y2={CENTER_Y} vectorEffect="non-scaling-stroke" style={{ stroke: "var(--color-fg)", strokeOpacity: 0.12 }} />
-          <circle cx={0} cy={CENTER_Y} r={9} style={{ fill: "var(--color-accent)" }} />
+          <line x1={0} x2={geom.width} y1={geom.centerY} y2={geom.centerY} vectorEffect="non-scaling-stroke" style={{ stroke: "var(--color-fg)", strokeOpacity: 0.12 }} />
+          <circle cx={0} cy={geom.centerY} r={9} style={{ fill: "var(--color-accent)" }} />
 
-          <g transform={`rotate(${spinAngle} ${CENTER_X} ${CENTER_Y})`}>
+          <g transform={`rotate(${spinAngle} ${geom.centerX} ${geom.centerY})`}>
             {gyms.map((gym, index) => {
               const baseAngle = (index - centerIndex(gyms)) * (360 / gyms.length);
               const active = gym.id === activeId;
               const width = labelWidth(gym.name);
-              const x = CENTER_X + Math.cos(toRad(baseAngle)) * RADIUS;
-              const y = CENTER_Y + Math.sin(toRad(baseAngle)) * RADIUS;
+              const x = geom.centerX + Math.cos(toRad(baseAngle)) * geom.radius;
+              const y = geom.centerY + Math.sin(toRad(baseAngle)) * geom.radius;
               const indexDistance = Math.abs(index - activeIndex);
-              const visible = indexDistance <= VISIBLE_ITEM_COUNT;
+              const visible = indexDistance <= geom.visibleItemCount;
               const inPool = fairPoolIds.has(gym.id);
-              const baseOpacity = active ? 1 : visible ? Math.max(0.08, 1 - indexDistance / (VISIBLE_ITEM_COUNT + 1)) : 0;
+              const baseOpacity = active ? 1 : visible ? Math.max(0.08, 1 - indexDistance / (geom.visibleItemCount + 1)) : 0;
               const opacity = inPool ? baseOpacity : baseOpacity * 0.28;
 
               return (
@@ -383,9 +489,9 @@ function ClimbingWheel({
                 >
                   <rect
                     x={-width / 2}
-                    y={-ITEM_H / 2}
+                    y={-geom.itemH / 2}
                     width={width}
-                    height={ITEM_H}
+                    height={geom.itemH}
                     rx={3}
                     style={{
                       fill: active ? "var(--color-bg)" : "var(--color-fg)",
