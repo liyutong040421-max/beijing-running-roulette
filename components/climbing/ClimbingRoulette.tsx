@@ -8,6 +8,7 @@ import { geometryToPath, makeProjection, type Bounds } from "@/lib/projection";
 import { haversineKm } from "@/lib/geo";
 import { pickFirstPhoto, type PhotoManifest } from "@/lib/climbing-photos";
 import { createWheelFeedback, type WheelFeedback } from "@/lib/wheel-feedback";
+import { getGymSubway, subwayLabel, type SubwayInfo } from "@/lib/climbing-subway";
 import { RefuelPanel } from "./RefuelPanel";
 import { PartyPanel, type Participant } from "./PartyPanel";
 
@@ -130,19 +131,23 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
   // worst-case commute (max km from any participant), keep gyms within 6km of
   // the best worst-case. Adapts to participant spread (close-by friends → tight
   // pool; spread out friends → looser pool). Always keeps at least 5 so SPIN
-  // is meaningful even when friends are scattered across town.
+  // is meaningful even when friends are scattered across town. Subway-friendly
+  // gyms get a bonus (effectively closer) since they reduce real commute pain
+  // even when air-distance is similar.
   const fairPool = useMemo<ClimbingGym[]>(() => {
     if (participants.length === 0) return gyms;
     const scored = gyms.map((g) => {
       const worst = Math.max(
         ...participants.map((p) => haversineKm(p, { lng: g.lng, lat: g.lat })),
       );
-      return { gym: g, worst };
+      const subway = getGymSubway(g.id);
+      const bonus = subwayBonusKm(subway);
+      return { gym: g, score: Math.max(0, worst - bonus) };
     });
-    scored.sort((a, b) => a.worst - b.worst);
-    const minWorst = scored[0]?.worst ?? 0;
-    const cutoff = minWorst + 6;
-    let pool = scored.filter((s) => s.worst <= cutoff);
+    scored.sort((a, b) => a.score - b.score);
+    const minScore = scored[0]?.score ?? 0;
+    const cutoff = minScore + 6;
+    let pool = scored.filter((s) => s.score <= cutoff);
     if (pool.length < 5) pool = scored.slice(0, Math.min(5, scored.length));
     return pool.map((s) => s.gym);
   }, [gyms, participants]);
@@ -151,6 +156,36 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
     () => new Set(fairPool.map((g) => g.id)),
     [fairPool],
   );
+
+  // In single-person mode, ask Amap for the actual transit time to the
+  // committed gym. Skipped when 0 or 2+ participants (multi mode shows fairness
+  // stats instead). Cached at the API layer so re-clicking is free.
+  const soloParticipant = participants.length === 1 ? participants[0] : null;
+  const [transitInfo, setTransitInfo] = useState<{
+    duration_min: number;
+    walking_m: number;
+  } | null>(null);
+  useEffect(() => {
+    if (!selectedGym || !soloParticipant) {
+      setTransitInfo(null);
+      return;
+    }
+    const ac = new AbortController();
+    const params = new URLSearchParams({
+      origin: `${soloParticipant.lng.toFixed(6)},${soloParticipant.lat.toFixed(6)}`,
+      destination: `${selectedGym.lng.toFixed(6)},${selectedGym.lat.toFixed(6)}`,
+    });
+    fetch(`/api/amap/transit?${params}`, { signal: ac.signal })
+      .then((r) => r.json() as Promise<{ plan?: { duration_min: number; walking_m: number } | null }>)
+      .then((data) => {
+        if (data.plan) setTransitInfo(data.plan);
+        else setTransitInfo(null);
+      })
+      .catch(() => {
+        // network error or no transit plan — silently drop, UI hides the row
+      });
+    return () => ac.abort();
+  }, [selectedGym, soloParticipant]);
 
   useEffect(() => {
     return () => {
@@ -332,7 +367,13 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
                 preview
               </div>
             </div>
-            <GymPreview gym={previewGym} participants={participants} photoManifest={photoManifest} />
+            <GymPreview
+              gym={previewGym}
+              participants={participants}
+              photoManifest={photoManifest}
+              transitInfo={previewGym && previewGym.id === selectedGym?.id ? transitInfo : null}
+              transitFromLabel={soloParticipant?.label ?? null}
+            />
           </div>
         </div>
         <div className="lg:max-h-[260px] lg:overflow-y-auto">
@@ -838,7 +879,19 @@ function LegendDot({ color, label }: { color: string; label: string }) {
   );
 }
 
-function GymPreview({ gym, participants, photoManifest }: { gym: ClimbingGym | null; participants: Participant[]; photoManifest: PhotoManifest }) {
+function GymPreview({
+  gym,
+  participants,
+  photoManifest,
+  transitInfo,
+  transitFromLabel,
+}: {
+  gym: ClimbingGym | null;
+  participants: Participant[];
+  photoManifest: PhotoManifest;
+  transitInfo: { duration_min: number; walking_m: number } | null;
+  transitFromLabel: string | null;
+}) {
   if (!gym) {
     return (
       <div className="grid h-full min-h-[260px] place-items-center bg-bg px-6 text-center">
@@ -857,6 +910,11 @@ function GymPreview({ gym, participants, photoManifest }: { gym: ClimbingGym | n
 
   const photo = pickFirstPhoto(gym.id, gym.photos, photoManifest);
   const shareUrl = buildShareUrl(gym.id, participants);
+  const subway = getGymSubway(gym.id);
+  const subwayText = subwayLabel(subway);
+  const transitText = transitInfo && transitFromLabel
+    ? `🚆 ${transitFromLabel} → ${transitInfo.duration_min}min（步行 ${transitInfo.walking_m}m）`
+    : null;
 
   return (
     <div className="grid h-full min-h-[260px] grid-rows-[minmax(0,1fr)_auto] bg-[#f7f7f3]">
@@ -877,6 +935,12 @@ function GymPreview({ gym, participants, photoManifest }: { gym: ClimbingGym | n
             <div className="font-mono text-[10px] uppercase tracking-[0.24em] opacity-80">{gym.area}</div>
             <h2 className="mt-1.5 text-2xl font-bold leading-tight tracking-tight">{gym.name}</h2>
             <p className="mt-1.5 text-xs leading-5 opacity-85 line-clamp-2">{gym.address}</p>
+            {(subwayText || transitText) ? (
+              <div className="mt-2 flex flex-col gap-0.5 text-[11px] opacity-90">
+                {subwayText ? <div>{subwayText}</div> : null}
+                {transitText ? <div>{transitText}</div> : null}
+              </div>
+            ) : null}
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
               <a
                 href={gym.amap_url}
@@ -930,6 +994,8 @@ function GymPreview({ gym, participants, photoManifest }: { gym: ClimbingGym | n
               </div>
             </div>
             <div className="grid gap-3 text-sm">
+              {subwayText ? <Fact label="subway" value={subwayText} /> : null}
+              {transitText ? <Fact label="transit" value={transitText} /> : null}
               {gym.audience ? <Fact label="vibe" value={gym.audience} /> : null}
               {gym.after ? <Fact label="after" value={gym.after} /> : null}
               {gym.notes ? <Fact label="status" value={compactNote(gym.notes)} /> : null}
@@ -985,6 +1051,17 @@ function gymColor(gym: ClimbingGym): string {
   if (gym.type.includes("抱石")) return "#ea580c";
   if (gym.type.includes("难度")) return "#16a34a";
   return "#0a0a0a";
+}
+
+// Effective km to subtract from a gym's worst-case commute when ranking the
+// fair pool. Subway-friendly gyms feel meaningfully closer than air distance
+// suggests; very far stations don't help at all.
+function subwayBonusKm(info: SubwayInfo | null): number {
+  if (!info) return 0;
+  if (info.walk_m < 300) return 1.5;
+  if (info.walk_m < 600) return 0.8;
+  if (info.walk_m < 1000) return 0.3;
+  return 0;
 }
 
 function centerAngleForGym(gyms: ClimbingGym[], gymId: string): number {

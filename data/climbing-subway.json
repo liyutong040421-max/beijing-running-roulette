@@ -1,0 +1,351 @@
+{
+  "quye-tengxun": {
+    "walk_m": 143,
+    "station": "文华路",
+    "exit": "C口",
+    "lines": [
+      "18号线"
+    ]
+  },
+  "yanshi-huilongguan": {
+    "walk_m": 433,
+    "station": "文华路",
+    "exit": "D口",
+    "lines": [
+      "18号线"
+    ]
+  },
+  "beiding-aosen": {
+    "walk_m": 651,
+    "station": "奥林匹克公园",
+    "exit": "E西南口",
+    "lines": [
+      "8号线"
+    ]
+  },
+  "haoshi-jiulong": {
+    "walk_m": 188,
+    "station": "将台",
+    "exit": "C东南口",
+    "lines": [
+      "14号线"
+    ]
+  },
+  "jihe": {
+    "walk_m": 386,
+    "station": "奥林匹克公园",
+    "exit": "H西南口",
+    "lines": [
+      "15号线"
+    ]
+  },
+  "ritan": {
+    "walk_m": 666,
+    "station": "东大桥",
+    "exit": "G口",
+    "lines": [
+      "17号线"
+    ]
+  },
+  "qingteng": {
+    "walk_m": 63,
+    "station": "关庄",
+    "exit": "A西北口",
+    "lines": [
+      "15号线"
+    ]
+  },
+  "wopan": {
+    "walk_m": 1104,
+    "station": "百子湾",
+    "exit": "B东北口",
+    "lines": [
+      "7号线"
+    ]
+  },
+  "yanshi-dawanglu": {
+    "walk_m": 455,
+    "station": "平乐园",
+    "exit": "C东南口",
+    "lines": [
+      "14号线"
+    ]
+  },
+  "zhongpan": {
+    "walk_m": 102,
+    "station": "石佛营",
+    "exit": "C2口",
+    "lines": [
+      "3号线"
+    ]
+  },
+  "bloc1": {
+    "walk_m": 409,
+    "station": "西坝河",
+    "exit": "C口",
+    "lines": [
+      "12号线"
+    ]
+  },
+  "camp4-sanlitun": {
+    "walk_m": 481,
+    "station": "呼家楼",
+    "exit": "E西北口",
+    "lines": [
+      "6号线"
+    ]
+  },
+  "cob": {
+    "walk_m": 242,
+    "station": "北土城",
+    "exit": "B东北口",
+    "lines": [
+      "10号线",
+      "8号线"
+    ]
+  },
+  "col": {
+    "walk_m": 1714,
+    "station": "红军营",
+    "exit": "D1口",
+    "lines": [
+      "17号线"
+    ]
+  },
+  "edge": {
+    "walk_m": 142,
+    "station": "三元桥",
+    "exit": "D西南口",
+    "lines": [
+      "10号线"
+    ]
+  },
+  "mellow": {
+    "walk_m": 219,
+    "station": "高家园",
+    "exit": "C口",
+    "lines": [
+      "12号线"
+    ]
+  },
+  "aopan-hongkun": {
+    "walk_m": 2230,
+    "station": "西红门",
+    "exit": "B1东入口",
+    "lines": [
+      "4号线/大兴线"
+    ]
+  },
+  "yiqi": {
+    "walk_m": 235,
+    "station": "崇文门",
+    "exit": "出入口",
+    "lines": [
+      "5号线"
+    ]
+  },
+  "aopan-yuquanlu": {
+    "walk_m": 335,
+    "station": "纪家庙",
+    "exit": "B东北口",
+    "lines": [
+      "10号线"
+    ]
+  },
+  "aopan-shijiegongyuan": {
+    "walk_m": 1170,
+    "station": "大葆台",
+    "exit": "D西南口",
+    "lines": []
+  },
+  "feimao": {
+    "walk_m": 593,
+    "station": "纪家庙",
+    "exit": "A西北口",
+    "lines": [
+      "10号线"
+    ]
+  },
+  "mowang": {
+    "walk_m": 485,
+    "station": "看丹",
+    "exit": "C东南口",
+    "lines": [
+      "16号线"
+    ]
+  },
+  "renren-lize": {
+    "walk_m": 587,
+    "station": "东管头",
+    "exit": "D口",
+    "lines": [
+      "14号线"
+    ]
+  },
+  "aopan-shangdi": {
+    "walk_m": 340,
+    "station": "上地",
+    "exit": "A西南口",
+    "lines": [
+      "13号线"
+    ]
+  },
+  "aopan-sijiqing": {
+    "walk_m": 206,
+    "station": "车道沟",
+    "exit": "B东北口",
+    "lines": [
+      "10号线"
+    ]
+  },
+  "aopan-wukesong": {
+    "walk_m": 780,
+    "station": "田村",
+    "exit": "B东北口",
+    "lines": [
+      "6号线"
+    ]
+  },
+  "qingshan-qinghe": {
+    "walk_m": 493,
+    "station": "朱房北",
+    "exit": "C口",
+    "lines": []
+  },
+  "xiangjiao-768": {
+    "walk_m": 374,
+    "station": "学知园",
+    "exit": "D口",
+    "lines": []
+  },
+  "xiangjiao-shangdi": {
+    "walk_m": 214,
+    "station": "西二旗",
+    "exit": "B1南出口",
+    "lines": [
+      "13号线"
+    ]
+  },
+  "wenshan": {
+    "walk_m": 291,
+    "station": "田村",
+    "exit": "D西南口",
+    "lines": [
+      "6号线"
+    ]
+  },
+  "yanshi-xisanqi": {
+    "walk_m": 381,
+    "station": "清河小营桥",
+    "exit": "B2口",
+    "lines": []
+  },
+  "cog-shougang": {
+    "walk_m": 798,
+    "station": "北辛安",
+    "exit": "A口",
+    "lines": [
+      "11号线"
+    ]
+  },
+  "yaoyan": {
+    "walk_m": 634,
+    "station": "沙河(",
+    "exit": ")",
+    "lines": []
+  },
+  "quye-longhu": {
+    "walk_m": 303,
+    "station": "北苑",
+    "exit": "A2口",
+    "lines": [
+      "13号线"
+    ]
+  },
+  "shougang-jixian": {
+    "walk_m": 238,
+    "station": "金安桥",
+    "exit": "H口",
+    "lines": [
+      "11号线"
+    ]
+  },
+  "aopan-jiaomen": {
+    "walk_m": 91,
+    "station": "角门东",
+    "exit": "C东南口",
+    "lines": [
+      "10号线"
+    ]
+  },
+  "aopan-wangfujing": {
+    "walk_m": 1616,
+    "station": "和义",
+    "exit": "B东北口",
+    "lines": [
+      "8号线"
+    ]
+  },
+  "dashou": {
+    "walk_m": 65,
+    "station": "通州北苑",
+    "exit": "出入口",
+    "lines": [
+      "1号线/八通线"
+    ]
+  },
+  "yanshi-guanzhuang": {
+    "walk_m": 73,
+    "station": "管庄",
+    "exit": "A1口",
+    "lines": [
+      "1号线/八通线"
+    ]
+  },
+  "wanyan": {
+    "walk_m": 27,
+    "station": "郭公庄",
+    "exit": "出入口",
+    "lines": [
+      "9号线"
+    ]
+  },
+  "qupanyan": {
+    "walk_m": 1930,
+    "station": "荣京东街",
+    "exit": "B2南口",
+    "lines": []
+  },
+  "xingyan": {
+    "walk_m": 118,
+    "station": "和平里北街",
+    "exit": "C东南口",
+    "lines": [
+      "5号线"
+    ]
+  },
+  "qingshan-weigongcun": {
+    "walk_m": 190,
+    "station": "魏公村",
+    "exit": "D西南口",
+    "lines": [
+      "4号线/大兴线"
+    ]
+  },
+  "camp4-jiangtai": {
+    "walk_m": 317,
+    "station": "将台",
+    "exit": "A西北口",
+    "lines": [
+      "14号线"
+    ]
+  },
+  "feimao-chaoyangmen": {
+    "walk_m": 412,
+    "station": "朝阳门",
+    "exit": "G东南口",
+    "lines": [
+      "6号线"
+    ]
+  }
+}

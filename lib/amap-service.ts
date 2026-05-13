@@ -58,6 +58,22 @@ type GeocodeResponse = AmapEnvelope<{
   }>;
 }>;
 
+type TransitResponse = AmapEnvelope<{
+  count?: string;
+  route?: {
+    origin?: string;
+    destination?: string;
+    distance?: string;
+    transits?: Array<{
+      duration?: string; // seconds
+      walking_distance?: string; // meters
+      cost?: string;
+      nightflag?: string;
+      segments?: unknown[];
+    }>;
+  };
+}>;
+
 const AMAP_REST_BASE = "https://restapi.amap.com/v3";
 const cache = new Map<string, { expiresAt: number; value: unknown }>();
 
@@ -125,6 +141,27 @@ export async function fetchGeocode(params: {
   });
   return cachedFetchAmap<GeocodeResponse>(
     `${AMAP_REST_BASE}/geocode/geo?${search.toString()}`,
+  );
+}
+
+export async function fetchTransitRoute(params: {
+  origin: string;
+  destination: string;
+  city?: string;
+  cityd?: string;
+}): Promise<TransitResponse> {
+  const search = new URLSearchParams({
+    key: getAmapWebServiceKey(),
+    origin: params.origin,
+    destination: params.destination,
+    city: params.city ?? "010",
+    cityd: params.cityd ?? params.city ?? "010",
+    strategy: "0", // fastest
+    nightflag: "0",
+    output: "json",
+  });
+  return cachedFetchAmap<TransitResponse>(
+    `${AMAP_REST_BASE}/direction/transit/integrated?${search.toString()}`,
   );
 }
 

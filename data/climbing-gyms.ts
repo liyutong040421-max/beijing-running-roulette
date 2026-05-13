@@ -645,5 +645,19 @@ export const climbingGyms: ClimbingGym[] = [
     "audience": "",
     "after": "",
     "notes": ""
+  },
+  {
+    "id": "feimao-chaoyangmen",
+    "name": "飞猫攀岩 (朝阳门店)",
+    "district": "东城",
+    "area": "朝阳门/银河SOHO",
+    "address": "北京市东城区南竹杆胡同2号银河SOHO商场C座F3层",
+    "amap_url": "https://www.amap.com/place/B0LBO76J7I",
+    "lng": 116.432709,
+    "lat": 39.920292,
+    "type": "抱石馆",
+    "audience": "",
+    "after": "朝阳门/银河SOHO",
+    "notes": "近2号线/6号线朝阳门站G口；高德精确坐标已确认"
   }
 ];
