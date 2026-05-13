@@ -97,6 +97,21 @@ const DISTRICT_ORDER = new Map<string, number>([
 type DistrictProps = { name?: string; adcode?: number };
 type GeoData = FeatureCollection<Geometry, DistrictProps>;
 
+type GymType = "boulder" | "lead";
+
+const TYPE_CHIPS: Array<{ key: GymType; label: string }> = [
+  { key: "boulder", label: "抱石" },
+  { key: "lead", label: "难度" },
+];
+
+// 抱石馆 = bouldering only; 难度馆 = lead only; 综合馆 has both. A gym matches
+// the active set if it offers at least one of the selected disciplines.
+function gymMatchesTypes(g: ClimbingGym, active: Set<GymType>): boolean {
+  const hasBoulder = g.type === "抱石馆" || g.type === "综合馆";
+  const hasLead = g.type === "难度馆" || g.type === "综合馆";
+  return (active.has("boulder") && hasBoulder) || (active.has("lead") && hasLead);
+}
+
 export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: PhotoManifest } = {}) {
   const [selectedGym, setSelectedGym] = useState<ClimbingGym | null>(null);
   const [hoveredGym, setHoveredGym] = useState<ClimbingGym | null>(null);
@@ -114,16 +129,43 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
     return feedbackRef.current;
   };
 
+  // 综合馆 = boulder + lead. Toggle a chip off to drop those gyms; the other
+  // chip stays selected so the wheel always has something to spin.
+  const [activeTypes, setActiveTypes] = useState<Set<GymType>>(
+    () => new Set<GymType>(["boulder", "lead"]),
+  );
+  const toggleType = (t: GymType) => {
+    setActiveTypes((prev) => {
+      const next = new Set(prev);
+      if (next.has(t)) {
+        if (next.size === 1) return prev; // never let user clear both
+        next.delete(t);
+      } else {
+        next.add(t);
+      }
+      return next;
+    });
+  };
+
   const gyms = useMemo(() => {
-    return [...climbingGyms].sort((a, b) => {
+    const filtered = climbingGyms.filter((g) => gymMatchesTypes(g, activeTypes));
+    return filtered.sort((a, b) => {
       const districtDelta = (DISTRICT_ORDER.get(a.district) ?? 99) - (DISTRICT_ORDER.get(b.district) ?? 99);
       if (districtDelta !== 0) return districtDelta;
       const areaDelta = a.area.localeCompare(b.area, "zh-CN");
       if (areaDelta !== 0) return areaDelta;
       return a.name.localeCompare(b.name, "zh-CN");
     });
-  }, []);
+  }, [activeTypes]);
   const previewGym = hoveredGym ?? selectedGym;
+
+  // If the user filters out the currently selected gym, drop the selection so
+  // we don't show stale preview / transit data for an off-pool gym.
+  const gymIds = useMemo(() => new Set(gyms.map((g) => g.id)), [gyms]);
+  useEffect(() => {
+    if (selectedGym && !gymIds.has(selectedGym.id)) setSelectedGym(null);
+    if (hoveredGym && !gymIds.has(hoveredGym.id)) setHoveredGym(null);
+  }, [gymIds, selectedGym, hoveredGym]);
 
   const [participants, setParticipants] = useState<Participant[]>([]);
 
@@ -321,6 +363,12 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
         }}
         onWheelSpin={wheelSpin}
         fairPoolIds={fairPoolIds}
+        typeChipsProps={{
+          active: activeTypes,
+          onToggle: toggleType,
+          shownCount: gyms.length,
+          totalCount: climbingGyms.length,
+        }}
         partyProps={{
           participants,
           poolCount: fairPool.length,
@@ -396,6 +444,7 @@ function ClimbingWheel({
   onGymHoverIndex,
   onWheelSpin,
   fairPoolIds,
+  typeChipsProps,
   partyProps,
 }: {
   gyms: ClimbingGym[];
@@ -409,6 +458,7 @@ function ClimbingWheel({
   onGymHoverIndex: (index: number | null) => void;
   onWheelSpin: (deltaY: number) => void;
   fairPoolIds: Set<string>;
+  typeChipsProps: TypeChipsProps;
   partyProps: React.ComponentProps<typeof PartyPanel>;
 }) {
   const activeIndex = activeId
@@ -459,7 +509,7 @@ function ClimbingWheel({
   };
 
   return (
-    <aside className="grid min-h-[310px] grid-rows-[48px_auto_minmax(0,1fr)] overflow-hidden border-b border-hairline bg-bg lg:min-h-0 lg:border-b-0 lg:border-r">
+    <aside className="grid min-h-[310px] grid-rows-[48px_auto_auto_minmax(0,1fr)] overflow-hidden border-b border-hairline bg-bg lg:min-h-0 lg:border-b-0 lg:border-r">
       <div className="z-20 flex h-12 items-center justify-between border-b border-hairline px-5 lg:px-6">
         <div className="font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-fg">
           Gyms
@@ -473,6 +523,8 @@ function ClimbingWheel({
           {spinning ? "..." : "SPIN"}
         </button>
       </div>
+
+      <TypeChips {...typeChipsProps} />
 
       <PartyPanel {...partyProps} />
 
@@ -876,6 +928,48 @@ function LegendDot({ color, label }: { color: string; label: string }) {
       />
       {label}
     </span>
+  );
+}
+
+type TypeChipsProps = {
+  active: Set<GymType>;
+  onToggle: (t: GymType) => void;
+  shownCount: number;
+  totalCount: number;
+};
+
+function TypeChips({ active, onToggle, shownCount, totalCount }: TypeChipsProps) {
+  return (
+    <div className="flex items-center justify-between gap-3 border-b border-hairline bg-bg/95 px-5 py-2 lg:px-6">
+      <div className="flex items-center gap-1.5">
+        {TYPE_CHIPS.map((chip) => {
+          const on = active.has(chip.key);
+          const onlyOne = on && active.size === 1;
+          return (
+            <button
+              key={chip.key}
+              type="button"
+              onClick={() => onToggle(chip.key)}
+              aria-pressed={on}
+              disabled={onlyOne}
+              title={onlyOne ? "至少要选一种类型" : on ? "点击取消" : "点击加入"}
+              className={
+                "border px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors " +
+                (on
+                  ? "border-fg bg-fg text-bg"
+                  : "border-hairline bg-bg text-muted hover:border-fg hover:text-fg") +
+                (onlyOne ? " cursor-not-allowed opacity-90" : "")
+              }
+            >
+              {chip.label}
+            </button>
+          );
+        })}
+      </div>
+      <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+        {shownCount === totalCount ? `${totalCount} 馆` : `${shownCount}/${totalCount} 馆`}
+      </div>
+    </div>
   );
 }
 
