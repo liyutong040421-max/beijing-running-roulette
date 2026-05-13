@@ -174,6 +174,20 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
 
   const [participants, setParticipants] = useState<Participant[]>([]);
 
+  // One-shot: hydrate from a shared link's ?gym=&p= on first mount. Empty deps
+  // — we don't want re-hydration if the URL changes later (e.g. SPIN'ing
+  // doesn't update the URL, but if it ever does, this prevents a clobber).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const { gymId, participants: shared } = parseShareParams(window.location.search);
+    if (gymId) {
+      const gym = climbingGyms.find((g) => g.id === gymId);
+      if (gym) setSelectedGym(gym);
+    }
+    if (shared.length > 0) setParticipants(shared);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Pool of gyms to spin from when in multi-person mode. Heuristic: rank by
   // worst-case commute (max km from any participant), keep gyms within 6km of
   // the best worst-case. Adapts to participant spread (close-by friends → tight
@@ -1219,7 +1233,7 @@ function GymPreview({
   }
 
   const photo = pickFirstPhoto(gym.id, gym.photos, photoManifest);
-  const shareUrl = buildShareUrl(gym.id, participants);
+  const sharePageUrl = buildSharePageUrl(gym.id, participants);
   const subway = getGymSubway(gym.id);
   const subwayText = subwayLabel(subway);
   const transitText = transitInfo && transitFromLabel
@@ -1262,7 +1276,7 @@ function GymPreview({
                 <span className="underline decoration-white/30 decoration-1 underline-offset-4 group-hover:decoration-white">高德搜岩馆</span>
               </a>
               <a
-                href={shareUrl}
+                href={sharePageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-1.5 text-xs text-white/90 transition-colors hover:text-white"
@@ -1293,7 +1307,7 @@ function GymPreview({
                   <span className="underline decoration-hairline decoration-1 underline-offset-4 group-hover:decoration-accent">高德搜岩馆</span>
                 </a>
                 <a
-                  href={shareUrl}
+                  href={sharePageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 text-sm text-fg transition-colors hover:text-accent"
@@ -1327,7 +1341,12 @@ function compactNote(value: string): string {
   return normalized.length > 42 ? `${normalized.slice(0, 42)}...` : normalized;
 }
 
-function buildShareUrl(gymId: string, participants: Participant[]): string {
+function buildSharePageUrl(gymId: string, participants: Participant[]): string {
+  const params = encodeShareParams(gymId, participants);
+  return `/climbing?${params.toString()}`;
+}
+
+function encodeShareParams(gymId: string, participants: Participant[]): URLSearchParams {
   const params = new URLSearchParams();
   params.set("gym", gymId);
   for (const p of participants) {
@@ -1336,7 +1355,40 @@ function buildShareUrl(gymId: string, participants: Participant[]): string {
       `${encodeURIComponent(p.label)}:${p.lng.toFixed(5)}:${p.lat.toFixed(5)}`,
     );
   }
-  return `/api/share-card?${params.toString()}`;
+  return params;
+}
+
+// Receiver side: parses ?gym=&p= from a share-link URL into the same shapes
+// that ClimbingRoulette's state holds. Returns null/empty for missing or
+// malformed values so callers can no-op silently.
+export function parseShareParams(search: string): {
+  gymId: string | null;
+  participants: Participant[];
+} {
+  const params = new URLSearchParams(search);
+  const gymId = params.get("gym");
+  const participants: Participant[] = [];
+  for (const raw of params.getAll("p")) {
+    const [labelEnc, lngS, latS] = raw.split(":");
+    const lng = Number(lngS);
+    const lat = Number(latS);
+    if (!labelEnc || !Number.isFinite(lng) || !Number.isFinite(lat)) continue;
+    let label: string;
+    try {
+      label = decodeURIComponent(labelEnc);
+    } catch {
+      label = labelEnc;
+    }
+    participants.push({
+      id: `share-${participants.length}-${labelEnc}`,
+      label,
+      lng,
+      lat,
+      origin: "shared-link",
+    });
+    if (participants.length >= 4) break;
+  }
+  return { gymId, participants };
 }
 
 function Fact({ label, value }: { label: string; value: string }) {
