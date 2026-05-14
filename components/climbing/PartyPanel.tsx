@@ -106,7 +106,7 @@ export function PartyPanel({
           多人模式 · {participants.length}/4
         </div>
         <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-          {participants.length > 0 ? `公平池 ${poolCount}/${totalCount}` : `pool ${totalCount}`}
+          {participants.length > 0 ? `公平池 ${poolCount}/${totalCount}` : `共 ${totalCount} 馆`}
         </div>
       </div>
 
@@ -132,7 +132,7 @@ export function PartyPanel({
                 onClick={onClear}
                 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted underline decoration-hairline decoration-1 underline-offset-4 hover:text-accent hover:decoration-accent"
               >
-                clear
+                清空
               </button>
             </li>
           ) : null}

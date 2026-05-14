@@ -402,9 +402,9 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
         <div className="grid min-h-0 border-b border-hairline bg-[#f7f7f3] lg:grid-rows-[minmax(0,1fr)_minmax(300px,42%)] xl:grid-cols-[minmax(0,1fr)_420px] xl:grid-rows-1">
           <div className="order-2 grid min-h-[390px] grid-rows-[40px_minmax(0,1fr)] border-b border-hairline lg:order-none xl:min-h-0 xl:border-b-0 xl:border-r">
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.24em]">Map</div>
+              <div className="font-mono text-[11px] uppercase tracking-[0.24em]">地图</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                visual gym positions
+                岩馆位置
               </div>
             </div>
             <div className="relative min-h-0 overflow-hidden">
@@ -429,10 +429,7 @@ export function ClimbingRoulette({ photoManifest = {} }: { photoManifest?: Photo
             className="order-1 grid min-h-[320px] grid-rows-[40px_minmax(0,1fr)] border-b border-hairline lg:order-none lg:min-h-0 lg:border-b-0"
           >
             <div className="flex items-center justify-between border-b border-hairline bg-bg px-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.24em]">Gym</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                preview
-              </div>
+              <div className="font-mono text-[11px] uppercase tracking-[0.24em]">岩馆</div>
             </div>
             <GymPreview
               gym={previewGym}
@@ -531,7 +528,7 @@ function ClimbingWheel({
     <aside className="grid min-h-[310px] grid-rows-[48px_auto_auto_minmax(0,1fr)] overflow-hidden border-b border-hairline bg-bg lg:min-h-0 lg:border-b-0 lg:border-r">
       <div className="z-20 flex h-12 items-center justify-between border-b border-hairline px-5 lg:px-6">
         <div className="font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-fg">
-          Gyms
+          岩馆
         </div>
         <button
           type="button"
@@ -1334,11 +1331,11 @@ function GymPreview({
               </div>
             </div>
             <div className="grid gap-3 text-sm">
-              {subwayText ? <Fact label="subway" value={subwayText} /> : null}
-              {transitText ? <Fact label="transit" value={transitText} /> : null}
-              {gym.audience ? <Fact label="vibe" value={gym.audience} /> : null}
-              {gym.after ? <Fact label="after" value={gym.after} /> : null}
-              {gym.notes ? <Fact label="status" value={compactNote(gym.notes)} /> : null}
+              {subwayText ? <Fact label="地铁" value={subwayText} /> : null}
+              {transitText ? <Fact label="通勤" value={transitText} /> : null}
+              {gym.audience ? <Fact label="氛围" value={gym.audience} /> : null}
+              {gym.after ? <Fact label="爬完顺路" value={gym.after} /> : null}
+              {gym.notes ? <Fact label="备注" value={compactNote(gym.notes)} /> : null}
             </div>
           </div>
         </div>
