@@ -539,7 +539,7 @@ function ClimbingWheel({
           disabled={spinning}
           className="bg-fg px-4 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.16em] text-bg transition-opacity hover:opacity-80 active:opacity-60 disabled:cursor-not-allowed disabled:opacity-35"
         >
-          {spinning ? "..." : "SPIN"}
+          {spinning ? "..." : "随机摇一家"}
         </button>
       </div>
 
@@ -1221,9 +1221,7 @@ function GymPreview({
       <div className="grid h-full min-h-[260px] place-items-center bg-bg px-6 text-center">
         <div className="max-w-72">
           <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">今晚去哪爬</div>
-          <p className="mt-3 text-sm leading-6 text-fg">
-            按 <span className="font-mono font-bold">SPIN</span> 随机摇一家。
-          </p>
+          <p className="mt-3 text-sm leading-6 text-fg">随机摇一家。</p>
           <p className="mt-2 text-xs leading-5 text-muted">
             和朋友一起？左边「多人模式」加几个位置，从对所有人通勤都不亏的子集里抽。
           </p>

@@ -215,7 +215,7 @@ export default async function GymPage({
             href="/climbing"
             className="mt-4 inline-block bg-bg px-5 py-2 font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-fg transition-opacity hover:opacity-80 lg:mt-0"
           >
-            SPIN →
+            随机摇一家 →
           </Link>
         </section>
       </article>
