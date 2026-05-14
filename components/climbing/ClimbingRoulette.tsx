@@ -596,35 +596,33 @@ function ClimbingWheel({
                     pointerEvents: visible ? "auto" : "none",
                   }}
                 >
-                  {/* Slip top + bottom hairlines (the "签" frame). Active gets a
-                      vermillion treatment, inactive a faint ink rule. No fill,
-                      no rounded corners — read as a paper-strip silhouette. */}
-                  <line
-                    x1={-width / 2}
-                    x2={width / 2}
-                    y1={-geom.itemH / 2 + 3}
-                    y2={-geom.itemH / 2 + 3}
-                    stroke={active ? "#b22222" : "var(--color-fg)"}
-                    strokeOpacity={active ? 0.85 : 0.18}
-                    strokeWidth={active ? 1.4 : 0.7}
+                  <rect
+                    x={-width / 2}
+                    y={-geom.itemH / 2}
+                    width={width}
+                    height={geom.itemH}
+                    rx={3}
+                    style={{
+                      fill: active ? "var(--color-bg)" : "var(--color-fg)",
+                      fillOpacity: active ? 1 : 0.1,
+                      stroke: active ? "var(--color-fg)" : "transparent",
+                      strokeWidth: active ? 1 : 0,
+                    }}
                   />
-                  <line
-                    x1={-width / 2}
-                    x2={width / 2}
-                    y1={geom.itemH / 2 - 3}
-                    y2={geom.itemH / 2 - 3}
-                    stroke={active ? "#b22222" : "var(--color-fg)"}
-                    strokeOpacity={active ? 0.85 : 0.18}
-                    strokeWidth={active ? 1.4 : 0.7}
+                  <circle
+                    cx={-width / 2 + 10}
+                    cy={0}
+                    r={3}
+                    fill={gymColor(gym)}
                   />
                   <text
-                    x={0}
+                    x={6}
                     y={1}
                     textAnchor="middle"
                     dominantBaseline="middle"
+                    className="font-medium"
                     fontSize={11.5}
-                    fontWeight={active ? 700 : 500}
-                    style={{ fill: active ? "#b22222" : "var(--color-fg)" }}
+                    style={{ fill: active ? "var(--color-accent)" : "var(--color-fg)" }}
                   >
                     {gym.name}
                   </text>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ClimbingRoulette } from "@/components/climbing/ClimbingRoulette";
 import { loadPhotoManifest } from "@/lib/climbing-photos-server";
 import { climbingGyms } from "@/data/climbing-gyms";
-import { getSiteUrl } from "@/lib/site-url";
 
 const DEFAULT_TITLE = "岩签 · 今晚去哪爬？";
 const DEFAULT_DESC =
@@ -19,46 +18,26 @@ export async function generateMetadata({
   const gymId = typeof sp.gym === "string" ? sp.gym : undefined;
   const gym = gymId ? climbingGyms.find((g) => g.id === gymId) : undefined;
 
-  // When the URL is a share link (?gym=…&p=…), point Open Graph at the
-  // matching share-card image so WeChat / iMessage / Twitter previews show the
-  // magazine cover instead of nothing. Absolute URL — most platforms refuse
-  // relative paths.
-  let ogImageUrl: string | undefined;
-  if (gymId) {
-    const ogParams = new URLSearchParams();
-    ogParams.set("gym", gymId);
-    const pVals = sp.p;
-    const pList = Array.isArray(pVals) ? pVals : pVals ? [pVals] : [];
-    for (const p of pList.slice(0, 4)) ogParams.append("p", p);
-    ogImageUrl = `${getSiteUrl()}/api/share-card?${ogParams.toString()}`;
-  }
-
-  const title = gym
-    ? `${gym.name} · 岩签`
-    : DEFAULT_TITLE;
+  const title = gym ? `${gym.name} · 岩签` : DEFAULT_TITLE;
   const description = gym
     ? `${gym.district} · ${gym.area} · ${gym.type}。今晚就这家。`
     : DEFAULT_DESC;
 
-  const openGraph: Metadata["openGraph"] = {
+  return {
     title,
     description,
-    type: "website",
-    locale: "zh_CN",
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "zh_CN",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   };
-  const twitter: Metadata["twitter"] = {
-    card: "summary_large_image",
-    title,
-    description,
-  };
-  if (ogImageUrl) {
-    openGraph.images = [
-      { url: ogImageUrl, width: 1080, height: 1350, alt: gym?.name ?? "" },
-    ];
-    twitter.images = [ogImageUrl];
-  }
-
-  return { title, description, openGraph, twitter };
 }
 
 export default async function ClimbingPage() {
