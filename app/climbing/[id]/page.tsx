@@ -27,9 +27,9 @@ export async function generateMetadata({
   const { id } = await params;
   const sp = await searchParams;
   const gym = climbingGyms.find((g) => g.id === id);
-  if (!gym) return { title: "岩馆未找到 · 北京岩馆指南" };
+  if (!gym) return { title: "岩馆未找到 · 岩签" };
 
-  const title = `${gym.name} · ${gym.district}${gym.area ? "·" + gym.area : ""} · 北京岩馆指南`;
+  const title = `${gym.name} · ${gym.district}${gym.area ? "·" + gym.area : ""} · 岩签`;
   const description =
     `${gym.name}：${gym.district}${gym.area ? "·" + gym.area : ""}的${gym.type}。` +
     `地址 ${gym.address}。` +
@@ -235,10 +235,10 @@ function TopBar() {
         href="/climbing"
         className="font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-fg hover:text-accent"
       >
-        ← ROULETTE
+        ← 岩签
       </Link>
       <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-        北京岩馆指南
+        北京岩馆抽签
       </div>
     </div>
   );

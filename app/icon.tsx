@@ -1,11 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const size = { width: 512, height: 512 };
 export const contentType = "image/png";
 
-// 攀岩轮盘 PWA icon: solid accent-orange square + bold white "R" wordmark
-// (matches the share-card masthead). Pure typography, no font loading needed.
-export default function Icon() {
+// 岩签 PWA icon — vermillion seal-style square + a single bold cream "签"
+// character. Matches the share-card brand seal.
+export default async function Icon() {
+  const fontPath = join(process.cwd(), "public", "fonts", "NotoSansSC-Bold.woff");
+  const bold = await readFile(fontPath);
   return new ImageResponse(
     (
       <div
@@ -15,17 +19,30 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ea580c",
+          background: "#b22222",
           color: "#fafaf6",
           fontSize: 360,
-          fontWeight: 900,
-          letterSpacing: -16,
+          fontWeight: 700,
           lineHeight: 1,
+          fontFamily: "Noto Sans SC",
         }}
       >
-        R
+        签
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Noto Sans SC",
+          data: bold.buffer.slice(
+            bold.byteOffset,
+            bold.byteOffset + bold.byteLength,
+          ) as ArrayBuffer,
+          weight: 700,
+          style: "normal",
+        },
+      ],
+    },
   );
 }

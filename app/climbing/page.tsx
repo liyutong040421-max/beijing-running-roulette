@@ -4,7 +4,7 @@ import { loadPhotoManifest } from "@/lib/climbing-photos-server";
 import { climbingGyms } from "@/data/climbing-gyms";
 import { getSiteUrl } from "@/lib/site-url";
 
-const DEFAULT_TITLE = "北京攀岩轮盘 · 今天去哪爬？";
+const DEFAULT_TITLE = "岩签 · 今晚去哪爬？";
 const DEFAULT_DESC =
   "随机抽一家北京攀岩馆。45 家真实坐标，公平多人模式，爬完一键找补碳。";
 
@@ -34,7 +34,7 @@ export async function generateMetadata({
   }
 
   const title = gym
-    ? `${gym.name} · 北京攀岩轮盘`
+    ? `${gym.name} · 岩签`
     : DEFAULT_TITLE;
   const description = gym
     ? `${gym.district} · ${gym.area} · ${gym.type}。今晚就这家。`

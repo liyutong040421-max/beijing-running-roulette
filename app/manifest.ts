@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "北京攀岩轮盘",
-    short_name: "攀岩轮盘",
+    name: "岩签 · 北京岩馆抽签",
+    short_name: "岩签",
     description:
       "随机抽一家北京攀岩馆。45 家真实坐标，公平多人模式，爬完一键找补碳。",
     start_url: "/climbing",
