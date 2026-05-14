@@ -11,6 +11,7 @@ import { getSiteUrl } from "@/lib/site-url";
 import { RefuelPanel } from "@/components/climbing/RefuelPanel";
 
 type Params = { id: string };
+type SearchParams = { [key: string]: string | string[] | undefined };
 
 export function generateStaticParams(): Params[] {
   return climbingGyms.map((g) => ({ id: g.id }));
@@ -18,10 +19,13 @@ export function generateStaticParams(): Params[] {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<Params>;
+  searchParams: Promise<SearchParams>;
 }): Promise<Metadata> {
   const { id } = await params;
+  const sp = await searchParams;
   const gym = climbingGyms.find((g) => g.id === id);
   if (!gym) return { title: "岩馆未找到 · 北京岩馆指南" };
 
@@ -31,17 +35,29 @@ export async function generateMetadata({
     `地址 ${gym.address}。` +
     (gym.audience ? `适合：${gym.audience}。` : "");
 
-  const ogImage = `${getSiteUrl()}/api/share-card?gym=${encodeURIComponent(gym.id)}`;
+  // Build OG image URL — preserve any ?p=label:lng:lat passed via the share
+  // link so the magazine-cover preview keeps the "with friends" chips.
+  const ogParams = new URLSearchParams();
+  ogParams.set("gym", gym.id);
+  const pVals = sp.p;
+  const pList = Array.isArray(pVals) ? pVals : pVals ? [pVals] : [];
+  for (const p of pList.slice(0, 4)) ogParams.append("p", p);
+  const ogImage = `${getSiteUrl()}/api/share-card?${ogParams.toString()}`;
+
+  // Canonical drops the ?p= so duplicate party-link variants of the same gym
+  // collapse to one indexable URL for search engines.
+  const canonical = `${getSiteUrl()}/climbing/${gym.id}`;
+
   return {
     title,
     description,
-    alternates: { canonical: `${getSiteUrl()}/climbing/${gym.id}` },
+    alternates: { canonical },
     openGraph: {
       title,
       description,
       type: "article",
       locale: "zh_CN",
-      url: `${getSiteUrl()}/climbing/${gym.id}`,
+      url: canonical,
       images: [{ url: ogImage, width: 1080, height: 1350, alt: gym.name }],
     },
     twitter: {

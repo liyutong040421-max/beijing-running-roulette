@@ -1360,20 +1360,19 @@ function compactNote(value: string): string {
 }
 
 function buildSharePageUrl(gymId: string, participants: Participant[]): string {
-  const params = encodeShareParams(gymId, participants);
-  return `/climbing?${params.toString()}`;
-}
-
-function encodeShareParams(gymId: string, participants: Participant[]): URLSearchParams {
-  const params = new URLSearchParams();
-  params.set("gym", gymId);
+  // Points at the static SEO landing page so receivers get an instant
+  // server-rendered "this is gym X" view instead of waiting for /climbing's
+  // SPA hydration. ?p=… is read by the landing page only for OG image
+  // generation (preserving the with-friends magazine cover preview).
+  const qs = new URLSearchParams();
   for (const p of participants) {
-    params.append(
+    qs.append(
       "p",
       `${encodeURIComponent(p.label)}:${p.lng.toFixed(5)}:${p.lat.toFixed(5)}`,
     );
   }
-  return params;
+  const tail = qs.toString();
+  return tail ? `/climbing/${gymId}?${tail}` : `/climbing/${gymId}`;
 }
 
 // Receiver side: parses ?gym=&p= from a share-link URL into the same shapes
