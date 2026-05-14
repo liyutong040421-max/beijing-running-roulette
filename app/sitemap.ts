@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
+import { climbingGyms } from "@/data/climbing-gyms";
 import { getSiteUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const now = new Date();
-  return [
+  const top: MetadataRoute.Sitemap = [
     {
       url: `${base}/`,
       lastModified: now,
@@ -24,4 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+  const gymPages: MetadataRoute.Sitemap = climbingGyms.map((g) => ({
+    url: `${base}/climbing/${g.id}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+  return [...top, ...gymPages];
 }

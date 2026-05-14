@@ -1276,6 +1276,15 @@ function GymPreview({
                 <span className="underline decoration-white/30 decoration-1 underline-offset-4 group-hover:decoration-white">高德搜岩馆</span>
               </a>
               <a
+                href={`/climbing/${gym.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 text-xs text-white/90 transition-colors hover:text-white"
+              >
+                <span className="opacity-70 group-hover:opacity-100">→</span>
+                <span className="underline decoration-white/30 decoration-1 underline-offset-4 group-hover:decoration-white">详情</span>
+              </a>
+              <a
                 href={sharePageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1305,6 +1314,15 @@ function GymPreview({
                 >
                   <span className="text-muted transition-colors group-hover:text-accent">→</span>
                   <span className="underline decoration-hairline decoration-1 underline-offset-4 group-hover:decoration-accent">高德搜岩馆</span>
+                </a>
+                <a
+                  href={`/climbing/${gym.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-sm text-fg transition-colors hover:text-accent"
+                >
+                  <span className="text-muted transition-colors group-hover:text-accent">→</span>
+                  <span className="underline decoration-hairline decoration-1 underline-offset-4 group-hover:decoration-accent">详情</span>
                 </a>
                 <a
                   href={sharePageUrl}
